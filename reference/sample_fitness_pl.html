@@ -12,7 +12,7 @@ degree distributions."><!-- mathjax --><script src="https://cdnjs.cloudflare.com
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.3.5.9098</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.3.5.9100</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,7 @@ degree distributions.</p>
 <dd><p>Numeric scalar, the power law exponent of the degree
 distribution. For directed graphs, this specifies the exponent of the
 out-degree distribution. It must be greater than or equal to 2. If you pass
-<code>Inf</code> here, you will get back an Erdos-Renyi random network.</p></dd>
+<code>Inf</code> here, you will get back an Erdős-Rényi random network.</p></dd>
 
 
 <dt>exponent.in</dt>
@@ -118,8 +118,8 @@ directed graphs, the exponents of the in- and out-degree distributions may
 be specified separately.</p>
 <p>The game simply uses <code><a href="sample_fitness.html">sample_fitness()</a></code> with appropriately
 constructed fitness vectors. In particular, the fitness of vertex \(i\) is
-\(i^{-alpha}\), where \(alpha = 1/(gamma-1)\) and gamma is
-the exponent given in the arguments.</p>
+\(i^{-\alpha}\), where \(\alpha = 1/(\gamma-1)\)
+and \(\gamma\) is the exponent given in the arguments.</p>
 <p>To remove correlations between in- and out-degrees in case of directed
 graphs, the in-fitness vector will be shuffled after it has been set up and
 before <code><a href="sample_fitness.html">sample_fitness()</a></code> is called.</p>
@@ -127,7 +127,7 @@ before <code><a href="sample_fitness.html">sample_fitness()</a></code> is called
 smaller than 3 in the original formulation of the game. This function
 provides an argument that lets you remove the finite size effects by
 assuming that the fitness of vertex \(i\) is
-\((i+i_0-1)^{-alpha}\) where \(i_0\) is a
+\((i+i_0-1)^{-\alpha}\) where \(i_0\) is a
 constant chosen appropriately to ensure that the maximum degree is less than
 the square root of the number of edges times the average degree; see the
 paper of Chung and Lu, and Cho et al for more details.</p>

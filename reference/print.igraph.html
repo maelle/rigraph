@@ -12,7 +12,7 @@ form."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathj
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.3.5.9098</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.3.5.9100</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,7 +133,7 @@ optionally graph, vertex and/or edge attributes.</p>
 <code>print_all()</code> depending on the <code>full</code> argument. See also the
 ‘print.full’ igraph option and <code><a href="igraph_options.html">igraph_opt()</a></code>.</p>
 <p>The graph summary printed by <code>summary.igraph</code> (and <code>print.igraph()</code>
-and <code>print_all()</code>) consists one or more lines. The first line contains
+and <code>print_all()</code>) consists of one or more lines. The first line contains
 the basic properties of the graph, and the rest contains its attributes.
 Here is an example, a small star graph with weighted directed edges and named
 vertices:</p><div class="sourceCode"><pre><code>    IGRAPH badcafe DNW- 10 9 -- In-star
@@ -149,7 +149,8 @@ graphs, i.e. graphs with the <code>name</code> vertex attribute set. The third
 letter is ‘<code>W</code>’ for weighted graphs, i.e. graphs with the
 <code>weight</code> edge attribute set. The fourth letter is ‘<code>B</code>’ for
 bipartite graphs, i.e. for graphs with the <code>type</code> vertex attribute set.</p>
-<p>Then, after two dashes, the name of the graph is printed, if it has one,
+<p>This is followed by the number of vertices and edges, then two dashes.</p>
+<p>Finally, after two dashes, the name of the graph is printed, if it has one,
 i.e. if the <code>name</code> graph attribute is set.</p>
 <p>From the second line, the attributes of the graph are listed, separated by a
 comma. After the attribute names, the kind of the attribute -- graph
@@ -219,12 +220,12 @@ comma. After the attribute names, the kind of the attribute -- graph
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x564cbbd82f78&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x561c8047dfb0&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "igraph"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 3cf90b1 U--- 10 10 -- Ring graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 9ac6caa U--- 10 10 -- Ring graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), mutual (g/l), circular (g/l)</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
