@@ -1,5 +1,448 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# igraph 1.3.5.9101
+
+## Bug fixes
+
+- Handle the default NULL value of frame.plot properly.
+
+- Do not use 'frame' partial argument when calling plot.default().
+
+- `NULL` means empty vertex or edge list again in all functions (#625).
+
+* NULL remains an alias for an empty vertex or edge list
+
+Reverts d05ac3140bde37d53365da464e23b22fe89e1b90.
+
+* Special case
+
+* Revert #608
+
+* Style
+
+* doc: fix docs
+
+- Fix builds with some `make` variants (#617).
+
+- Fix syntax error in new unit test.
+
+- Fixed indexing of result vertices in convex_hull(), closes #613.
+
+- Avoid defining PACKAGE_VERSION at all in Makevars (#600).
+
+* Avoid defining PACKAGE_VERSION at all in Makevars
+
+* Fix test
+
+* don't try to tweak igraph_version.h.in now that we don't pass PACKAGE_VERSION from the compiler CLI
+
+- PACKAGE_VERSION is now quoted dynamically in igraph_version.h to avoid quoting in the Windows shell.
+
+- Try alternative escaping of PACKAGE_VERSION in the Windows build.
+
+- Try not to escape PACKAGE_VERSION in the Windows build.
+
+- Do not use sprintf in C code.
+
+- Fix detection of already-applied patches in tools/apply-patch.sh for newer versions of macOS.
+
+- Dfs()$root index should be 1-based, fixes #589.
+
+- Fix a bug in graph_from_incidence_matrix() for directed=T, mode='all' from sparse matrices, fixes #354.
+
+- Fix a bug in graph_from_incidence_matrix() for directed=T, mode='all' when the graph also had weights, fixes #353.
+
+- Trivial speedup in get.adjacency.dense() when using attributes.
+
+- Fix typon in previous commit.
+
+- Fix as.dendrogram.communities() for large dendrograms, closes #292.
+
+- Fix documentation of graph_from_adj_list, closes #170.
+
+- Use on.exit() to restore par(xpd=...).
+
+- Remove unimplemented pie.border from docs, refs #132.
+
+- Restore par(xpd=...) after plotting.
+
+- Eliminate Clang 15 warnings.
+
+- Bump max iteration count of eigenvector centrality to 3000.
+
+- Defer resolution of IGRAPH_VERSION in igraph_version.h to make it harder to publish igraph on CRAN with an invalid version number.
+
+- Fix typo in name of test file.
+
+- Distances(algorithm='johnson') now throws an error if mode != 'out' for directed graphs.
+
+- Removed ARPACK homepage reference now that the homepage is gone.
+
+## Features
+
+- Support `index = NULL` when setting attributes (#608).
+
+- New id argument to print(), with new option print.id (#605).
+
+- Tkplot() now has a palette, also fixes #159.
+
+## Chore
+
+- Fix make from a clean repository.
+
+- Track revdepcheck results (#621).
+
+- Move to single branch setup (#620).
+
+- Stabilize vs-es tests (#631).
+
+- Add fledge workflow.
+
+- Prepare for using fledge for managing NEWS.md (#615).
+
+- Style remaining files (#614).
+
+- Clarify changelog item [skip ci].
+
+- Apply styler (#612).
+
+* Attach code to roxygen2 blocks
+
+* Remove space at EOL
+
+* Turn off styler in generated code
+
+* none
+
+* spaces
+
+* indention
+
+* line_breaks
+
+* line_breaks, strict = TRUE
+
+* Manual
+
+* tokens
+
+* tokens, strict = TRUE
+
+* Document
+
+- Store generated files (@krlmlr, #597).
+
+- Remove or replace `\dontrun{}` (#593).
+
+* Remove or replace \dontrun
+
+* Qualify
+
+* Unexported
+
+* Make has_glpk() and has_graphml() available in package
+
+- Updated changelog.
+
+- Extract is_single_index() and get_single_index() (#596).
+
+- Update vendored igraph.
+
+- Updated changelog.
+
+- Update issue template.
+
+- Updated vendored igraph.
+
+- Update vendored igraph.
+
+- Update vendored igraph.
+
+- Correct misstatement in NEWS.
+
+- Updated vendored igraph.
+
+- Update NEWS [skip ci].
+
+- Updated vendored igraph.
+
+## Documentation
+
+- Further polish print_all() docs.
+
+- Clarify print_all() output.
+
+- Polish sample_fitness_pl() docs.
+
+- Wrap README badges for detection by pkgdown (#637).
+
+- Clarify documentation of alpha_centrality.
+
+- Update Erdős-Rényi sampler docs, change an incorrect G(n,p) to G(n,m) in sample_bipartite().
+
+- Use Markdown in documentation (#624).
+
+* Enable Markdown, mostly whitespace changes
+
+* Indent
+
+* Parentheses
+
+* as.dendrogram()
+
+* print()
+
+* plot()
+
+* summary()
+
+* Pipe
+
+* simple
+
+* full
+
+- Fix typo [skip ci].
+
+- Fix minor typo [skip ci].
+
+- Improve PageRank docs.
+
+- Clarify edge_density docs.
+
+- Add references to realize_degseq() docs.
+
+## Refactoring
+
+- Renamed automorphisms() to count_automorphisms().
+
+## Testing
+
+- Add an example for a plot test (#598).
+
+* Add an example for a plot test
+
+* Fix random seed
+
+- Skip unstable leading eigenvector stress test on R 3.4 and 3.5.
+
+## doc
+
+- Switch to https in a URL that CRAN check was complaining about.
+
+## WIP
+
+- Add coverage reporting (#592).
+
+* Micro-tweaks to smoke test
+
+* Tweaks to main test
+
+* Add coverage workflow
+
+* Install dependencies once
+
+* Create source package first
+
+* Make DESCRIPTION first
+
+* Avoid installing R
+
+* Try stable without needs
+
+* Move to Config/Needs
+
+* Use RSPM
+
+* setwd() first
+
+* Configure codecov
+
+* Fix name
+
+* Fix shell call
+
+* Add coverage needs
+
+* Fix codecov() call
+
+* Use numbered oldrel
+
+## Uncategorized
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/642 (#642).
+
+- Added igraph extended tutorial as R vignette (@ntamas, #587).
+
+- Update igraph_extended_tutorial_R_vignette_english.Rmd (@ntamas, #587).
+
+- Bump version to 1.3.5.9095 (@ntamas, #587).
+
+- A bunch of fixes after review and rename (@ntamas, #587).
+
+- Adapt one line suggested by @szhorvat (@ntamas, #587).
+
+- R vignette compiles into html and PDF using rmarkdown (@ntamas, #587).
+
+- Remove methods since R is not very much OO (@ntamas, #587).
+
+- Bump version to 1.3.5.9096 (@ntamas, #587).
+
+- Corrections throughout (@ntamas, #587).
+
+- Bump version to 1.3.5.9097 (@ntamas, #587).
+
+- Fix: fix deprecation warnings about 'from' and 'to' in edge selectors (@ntamas, #587).
+
+- Read/write files corrected (@ntamas, #587).
+
+- Remove Spanish version, will be a separate PR (@ntamas, #587).
+
+- NEWS.md went for a spin, bring it back (@ntamas, #587).
+
+- Minor tweaks, adjusted figure sizes, work in progress (@ntamas, #587).
+
+- Title, notes, first paragraph (@ntamas, #587).
+
+- Starting igraph (@ntamas, #587).
+
+- More corrections (@ntamas, #587).
+
+- Clean up a bunch of Python-isms in the second half (@ntamas, #587).
+
+- Session info, headers down a notch, some wording (@ntamas, #587).
+
+- Bump version to 1.3.5.9098 (@ntamas, #587).
+
+- Doc: more updates to the vignette (@ntamas, #587).
+
+- Bump version to 1.3.5.9099 (@ntamas, #587).
+
+- Doc: vignette cleanup finished (@ntamas, #587).
+
+- Revert changes to DESCRIPTION (@ntamas, #587).
+
+- Revert changes to NEWS.md (@ntamas, #587).
+
+- Ignore.
+
+- Update instructions.
+
+- Ignore.
+
+- Automated changes.
+
+- Run autoconf on 22.04.
+
+- Automated changes.
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/634 (#634).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/632 (#632).
+
+- Fix: distances() with algorithm='johnson' now handles all mode parameter values correctly.
+
+- Docs: better explain use cases of Johnson's shortest path length algorithm.
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/619 (#619).
+
+- Man to repository (@krlmlr, #602).
+
+- Src to repository (@krlmlr, #602).
+
+- Unignore src (@krlmlr, #602).
+
+- Update makefile (@krlmlr, #602).
+
+- Delete config.h.in from src (@krlmlr, #602).
+
+- Add validation after make igraph (@krlmlr, #602).
+
+- Typo (@krlmlr, #602).
+
+- Remove duplicates (@krlmlr, #602).
+
+- Add loops and multiple argument (@krlmlr, #602).
+
+- Update man (@krlmlr, #602).
+
+- Fix tests and printing (@krlmlr, #602).
+
+- Add `ignore` option for `loops` (@krlmlr, #602).
+
+- Remove default argument (@krlmlr, #602).
+
+- Document arguments (@krlmlr, #602).
+
+- Document arguments (@krlmlr, #602).
+
+- Consistent default arguments (@krlmlr, #602).
+
+- Hide new arguments for now, revert tests (@krlmlr, #602).
+
+- Document (@krlmlr, #602).
+
+- Fix: don't expose 'multiple' argument of igraph_i_incident (@krlmlr, #602).
+
+- Fix: disallow multiple edges in as_graphnel() (@krlmlr, #602).
+
+- Chore: update changelog (@krlmlr, #602).
+
+- Fix: cleaning up, get_adjedgelist() should not expose multiple=..., only loops, but it's okay for get_adjlist() (@krlmlr, #602).
+
+- Test: add unit test for loop edge duplication in as_graphnel() (@krlmlr, #602).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/607 (#607).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/606 (#606).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/603 (#603).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/298 (#298).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/599 (#599).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/595 (#595).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/594 (#594).
+
+- 9L -> igraph_t_idx_attr.
+
+- 3L and 4L.
+
+- Igraph_attr_idx.
+
+- Fix: element 10 of the igraph data structure is an R env.
+
+- Faster build process.
+
+- Avoid @include.
+
+- Use new target.
+
+- Update contributing guide.
+
+- Remove auto.R.
+
+- Aaa-auto.R.
+
+- Remove remaining @ include tags.
+
+- Remove more library(igraph) and library(Matrix).
+
+- Avoid require(digest).
+
+- Avoid require(Matrix) in tests.
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/580 (#580).
+
+- PLACEHOLDER https://github.com/maelle/rigraph/pull/576 (#576).
+
+- Remove spaces at EOL.
+
+- Remove blank lines at EOF.
+
+
 # igraph 1.3.5.9100
 
 ## Chore
