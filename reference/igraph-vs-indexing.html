@@ -210,32 +210,32 @@ examples below.</p>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">$</span><span class="va">color</span> <span class="op">&lt;-</span> <span class="st">"green"</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="va">giant_v</span><span class="op">]</span><span class="op">$</span><span class="va">color</span> <span class="op">&lt;-</span> <span class="st">"red"</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in xy.coords(x, y, xlabel, ylabel, log):</span> 'x' is a list, but does not have components 'x' and 'y'</span>
+<span class="r-plt img"><img src="igraph-vs-indexing-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># -----------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># nei() special function</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_graph.html">graph</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">4</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="fu">.nei</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 4/4 vertices, from 4501bc6:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 4/4 vertices, from 16a78ba:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3 4</span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="fu">.nei</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span>, <span class="st">"in"</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, from 4501bc6:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, from 16a78ba:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 4</span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="fu">.nei</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span>, <span class="st">"out"</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, from 4501bc6:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, from 16a78ba:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2 3 4</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># -----------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># The same with vertex names</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_graph.html">graph</a></span><span class="op">(</span><span class="op">~</span> <span class="va">A</span> <span class="op">-</span><span class="op">+</span> <span class="va">B</span>, <span class="va">B</span> <span class="op">-</span><span class="op">+</span> <span class="va">C</span><span class="op">:</span><span class="va">D</span>, <span class="va">D</span> <span class="op">-</span><span class="op">+</span> <span class="va">B</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="fu">.nei</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"B"</span>, <span class="st">"D"</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 4/4 vertices, named, from a43a01c:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 4/4 vertices, named, from 03f35a3:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] A B C D</span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="fu">.nei</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"B"</span>, <span class="st">"D"</span><span class="op">)</span>, <span class="st">"in"</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, named, from a43a01c:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, named, from 03f35a3:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] A B D</span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="fu">.nei</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"B"</span>, <span class="st">"D"</span><span class="op">)</span>, <span class="st">"out"</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, named, from a43a01c:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 3/4 vertices, named, from 03f35a3:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] B C D</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># -----------------------------------------------------------------</span></span></span>
@@ -243,7 +243,7 @@ examples below.</p>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_graph.html">graph</a></span><span class="op">(</span><span class="op">~</span> <span class="va">A</span> <span class="op">-</span><span class="op">+</span> <span class="va">B</span>, <span class="va">B</span> <span class="op">-</span><span class="op">+</span> <span class="va">C</span><span class="op">:</span><span class="va">D</span>, <span class="va">D</span> <span class="op">-</span><span class="op">+</span> <span class="va">B</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">$</span><span class="va">color</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"green"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="va">color</span> <span class="op">==</span> <span class="st">"red"</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 2/4 vertices, named, from d7c874c:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 2/4 vertices, named, from 60a7dc7:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] A B</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Indexing with a variable whose name matches the name of an attribute</span></span></span>
@@ -251,7 +251,7 @@ examples below.</p>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">$</span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">10</span><span class="op">:</span><span class="fl">13</span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">2</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[</span><span class="va">.env</span><span class="op">$</span><span class="va">x</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 1/4 vertex, named, from d7c874c:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 1/4 vertex, named, from 60a7dc7:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] B</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

@@ -156,13 +156,11 @@ Notes in Computer Science</em> 4503, 1--13. Springer-Verlag, Berlin Heidelberg
 <span class="r-in"><span><span class="va">hrg</span> <span class="op">&lt;-</span> <span class="fu">fit_hrg</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">hrg</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Hierarchical random graph, at level 3:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> g1        p=0.06  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> '- g15    p=   0  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g5  p=0.62  1  7  3  8  2  6  5  10 9 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g16 p=0.67  15 19 12 20 16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> '- g2     p=0.38  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g9  p=   0  4  11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g14 p=   1  14 17 13 18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> g1        p=   0  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> '- g12    p=0.44  7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g14 p=0.12  2  3  6  5  4  1  10 9  8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> '- g17    p=0.78  20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g13 p=0.35  15 14 19 11 18 17 12 16 13</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## The consensus tree for it</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="consensus_tree.html">consensus_tree</a></span><span class="op">(</span><span class="va">g</span>, hrg <span class="op">=</span> <span class="va">hrg</span>, start <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
@@ -170,26 +168,25 @@ Notes in Computer Science</em> 4503, 1--13. Springer-Verlag, Berlin Heidelberg
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 20 20 20 20 20 20 20 20 20 20 21 21 21 21 21 21 21 21 21 21 22 22 -1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $weights</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  6788  9039 10000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  8793  9831 10000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg$left</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -15  -9 -10 -13   0  15 -18  -3   3   1   8  11  12  -4  -5 -17 -12   4  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -12  -8  -5   0  -7 -10  10 -15   8 -11  11 -14  -3  -2 -18  -4 -13 -16  12</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg$right</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  -2 -14   2  13 -19  19 -11  -7  10   7   9  18  16  17 -16  -6  14   5   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -17   1  14  -9  13  17  18   2   9  16 -19   6  -6   7   5   3  19   4  15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg$prob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.05952381 0.37500000 0.00000000 0.50000000 0.62500000 1.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.00000000 1.00000000 0.00000000 0.00000000 0.00000000 0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] 1.00000000 1.00000000 0.00000000 0.66666667 1.00000000 1.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [19] 0.14285714</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.0000000 0.5714286 0.6666667 0.0000000 0.0000000 1.0000000 1.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 0.0000000 1.0000000 1.0000000 0.0000000 0.4444444 0.3500000 0.1250000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [15] 0.6000000 1.0000000 0.7777778 0.7500000 1.0000000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg$edges</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  5  3  0  1  5  1  0 12  0  0  0  0  1  3  0  4  2  1  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0 4 2 0 0 4 1 0 1 3 0 4 7 1 3 3 7 3 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg$vertices</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 20  6  3  3  9  2  4  7  2  2  2  2  2  4 14  5  3  2  8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 20  8  4  3  3  5  2  7  2  4  3 10  9  9  6  4 10  5  2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
@@ -199,35 +196,35 @@ Notes in Computer Science</em> 4503, 1--13. Springer-Verlag, Berlin Heidelberg
 <span class="r-out co"><span class="r-pr">#&gt;</span> $edges</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       [,1] [,2]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]    5    6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]    4    6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]    2    6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]    1    6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]    3    6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]    2    5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]    3    5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]    4    5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]    1    5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]    3    7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [11,]    2    7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [12,]    4    7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13,]    1    7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]    4    5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]    2    5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]    1    5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]    3    5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]    4    6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]    1    6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]    2    6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]    3    6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]    2    8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11,]    4    8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [12,]    2    7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13,]    4    7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [14,]    1    8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [15,]    3    8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16,]    4    8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [17,]    2    8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [16,]    3    7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [17,]    1    7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $prob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.276373020 0.004641428 0.004424832 0.004404252 0.004370966 0.003922240</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.003904642 0.003834868 0.003821421 0.003289436 0.003244359 0.003188349</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] 0.003065094 0.002676969 0.002626216 0.002605210 0.002444697</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.272648783 0.005001911 0.004942516 0.004785216 0.004763794 0.004210195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.004154408 0.004057616 0.003996802 0.003893010 0.003857092 0.003716136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] 0.003672164 0.003657983 0.003624458 0.003354700 0.003288983</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hrg</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Hierarchical random graph, at level 3:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> g1        p=0  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> '- g7     p=1  3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g5  p=1  4 1 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> '- g6     p=1  8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g4  p=1  6 5 7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> g1        p=   0  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> '- g5     p=   1  2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g7  p=   1  4 1 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> '- g3     p=0.67  5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    '- g2  p=   1  8 6 7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>

@@ -88,57 +88,11 @@ These objects are created by the <code><a href="fit_hrg.html">fit_hrg()</a></cod
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_full_graph.html">make_full_graph</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="make_full_graph.html">make_full_graph</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">hrg</span> <span class="op">&lt;-</span> <span class="fu"><a href="fit_hrg.html">fit_hrg</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">as.igraph</span><span class="op">(</span><span class="va">hrg</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 10 11 12 13 14 15 16 17 18 10 11 12 13 14 15 16 17 18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 13  0  1 15  7 11 18  5  6 17 12  3  2  8  4 14 16  9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  0  9  1 10  2 11 12  3  4 13 14  5 15  6  7 16  8 17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1  2 12 11 14  7  8  4 13 17  5 10  0 15  3 16  9  6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  0  0  0  0  0  0  0  0  0  0  0  2  4  6  8 10 12 14 16 18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  0  1  2  3  4  5  6  7  8  9 10 10 11 12 13 14 15 16 17 18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 0 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]$name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Fitted HRG"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]$name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "g1" "g2" "g3" "g4" "g5"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [16] "g6" "g7" "g8" "g9"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]$prob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] NA NA NA NA NA NA NA NA NA NA  0  1  1  1  1  1  1  1  1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563a412f99a8&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "igraph"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH eb6cc5f DN-- 19 18 -- Fitted HRG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), name (v/c), prob (v/n)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from eb6cc5f (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] g1-&gt;g4 g2-&gt;1  g3-&gt;2  g4-&gt;g6 g5-&gt;8  g6-&gt;g2 g7-&gt;g9 g8-&gt;6  g9-&gt;7  g1-&gt;g8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11] g2-&gt;g3 g3-&gt;4  g4-&gt;3  g5-&gt;9  g6-&gt;5  g7-&gt;g5 g8-&gt;g7 g9-&gt;10</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

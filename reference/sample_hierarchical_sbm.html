@@ -160,164 +160,18 @@ stochastic block model.</p>
 <span class="r-in"><span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">sample_hierarchical_sbm</span><span class="op">(</span><span class="fl">100</span>, <span class="fl">10</span>, rho <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span> <span class="op">/</span> <span class="fl">10</span>, C <span class="op">=</span> <span class="va">C</span>, p <span class="op">=</span> <span class="fl">1</span> <span class="op">/</span> <span class="fl">20</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">g</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  1  2  2  3  3  3  4  4  5  5  5  6  6  6  7  7  8  9  9  7  8  8  9 11 12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [26] 12 14 14 15 15 16 16 17 17 17 18 18 19 19 17 18 19 19 19 21 22 22 23 24 24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [51] 24 25 25 27 27 28 29 29 29 27 28 28 29 29 29 31 32 32 33 33 34 34 34 35 35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [76] 36 36 36 37 37 38 38 38 39 39 37 38 38 39 39 41 42 42 43 43 44 45 45 45 46</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [101] 46 47 47 48 48 48 49 49 47 48 49 49 49 51 52 52 53 53 53 54 54 54 55 55 56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [126] 57 57 57 58 58 58 59 59 59 57 58 59 59 61 62 62 63 63 63 64 65 65 65 66 66</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [151] 67 67 67 68 68 69 69 69 67 68 68 69 69 69 71 72 72 73 73 73 74 74 75 75 76</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [176] 76 76 77 77 78 78 78 79 79 77 78 79 79 81 82 82 83 83 83 84 84 84 85 86 87</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [201] 87 87 88 88 88 89 88 88 89 89 89 91 92 92 93 93 94 94 95 95 96 96 96 97 97</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [226] 98 98 99 99 97 99 10 11 13 15 15 17 19 22 29 31 32 33 34 35 39 41 41 42 43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [251] 46 49 52 57 57 58 59 61 62 64 64 65 66 68 68 69 70 71 76 77 78 79 79 87 87</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [276] 88 89 91 93 96 97 20 20 22 24 33 34 35 36 36 38 39 41 42 42 43 45 46 51 56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [301] 59 59 67 72 75 77 78 79 79 80 81 84 86 86 87 87 88 88 91 93 93 95 95 31 37</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [326] 37 39 41 44 48 52 53 53 54 58 59 59 61 63 64 66 67 68 69 69 74 74 74 80 82</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [351] 84 86 88 94 95 95 97 98 43 44 49 51 56 60 62 67 67 68 69 70 70 71 72 74 76</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [376] 80 80 82 87 87 88 91 91 94 98 98 53 55 55 62 65 66 68 69 72 72 73 76 81 84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [401] 84 87 90 91 92 92 92 95 60 61 63 64 65 66 66 67 68 70 71 74 74 78 81 82 83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [426] 83 84 84 84 86 89 91 92 95 98 99 99 72 74 74 76 77 77 77 78 79 79 83 83 84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [451] 87 87 89 90 90 94 97 99 92 92 96 97 97 98 90 91 92 93 94 95 96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0  0  1  0  1  2  1  2  0  1  2  3  4  5  4  5  3  3  4  6  6  7  8 10 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [26] 11 10 12 10 11 14 15 13 14 15 13 14 14 15 16 16 16 17 18 20 20 21 21 20 21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [51] 22 20 22 23 25 25 23 24 25 26 26 27 26 27 28 30 30 31 30 31 30 31 32 30 32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [76] 33 34 35 33 35 33 34 35 34 35 36 36 37 37 38 40 40 41 40 42 41 40 41 42 43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [101] 45 43 44 43 44 45 44 45 46 46 46 47 48 50 50 51 50 51 52 50 51 52 50 52 53</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [126] 53 54 55 53 54 55 53 54 55 56 57 56 58 60 60 61 60 61 62 62 60 61 62 63 64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [151] 63 64 65 64 65 63 64 65 66 66 67 66 67 68 70 70 71 70 71 72 70 72 70 71 73</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [176] 74 75 73 74 73 74 75 74 75 76 77 77 78 80 80 81 80 81 82 80 81 82 82 85 83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [201] 84 85 83 84 85 83 86 87 86 87 88 90 90 91 91 92 90 92 90 92 93 94 95 93 94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [226] 93 94 94 95 96 98  2  3  2  1  7  6  8  0  2  1  1  2  4  8  7  1  3  2  6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [251]  6  0  3  6  9  6  2  6  9  3  8  8  7  2  7  7  4  4  1  9  4  2  7  3  5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [276]  2  9  1  9  6  8 10 11 13 10 17 17 17 15 18 14 13 19 10 19 12 17 10 14 15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [301] 12 13 19 15 12 14 14 11 14 12 19 14 12 15 12 18 15 16 17 12 18 10 18 28 24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [326] 26 22 27 29 20 25 20 27 21 22 22 27 23 22 24 28 29 27 25 26 24 26 27 22 26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [351] 28 23 29 21 20 28 28 29 33 36 31 31 37 34 37 36 37 33 36 34 39 32 34 37 38</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [376] 33 39 33 35 37 36 32 39 30 32 34 49 41 49 43 43 44 48 40 47 49 44 49 42 42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [401] 49 49 44 45 46 47 48 48 57 54 53 58 52 54 55 53 53 53 50 51 54 57 50 58 56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [426] 57 56 58 59 52 53 56 58 57 57 53 56 67 66 69 64 63 65 68 68 66 69 63 68 61</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [451] 62 67 60 60 64 64 60 67 71 73 78 73 78 71 85 89 81 83 81 87 85</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  19  16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19]  20  21  17  18  22 231 232  23  24  25 233  26  27 234 235  28  29  30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37]  31 236  32  33  34  39  35  36  40 237  37  38  41  42  43 281 282  44</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] 238 283  45  46  47 284  48  49  50  51  52  53  54  59  55  60  61 239</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73]  56  57  58  62  63  64 240 323  65 241  66  67 242 285  68  69 243 286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91]  70  71  72 244 287  73  74 288 289  75  76  77 324 325  78  79  85 290</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [109]  80  81  82  86  87 245 291 326  83  84  88  89 246 247 292 327  90 248</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [127] 293 294  91  92 249 295 358  93  94 328 359  95 296  96  97  98 250 297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [145]  99 100 101 102 108 329 103 104 105 109 251 360 106 107 110 111 112 298</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [163] 361 113 252 330 114 115 331 332 386 116 117 118 333 119 120 121 387 388</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [181] 122 123 299 362 124 253 254 125 126 127 134 255 334 128 129 130 135 256</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [199] 300 301 335 336 131 132 133 136 137 363 408 257 337 409 138 258 364 389</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [217] 139 140 338 410 141 142 143 259 260 339 411 144 261 390 412 145 146 147</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [235] 262 340 391 413 414 148 149 302 341 365 366 415 150 151 152 158 263 264</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [253] 342 367 392 416 153 154 159 160 265 343 344 368 393 155 156 157 161 162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [271] 163 266 369 370 417 267 371 418 164 303 372 394 395 437 165 166 396 167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [289] 168 169 345 346 347 373 419 420 438 439 170 171 304 172 173 268 374 397</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [307] 440 174 175 176 269 305 441 442 443 177 178 184 270 306 421 444 179 180</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [325] 181 185 271 272 307 308 445 446 182 183 186 187 309 348 375 376 310 398</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [343] 422 188 349 377 423 189 190 424 425 447 448 191 192 193 311 350 399 400</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [361] 426 427 428 449 194 195 196 197 312 313 351 429 198 273 274 314 315 378</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [379] 379 401 450 451 199 200 201 275 316 317 352 380 202 203 204 206 207 276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [397] 430 452 205 208 209 210 402 453 454 464 277 318 381 382 403 431 465 211</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [415] 404 405 406 432 458 459 466 212 213 278 319 320 467 214 215 353 383 455</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [433] 468 216 217 321 322 354 355 407 433 469 218 219 279 460 470 220 221 222</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [451] 280 356 456 461 462 223 224 229 357 384 385 434 463 225 226 435 436 457</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [469] 227 228 230</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   0   1   3   8 238 251   2   4   6   9 234 240 241 246 268 277   5   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19]  10 231 233 239 242 248 256 263 271 275  11  16  17 232 247 252 259 273</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37]  12  14  18 243 266 267 270  13  15 274  19  20 236 249 250 253 255 257</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] 279  21 235 245 262 264 265 272  22 237 244 260 261 280 254 258 269 276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] 278  23  24  26  28 281 284 293 297 321  25  29 282 307  27 295 300 304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] 309 312 314 319  32  35 283 291 301  30  33  36  37 290 298 305 306 308</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [109] 311  31  34  38 288 299 303 313 316  39  40  41 317  42 285 286 287 296</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [127] 318  43 289 315 320 322 292 294 302 310  44  45  48  51 329 331 354  46</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [145]  47  49 333 353  50  52 326 334 335 338 348  53  56 337 351  57 324 339</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [163] 345  54  55  58 330 343  59  60  62 325 344 346 349  61  63 327 332 336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [181] 342 347  64 323 340 350 355 356 328 341 352 357  65  66  68  70  73 383</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [199]  67  69  71 360 361  72  74 371 381 384  75  78  80 358 367 375 377  76</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [217]  81  83 363 369 372 385  77  79  82  84 378  85  86 359 365 368 380  87</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [235]  88 362 364 366 373 379  89 374 370 376 382  90  91  93  96 393  92  95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [253]  97 387  94  98 398 399  99 101 103 389 390 102 104 106 391 396 402 100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [271] 105 107 403 108 109 110 404 111 394 405 112 392 406 407 386 388 395 397</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [289] 400 401 113 114 116 119 122 418 422 115 117 120 419 118 121 123 412 429</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [307] 124 125 128 131 410 415 416 417 430 435 126 129 132 409 413 420 127 130</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [325] 133 414 134 136 424 426 431 436 135 408 421 425 433 434 137 411 423 427</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [343] 432 428 138 139 141 145 452 453 456 140 142 146 449 143 144 147 450 148</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [361] 150 155 441 447 149 151 153 156 440 454 455 152 154 157 442 158 159 161</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [379] 438 445 160 162 437 451 457 163 443 444 448 439 446 164 165 167 170 172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [397] 166 168 173 458 463 169 171 174 177 179 459 461 175 178 180 182 176 181</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [415] 183 184 185 186 187 460 462 188 189 191 194 190 192 195 466 468 193 196</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [433] 197 199 202 205 467 200 203 198 201 204 464 470 206 208 207 209 469 210</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [451] 465 211 212 216 218 213 214 215 217 219 220 223 225 221 224 226 227 222</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [469] 228 229 230</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   0   0   1   3   6   8  11  14  17  20  23  24  26  28  29  31  35  37</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19]  42  45  51  53  54  58  59  63  65  65  68  71  78  78  81  84  88  93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37]  97 102 107 113 120 120 125 130 135 138 142 146 149 154 161 161 164 168</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] 174 178 182 185 191 197 207 209 213 218 223 228 234 241 250 260 271 275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] 279 286 290 300 303 310 318 326 336 340 344 349 356 367 368 373 385 395</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] 402 406 414 423 429 435 444 450 458 465 471</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   0   6  16  28  36  43  46  55  62  68  73  82  86  94  99 109 117 121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [19] 127 132 136 143 148 155 159 163 168 175 182 188 192 198 203 208 215 222</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] 227 233 240 242 245 250 254 258 263 269 273 277 280 284 290 297 301 306</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [55] 316 322 326 332 338 343 344 351 355 359 364 371 375 380 385 389 391 396</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] 401 403 408 412 415 416 418 421 421 425 430 433 437 439 444 446 449 450</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [91] 451 455 457 460 463 467 469 470 470 471 471</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 0 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]$name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Hierarchical stochastic block model"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]$m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]$rho</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.3 0.3 0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]$C</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      [,1] [,2] [,3]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1,] 1.00 0.75 0.00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2,] 0.75 0.00 0.75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3,] 0.00 0.75 0.75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]$p</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563a3fe7a588&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "igraph"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 42868d6 U--- 100 461 -- Hierarchical stochastic block model</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), m (g/n), rho (g/n), C (g/n), p (g/n)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 42868d6:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1-- 2  1-- 3  2-- 3  1-- 4  2-- 4  1-- 5  2-- 5  3-- 5  1-- 6  4-- 7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [11]  4-- 8  4-- 9  5-- 9  5--10  6--10  8-- 9  7--10  8--10  9--10 11--12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [21] 11--13 12--13 11--14 12--14 13--14 11--15 12--15 13--15 11--16 12--16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [31] 13--16 14--17 16--17 15--18 16--18 14--19 15--19 16--19 15--20 16--20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [41] 17--18 17--19 18--19 17--20 18--20 19--20 21--22 21--23 22--23 21--24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [51] 22--24 23--24 22--25 23--25 21--26 22--26 23--26 24--27 25--27 26--27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [61] 24--28 25--28 24--29 25--29 26--29 24--30 25--30 26--30 28--29 27--30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [71] 28--30 31--32 31--33 32--33 32--34 33--34 31--35 32--35 31--36 32--36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + ... omitted several edges</span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://Matrix.R-forge.R-project.org/" class="external-link">Matrix</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">g</span><span class="op">[</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>

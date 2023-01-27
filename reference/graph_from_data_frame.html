@@ -194,65 +194,12 @@ from files.</p>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">graph_from_data_frame</span><span class="op">(</span><span class="va">relations</span>, directed <span class="op">=</span> <span class="cn">TRUE</span>, vertices <span class="op">=</span> <span class="va">actors</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">g</span>, e <span class="op">=</span> <span class="cn">TRUE</span>, v <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 2 3 3 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 1 0 0 1 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 2 1 3 4 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 2 3 5 1 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 0 1 3 5 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 4 6 6 6 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 0 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]$name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Alice"     "Bob"       "Cecil"     "David"     "Esmeralda"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]$age</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 48 33 45 34 21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[3]]$gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "F" "M" "F" "M" "F"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[4]]$same.dept</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE FALSE  TRUE FALSE FALSE  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[4]]$friendship</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4 5 5 2 1 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]][[4]]$advice</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4 5 5 4 2 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563a3e700ae0&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "igraph"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH db0ded3 DN-- 5 6 -- </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (v/c), age (v/n), gender (v/c), same.dept (e/l),</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> | friendship (e/n), advice (e/n)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from db0ded3 (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] Bob      -&gt;Alice Cecil    -&gt;Bob   Cecil    -&gt;Alice David    -&gt;Alice</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] David    -&gt;Bob   Esmeralda-&gt;Alice</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## The opposite operation</span></span></span>
 <span class="r-in"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="va">g</span>, what <span class="op">=</span> <span class="st">"vertices"</span><span class="op">)</span></span></span>

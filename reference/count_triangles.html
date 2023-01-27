@@ -103,7 +103,7 @@ to the first triangle, etc.</p>
 <span class="r-in"><span><span class="co">## A small graph</span></span></span>
 <span class="r-in"><span><span class="va">kite</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_graph.html">make_graph</a></span><span class="op">(</span><span class="st">"Krackhardt_Kite"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">kite</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in xy.coords(x, y, xlabel, ylabel, log):</span> 'x' is a list, but does not have components 'x' and 'y'</span>
+<span class="r-plt img"><img src="count_triangles-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu">triangles</span><span class="op">(</span><span class="va">kite</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1,]    4    4    4    4    4    4    4    4    6     6     7</span>
@@ -113,7 +113,7 @@ to the first triangle, etc.</p>
 <span class="r-in"><span><span class="co">## Adjacenct triangles</span></span></span>
 <span class="r-in"><span><span class="va">atri</span> <span class="op">&lt;-</span> <span class="fu">count_triangles</span><span class="op">(</span><span class="va">kite</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">kite</span>, vertex.label <span class="op">=</span> <span class="va">atri</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in xy.coords(x, y, xlabel, ylabel, log):</span> 'x' is a list, but does not have components 'x' and 'y'</span>
+<span class="r-plt img"><img src="count_triangles-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Always true</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu">count_triangles</span><span class="op">(</span><span class="va">kite</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu">triangles</span><span class="op">(</span><span class="va">kite</span><span class="op">)</span><span class="op">)</span></span></span>
