@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.3.5.9103</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0.9003</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,8 +18,17 @@
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="active nav-item">
+      <ul class="navbar-nav me-auto"><li class="nav-item">
+  <a class="nav-link" href="../articles/igraph.html">Get started</a>
+</li>
+<li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation troubleshooting</a>
+  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -125,11 +134,15 @@ uniformly choose \(m\) edges to realize.</p>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><code><a href="sample_gnp.html">sample_gnp()</a></code> and <code><a href="sample_gnm.html">sample_gnm()</a></code> for the unipartite version.</p>
-<p>Other games: 
-<code><a href="ego.html">connect</a>()</code>,
+<p>Random graph models (games)
 <code><a href="erdos.renyi.game.html">erdos.renyi.game</a>()</code>,
+<code><a href="sample_correlated_gnp_pair.html">sample_correlated_gnp_pair</a>()</code>,
+<code><a href="sample_correlated_gnp.html">sample_correlated_gnp</a>()</code>,
 <code><a href="sample_degseq.html">sample_degseq</a>()</code>,
 <code><a href="sample_dot_product.html">sample_dot_product</a>()</code>,
+<code><a href="sample_fitness_pl.html">sample_fitness_pl</a>()</code>,
+<code><a href="sample_fitness.html">sample_fitness</a>()</code>,
+<code><a href="sample_forestfire.html">sample_forestfire</a>()</code>,
 <code><a href="sample_gnm.html">sample_gnm</a>()</code>,
 <code><a href="sample_gnp.html">sample_gnp</a>()</code>,
 <code><a href="sample_grg.html">sample_grg</a>()</code>,
@@ -143,12 +156,18 @@ uniformly choose \(m\) edges to realize.</p>
 <code><a href="sample_pref.html">sample_pref</a>()</code>,
 <code><a href="sample_sbm.html">sample_sbm</a>()</code>,
 <code><a href="sample_smallworld.html">sample_smallworld</a>()</code>,
-<code><a href="sample_traits_callaway.html">sample_traits_callaway</a>()</code></p>
-<p>Other games: 
-<code><a href="ego.html">connect</a>()</code>,
+<code><a href="sample_traits_callaway.html">sample_traits_callaway</a>()</code>,
+<code><a href="sample_tree.html">sample_tree</a>()</code>,
+<code><a href="sample_.html">sample_</a>()</code></p>
+<p>Random graph models (games)
 <code><a href="erdos.renyi.game.html">erdos.renyi.game</a>()</code>,
+<code><a href="sample_correlated_gnp_pair.html">sample_correlated_gnp_pair</a>()</code>,
+<code><a href="sample_correlated_gnp.html">sample_correlated_gnp</a>()</code>,
 <code><a href="sample_degseq.html">sample_degseq</a>()</code>,
 <code><a href="sample_dot_product.html">sample_dot_product</a>()</code>,
+<code><a href="sample_fitness_pl.html">sample_fitness_pl</a>()</code>,
+<code><a href="sample_fitness.html">sample_fitness</a>()</code>,
+<code><a href="sample_forestfire.html">sample_forestfire</a>()</code>,
 <code><a href="sample_gnm.html">sample_gnm</a>()</code>,
 <code><a href="sample_gnp.html">sample_gnp</a>()</code>,
 <code><a href="sample_grg.html">sample_grg</a>()</code>,
@@ -162,7 +181,9 @@ uniformly choose \(m\) edges to realize.</p>
 <code><a href="sample_pref.html">sample_pref</a>()</code>,
 <code><a href="sample_sbm.html">sample_sbm</a>()</code>,
 <code><a href="sample_smallworld.html">sample_smallworld</a>()</code>,
-<code><a href="sample_traits_callaway.html">sample_traits_callaway</a>()</code></p></div>
+<code><a href="sample_traits_callaway.html">sample_traits_callaway</a>()</code>,
+<code><a href="sample_tree.html">sample_tree</a>()</code>,
+<code><a href="sample_.html">sample_</a>()</code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -174,15 +195,15 @@ uniformly choose \(m\) edges to realize.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## empty graph</span></span></span>
 <span class="r-in"><span><span class="fu">sample_bipartite</span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span>, p <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH c3b796e U--B 15 0 -- Bipartite Gnp random graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH f455ba7 U--B 15 0 -- Bipartite Gnp random graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), p (g/n), type (v/l)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from c3b796e:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from f455ba7:</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## full graph</span></span></span>
 <span class="r-in"><span><span class="fu">sample_bipartite</span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span>, p <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 1578fea U--B 15 50 -- Bipartite Gnp random graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 65a0b8b U--B 15 50 -- Bipartite Gnp random graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), p (g/n), type (v/l)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 1578fea:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 65a0b8b:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1--11  1--12  1--13  1--14  1--15  2--11  2--12  2--13  2--14  2--15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [11]  3--11  3--12  3--13  3--14  3--15  4--11  4--12  4--13  4--14  4--15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [21]  5--11  5--12  5--13  5--14  5--15  6--11  6--12  6--13  6--14  6--15</span>
@@ -191,16 +212,16 @@ uniformly choose \(m\) edges to realize.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## random bipartite graph</span></span></span>
 <span class="r-in"><span><span class="fu">sample_bipartite</span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span>, p <span class="op">=</span> <span class="fl">.1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 278e063 U--B 15 9 -- Bipartite Gnp random graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 2b4870b U--B 15 9 -- Bipartite Gnp random graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), p (g/n), type (v/l)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 278e063:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 2b4870b:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]  6--11  9--11  8--12  3--13 10--14  1--15  3--15  4--15  5--15</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## directed bipartite graph, G(n,m)</span></span></span>
 <span class="r-in"><span><span class="fu">sample_bipartite</span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span>, type <span class="op">=</span> <span class="st">"Gnm"</span>, m <span class="op">=</span> <span class="fl">20</span>, directed <span class="op">=</span> <span class="cn">TRUE</span>, mode <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 90e0d80 D--B 15 20 -- Bipartite Gnm random graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 934a11e D--B 15 20 -- Bipartite Gnm random graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), m (g/n), type (v/l)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 90e0d80:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 934a11e:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  8-&gt;11  2-&gt;12  9-&gt;12  2-&gt;13  5-&gt;13  1-&gt;14 10-&gt;14  2-&gt;15  4-&gt;15  8-&gt;15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [11] 11-&gt; 1 14-&gt; 1 15-&gt; 1 12-&gt; 2 15-&gt; 2 13-&gt; 4 12-&gt; 7 14-&gt; 7 14-&gt; 8 13-&gt;10</span>
 <span class="r-in"><span></span></span>

@@ -12,7 +12,7 @@ edges to/from graphs."><!-- mathjax --><script src="https://cdnjs.cloudflare.com
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.3.5.9103</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0.9003</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +20,17 @@ edges to/from graphs."><!-- mathjax --><script src="https://cdnjs.cloudflare.com
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="active nav-item">
+      <ul class="navbar-nav me-auto"><li class="nav-item">
+  <a class="nav-link" href="../articles/igraph.html">Get started</a>
+</li>
+<li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation troubleshooting</a>
+  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -90,10 +99,41 @@ used as edge attributes for the new edges.</p>
 <code><a href="plus-.igraph.html">+.igraph</a>()</code>,
 <code><a href="add_edges.html">add_edges</a>()</code>,
 <code><a href="add_vertices.html">add_vertices</a>()</code>,
+<code><a href="complementer.html">complementer</a>()</code>,
+<code><a href="compose.html">compose</a>()</code>,
 <code><a href="delete_edges.html">delete_edges</a>()</code>,
 <code><a href="delete_vertices.html">delete_vertices</a>()</code>,
+<code><a href="difference.igraph.html">difference.igraph</a>()</code>,
+<code><a href="difference.html">difference</a>()</code>,
+<code><a href="disjoint_union.html">disjoint_union</a>()</code>,
 <code><a href="igraph-minus.html">igraph-minus</a></code>,
+<code><a href="intersection.igraph.html">intersection.igraph</a>()</code>,
+<code><a href="intersection.html">intersection</a>()</code>,
 <code><a href="path.html">path</a>()</code>,
+<code><a href="rep.igraph.html">rep.igraph</a>()</code>,
+<code><a href="reverse_edges.html">reverse_edges</a>()</code>,
+<code><a href="union.igraph.html">union.igraph</a>()</code>,
+<code><a href="union.html">union</a>()</code>,
+<code><a href="vertex.html">vertex</a>()</code></p>
+<p>Other functions for manipulating graph structure: 
+<code><a href="plus-.igraph.html">+.igraph</a>()</code>,
+<code><a href="add_edges.html">add_edges</a>()</code>,
+<code><a href="add_vertices.html">add_vertices</a>()</code>,
+<code><a href="complementer.html">complementer</a>()</code>,
+<code><a href="compose.html">compose</a>()</code>,
+<code><a href="delete_edges.html">delete_edges</a>()</code>,
+<code><a href="delete_vertices.html">delete_vertices</a>()</code>,
+<code><a href="difference.igraph.html">difference.igraph</a>()</code>,
+<code><a href="difference.html">difference</a>()</code>,
+<code><a href="disjoint_union.html">disjoint_union</a>()</code>,
+<code><a href="igraph-minus.html">igraph-minus</a></code>,
+<code><a href="intersection.igraph.html">intersection.igraph</a>()</code>,
+<code><a href="intersection.html">intersection</a>()</code>,
+<code><a href="path.html">path</a>()</code>,
+<code><a href="rep.igraph.html">rep.igraph</a>()</code>,
+<code><a href="reverse_edges.html">reverse_edges</a>()</code>,
+<code><a href="union.igraph.html">union.igraph</a>()</code>,
+<code><a href="union.html">union</a>()</code>,
 <code><a href="vertex.html">vertex</a>()</code></p></div>
     </div>
 
@@ -107,7 +147,7 @@ used as edge attributes for the new edges.</p>
 <span class="r-in"><span>  <span class="fu">edge</span><span class="op">(</span><span class="st">"8|9"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="E.html">E</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[[</span><span class="op">]</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 11/11 edges from 74706db:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 11/11 edges from d6904b4:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    tail head tid hid color</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1    2   1   2   red</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     2    3   2   3   red</span>
