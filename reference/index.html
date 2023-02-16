@@ -200,6 +200,16 @@
           <code><a href="graph_from_literal.html">graph_from_literal()</a></code> <code><a href="graph_from_literal.html">from_literal()</a></code> 
         </dt>
         <dd>Creating (small) graphs via a simple interface</dd>
+      </dl><dl><dt>
+          
+          <code><a href="graph_.html">graph_()</a></code> 
+        </dt>
+        <dd>Convert object to a graph</dd>
+      </dl><dl><dt>
+          
+          <code><a href="graph_from_lcf.html">graph_from_lcf()</a></code> 
+        </dt>
+        <dd>Creating a graph from LCF notation</dd>
       </dl></div><div class="section level2">
       
       <h3 id="stochastic-constructors-random-graph-models-games-">Stochastic constructors – Random graph models (games)<a class="anchor" aria-label="anchor" href="#stochastic-constructors-random-graph-models-games-"></a></h3>
@@ -212,11 +222,6 @@
       
 
       <dl><dt>
-          
-          <code><a href="erdos.renyi.game.html">erdos.renyi.game()</a></code> 
-        </dt>
-        <dd>Generate random graphs according to the Erdős-Rényi model</dd>
-      </dl><dl><dt>
           
           <code><a href="sample_.html">sample_()</a></code> 
         </dt>
@@ -410,16 +415,6 @@ constructor modifiers from it.</dd>
           <code><a href="as.igraph.html">as.igraph()</a></code> 
         </dt>
         <dd>Conversion to igraph</dd>
-      </dl><dl><dt>
-          
-          <code><a href="graph_from_lcf.html">graph_from_lcf()</a></code> 
-        </dt>
-        <dd>Creating a graph from LCF notation</dd>
-      </dl><dl><dt>
-          
-          <code><a href="graph_.html">graph_()</a></code> 
-        </dt>
-        <dd>Convert object to a graph</dd>
       </dl></div><div class="section level2">
       
       <h3 id="adjacency-matrices">Adjacency matrices<a class="anchor" aria-label="anchor" href="#adjacency-matrices"></a></h3>
@@ -1030,12 +1025,6 @@ constructor modifiers from it.</dd>
       
     </div><div class="section level2">
       
-      <h3 id="utilities-1">Utilities<a class="anchor" aria-label="anchor" href="#utilities-1"></a></h3>
-      
-
-      
-    </div><div class="section level2">
-      
       <h3 id="graph-id-comparison-name-weight">Graph ID, comparison, name, weight<a class="anchor" aria-label="anchor" href="#graph-id-comparison-name-weight"></a></h3>
       
 
@@ -1200,7 +1189,33 @@ constructor modifiers from it.</dd>
         <dd>Create a printer callback function</dd>
       </dl></div><div class="section level2">
       
-      <h3 id="misc">Misc<a class="anchor" aria-label="anchor" href="#misc"></a></h3>
+      <h3 id="latent-position-vector-samplers">Latent position vector samplers<a class="anchor" aria-label="anchor" href="#latent-position-vector-samplers"></a></h3>
+      
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="sample_dirichlet.html">sample_dirichlet()</a></code> 
+        </dt>
+        <dd>Sample from a Dirichlet distribution</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sample_sphere_surface.html">sample_sphere_surface()</a></code> 
+        </dt>
+        <dd>Sample vectors uniformly from the surface of a sphere</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sample_sphere_volume.html">sample_sphere_volume()</a></code> 
+        </dt>
+        <dd>Sample vectors uniformly from the volume of a sphere</dd>
+      </dl></div><div class="section level2">
+      
+      <h3 id="miscellaneous">Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous"></a></h3>
       
 
       
@@ -1699,8 +1714,8 @@ constructor modifiers from it.</dd>
         </dt>
         <dd>Find subgraph centrality scores of network positions</dd>
       </dl></div><div class="section level2">
-      <h2 id="centralization-related">Centralization related<a class="anchor" aria-label="anchor" href="#centralization-related"></a></h2>
       
+      <h3 id="centralization">Centralization<a class="anchor" aria-label="anchor" href="#centralization"></a></h3>
       
 
       
@@ -1862,9 +1877,14 @@ another graph</dd>
           <code><a href="count_automorphisms.html">count_automorphisms()</a></code> 
         </dt>
         <dd>Number of automorphisms</dd>
+      </dl><dl><dt>
+          
+          <code><a href="permute.html">permute()</a></code> 
+        </dt>
+        <dd>Permute the vertices of a graph</dd>
       </dl></div><div class="section level2">
+      <h2 id="graph-matching">Graph matching<a class="anchor" aria-label="anchor" href="#graph-matching"></a></h2>
       
-      <h3 id="graph-matching">Graph matching<a class="anchor" aria-label="anchor" href="#graph-matching"></a></h3>
       
 
       
@@ -2337,32 +2357,6 @@ van Eck &amp; Waltman.</dd>
           <code><a href="igraph_demo.html">igraph_demo()</a></code> 
         </dt>
         <dd>Run igraph demos, step by step</dd>
-      </dl></div><div class="section level2">
-      <h2 id="latent-position-vector-samplers">Latent position vector samplers<a class="anchor" aria-label="anchor" href="#latent-position-vector-samplers"></a></h2>
-      
-      
-
-      
-    </div><div id="" class="section level2">
-      
-      
-      
-
-      <dl><dt>
-          
-          <code><a href="sample_dirichlet.html">sample_dirichlet()</a></code> 
-        </dt>
-        <dd>Sample from a Dirichlet distribution</dd>
-      </dl><dl><dt>
-          
-          <code><a href="sample_sphere_surface.html">sample_sphere_surface()</a></code> 
-        </dt>
-        <dd>Sample vectors uniformly from the surface of a sphere</dd>
-      </dl><dl><dt>
-          
-          <code><a href="sample_sphere_volume.html">sample_sphere_volume()</a></code> 
-        </dt>
-        <dd>Sample vectors uniformly from the volume of a sphere</dd>
       </dl></div><div class="section level2">
       <h2 id="i-o-read-write-files">I/O read/write files<a class="anchor" aria-label="anchor" href="#i-o-read-write-files"></a></h2>
       
