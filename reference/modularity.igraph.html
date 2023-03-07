@@ -12,7 +12,7 @@ subgraphs."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0.9004</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9006</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,20 +20,26 @@ subgraphs."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="nav-item">
-  <a class="nav-link" href="../articles/igraph.html">Get started</a>
+      <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-get-started">Get started</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-get-started">
+    <a class="dropdown-item" href="../articles/igraph.html">Intro</a>
+    <a class="dropdown-item" href="../articles/igraph_ES.html">Intro (Español)</a>
+  </div>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation troubleshooting</a>
+    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation FAQs</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">All articles</a>
   </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -162,7 +168,7 @@ structure in very large networks, <em>Physical Review E</em> 2004, 70, 066111</p
 <code><a href="cluster_fast_greedy.html">cluster_fast_greedy()</a></code>, <code><a href="cluster_spinglass.html">cluster_spinglass()</a></code>,
 <code><a href="cluster_louvain.html">cluster_louvain()</a></code> and <code><a href="cluster_leiden.html">cluster_leiden()</a></code> for
 various community detection methods.</p>
-<p>Other community: 
+<p>Community detection
 <code><a href="as_membership.html">as_membership</a>()</code>,
 <code><a href="cluster_edge_betweenness.html">cluster_edge_betweenness</a>()</code>,
 <code><a href="cluster_fast_greedy.html">cluster_fast_greedy</a>()</code>,
@@ -181,7 +187,7 @@ various community detection methods.</p>
 <code><a href="communities.html">membership</a>()</code>,
 <code><a href="plot_dendrogram.communities.html">plot_dendrogram</a>()</code>,
 <code><a href="split_join_distance.html">split_join_distance</a>()</code></p>
-<p>Other community: 
+<p>Community detection
 <code><a href="as_membership.html">as_membership</a>()</code>,
 <code><a href="cluster_edge_betweenness.html">cluster_edge_betweenness</a>()</code>,
 <code><a href="cluster_fast_greedy.html">cluster_fast_greedy</a>()</code>,

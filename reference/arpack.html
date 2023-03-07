@@ -12,7 +12,7 @@ matrices"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0.9004</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9006</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,20 +20,26 @@ matrices"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="nav-item">
-  <a class="nav-link" href="../articles/igraph.html">Get started</a>
+      <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-get-started">Get started</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-get-started">
+    <a class="dropdown-item" href="../articles/igraph.html">Intro</a>
+    <a class="dropdown-item" href="../articles/igraph_ES.html">Intro (Español)</a>
+  </div>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation troubleshooting</a>
+    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation FAQs</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">All articles</a>
   </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -320,17 +326,17 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $vectors</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               [,1]        [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,] -0.421295893  0.45161369</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]  0.102502788 -0.04806711</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,] -0.214769284 -0.48521601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] -0.484437586 -0.35339624</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]  0.347002802 -0.08976387</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]  0.415794951 -0.38785054</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]  0.448422399  0.36237241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] -0.042380153 -0.13924866</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] -0.187142173  0.30015495</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]  0.000156654 -0.18473929</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              [,1]        [,2]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]  0.04604942  0.06711775</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,] -0.42976204  0.36133167</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]  0.42825349 -0.36838343</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] -0.32519538 -0.33500233</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]  0.01986304  0.01877953</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,] -0.34958617 -0.44901791</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]  0.14337988  0.07766687</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] -0.35417289 -0.47045866</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] -0.28254388 -0.13562649</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]  0.41904493 -0.41142913</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options$bmat</span>
@@ -473,7 +479,7 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options$numreo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0.9004</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9006</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,20 +18,26 @@
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="nav-item">
-  <a class="nav-link" href="../articles/igraph.html">Get started</a>
+      <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-get-started">Get started</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-get-started">
+    <a class="dropdown-item" href="../articles/igraph.html">Intro</a>
+    <a class="dropdown-item" href="../articles/igraph_ES.html">Intro (Español)</a>
+  </div>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation troubleshooting</a>
+    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation FAQs</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">All articles</a>
   </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -129,7 +135,7 @@
           
           <code><a href="make_from_prufer.html">make_from_prufer()</a></code> <code><a href="make_from_prufer.html">from_prufer()</a></code> 
         </dt>
-        <dd>Create an undirected tree graph from its Prufer sequence</dd>
+        <dd>Create an undirected tree graph from its Prüfer sequence</dd>
       </dl><dl><dt>
           
           <code><a href="make_full_bipartite_graph.html">make_full_bipartite_graph()</a></code> <code><a href="make_full_bipartite_graph.html">full_bipartite_graph()</a></code> 
@@ -1551,7 +1557,7 @@ constructor modifiers from it.</dd>
           
           <code><a href="make_from_prufer.html">make_from_prufer()</a></code> <code><a href="make_from_prufer.html">from_prufer()</a></code> 
         </dt>
-        <dd>Create an undirected tree graph from its Prufer sequence</dd>
+        <dd>Create an undirected tree graph from its Prüfer sequence</dd>
       </dl><dl><dt>
           
           <code><a href="sample_spanning_tree.html">sample_spanning_tree()</a></code> 
@@ -1561,7 +1567,7 @@ constructor modifiers from it.</dd>
           
           <code><a href="to_prufer.html">to_prufer()</a></code> 
         </dt>
-        <dd>Convert a tree graph to its Prufer sequence</dd>
+        <dd>Convert a tree graph to its Prüfer sequence</dd>
       </dl><dl><dt>
           
           <code><a href="mst.html">mst()</a></code> 
@@ -1961,7 +1967,7 @@ another graph</dd>
           
           <code><a href="edge_connectivity.html">edge_connectivity()</a></code> 
         </dt>
-        <dd>Edge connectivity.</dd>
+        <dd>Edge connectivity</dd>
       </dl><dl><dt>
           
           <code><a href="is_min_separator.html">is_min_separator()</a></code> 
@@ -2006,7 +2012,7 @@ another graph</dd>
           
           <code><a href="vertex_connectivity.html">vertex_connectivity()</a></code> <code><a href="vertex_connectivity.html">cohesion(<i>&lt;igraph&gt;</i>)</a></code> 
         </dt>
-        <dd>Vertex connectivity.</dd>
+        <dd>Vertex connectivity</dd>
       </dl></div><div class="section level2">
       <h2 id="cliques">Cliques<a class="anchor" aria-label="anchor" href="#cliques"></a></h2>
       
@@ -2022,7 +2028,7 @@ another graph</dd>
           
           <code><a href="cliques.html">cliques()</a></code> <code><a href="cliques.html">max_cliques()</a></code> 
         </dt>
-        <dd>Functions to find cliques, ie. complete subgraphs in a graph</dd>
+        <dd>Functions to find cliques, i.e. complete subgraphs in a graph</dd>
       </dl><dl><dt>
           
           <code><a href="ivs.html">ivs()</a></code> 
@@ -2032,7 +2038,7 @@ another graph</dd>
           
           <code><a href="weighted_cliques.html">weighted_cliques()</a></code> 
         </dt>
-        <dd>Functions to find weighted cliques, ie. weighted complete subgraphs in a graph</dd>
+        <dd>Functions to find weighted cliques, i.e. weighted complete subgraphs in a graph</dd>
       </dl><dl><dt>
           
           <code><a href="graphlet_basis.html">graphlet_basis()</a></code> <code><a href="graphlet_basis.html">graphlet_proj()</a></code> 
@@ -2158,6 +2164,16 @@ van Eck &amp; Waltman.</dd>
       
 
       <dl><dt>
+          
+          <code><a href="feedback_arc_set.html">feedback_arc_set()</a></code> 
+        </dt>
+        <dd>Finding a feedback arc set in a graph</dd>
+      </dl><dl><dt>
+          
+          <code><a href="girth.html">girth()</a></code> 
+        </dt>
+        <dd>Girth of a graph</dd>
+      </dl><dl><dt>
           
           <code><a href="has_eulerian_path.html">has_eulerian_path()</a></code> <code><a href="has_eulerian_path.html">has_eulerian_cycle()</a></code> <code><a href="has_eulerian_path.html">eulerian_path()</a></code> <code><a href="has_eulerian_path.html">eulerian_cycle()</a></code> 
         </dt>
@@ -2433,7 +2449,7 @@ van Eck &amp; Waltman.</dd>
         <dd>Interactive plotting of graphs</dd>
       </dl><dl><dt>
           
-          <code><a href="console.html">console()</a></code> 
+          <code><a href="console.html">console()</a></code> <code><a href="console.html">.igraph.progress()</a></code> <code><a href="console.html">.igraph.status()</a></code> 
         </dt>
         <dd>The igraph console</dd>
       </dl></div><div class="section level2">

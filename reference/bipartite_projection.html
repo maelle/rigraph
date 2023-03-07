@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.0.9004</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9006</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,20 +18,26 @@
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="nav-item">
-  <a class="nav-link" href="../articles/igraph.html">Get started</a>
+      <ul class="navbar-nav me-auto"><li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-get-started">Get started</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-get-started">
+    <a class="dropdown-item" href="../articles/igraph.html">Intro</a>
+    <a class="dropdown-item" href="../articles/igraph_ES.html">Intro (Español)</a>
+  </div>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation troubleshooting</a>
+    <a class="dropdown-item" href="../articles/installation-troubleshooting.html">Installation FAQs</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">All articles</a>
   </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -135,7 +141,7 @@ the second.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other bipartite: 
+    <div class="dont-index"><p>Bipartite graphs
 <code><a href="bipartite_mapping.html">bipartite_mapping</a>()</code>,
 <code><a href="make_bipartite_graph.html">is_bipartite</a>()</code></p></div>
     </div>
@@ -171,15 +177,15 @@ the second.</p>
 <span class="r-in"><span><span class="va">g2</span><span class="op">$</span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Event network"</span></span></span>
 <span class="r-in"><span><span class="va">proj2</span> <span class="op">&lt;-</span> <span class="fu">bipartite_projection</span><span class="op">(</span><span class="va">g2</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">proj2</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, g <span class="op">=</span> <span class="cn">TRUE</span>, e <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH c03465a UNW- 5 8 -- Event network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 3c554db UNW- 5 8 -- Event network</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), name (v/c), weight (e/n)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from c03465a (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 3c554db (vertex names):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] Alice--Bob   Alice--Cecil Alice--Ethel Bob  --Cecil Bob  --Ethel</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [6] Cecil--Ethel Cecil--Dan   Dan  --Ethel</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">proj2</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, g <span class="op">=</span> <span class="cn">TRUE</span>, e <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 85c2596 UNW- 3 3 -- Event network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 3bdafc6 UNW- 3 3 -- Event network</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), name (v/c), weight (e/n)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 85c2596 (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 3bdafc6 (vertex names):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] Party --Skiing    Party --Badminton Skiing--Badminton</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
