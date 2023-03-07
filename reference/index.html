@@ -1282,11 +1282,6 @@ constructor modifiers from it.</dd>
         <dd>Depth-first search</dd>
       </dl><dl><dt>
           
-          <code><a href="diameter.html">diameter()</a></code> 
-        </dt>
-        <dd>Diameter of a graph</dd>
-      </dl><dl><dt>
-          
           <code><a href="distances.html">distance_table()</a></code> <code><a href="distances.html">mean_distance()</a></code> <code><a href="distances.html">distances()</a></code> <code><a href="distances.html">shortest_paths()</a></code> <code><a href="distances.html">all_shortest_paths()</a></code> 
         </dt>
         <dd>Shortest (directed or undirected) paths between vertices</dd>
@@ -1310,6 +1305,11 @@ constructor modifiers from it.</dd>
           <code><a href="girth.html">girth()</a></code> 
         </dt>
         <dd>Girth of a graph</dd>
+      </dl><dl><dt>
+          
+          <code><a href="is_dag.html">is_dag()</a></code> 
+        </dt>
+        <dd>Directed acyclic graphs</dd>
       </dl><dl><dt>
           
           <code><a href="knn.html">knn()</a></code> 
@@ -1385,6 +1385,32 @@ constructor modifiers from it.</dd>
           <code><a href="assortativity.html">assortativity()</a></code> <code><a href="assortativity.html">assortativity_nominal()</a></code> <code><a href="assortativity.html">assortativity_degree()</a></code> 
         </dt>
         <dd>Assortativity coefficient</dd>
+      </dl><dl><dt>
+          
+          <code><a href="spectrum.html">spectrum()</a></code> 
+        </dt>
+        <dd>Eigenvalues and eigenvectors of the adjacency matrix of a graph</dd>
+      </dl></div><div class="section level2">
+      
+      <h3 id="chordal-graphs">Chordal graphs<a class="anchor" aria-label="anchor" href="#chordal-graphs"></a></h3>
+      
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="is_chordal.html">is_chordal()</a></code> 
+        </dt>
+        <dd>Chordality of a graph</dd>
+      </dl><dl><dt>
+          
+          <code><a href="max_cardinality.html">max_cardinality()</a></code> 
+        </dt>
+        <dd>Maximum cardinality search</dd>
       </dl></div><div class="section level2">
       
       <h3 id="triangles-and-transitivity">Triangles and transitivity<a class="anchor" aria-label="anchor" href="#triangles-and-transitivity"></a></h3>
@@ -1424,6 +1450,11 @@ constructor modifiers from it.</dd>
         <dd>List all simple paths from one source</dd>
       </dl><dl><dt>
           
+          <code><a href="diameter.html">diameter()</a></code> 
+        </dt>
+        <dd>Diameter of a graph</dd>
+      </dl><dl><dt>
+          
           <code><a href="distances.html">distance_table()</a></code> <code><a href="distances.html">mean_distance()</a></code> <code><a href="distances.html">distances()</a></code> <code><a href="distances.html">shortest_paths()</a></code> <code><a href="distances.html">all_shortest_paths()</a></code> 
         </dt>
         <dd>Shortest (directed or undirected) paths between vertices</dd>
@@ -1432,16 +1463,6 @@ constructor modifiers from it.</dd>
           <code><a href="eccentricity.html">eccentricity()</a></code> 
         </dt>
         <dd>Eccentricity of the vertices in a graph</dd>
-      </dl><dl><dt>
-          
-          <code><a href="is_dag.html">is_dag()</a></code> 
-        </dt>
-        <dd>Directed acyclic graphs</dd>
-      </dl><dl><dt>
-          
-          <code><a href="max_cardinality.html">max_cardinality()</a></code> 
-        </dt>
-        <dd>Maximum cardinality search</dd>
       </dl><dl><dt>
           
           <code><a href="radius.html">radius()</a></code> 
@@ -1629,6 +1650,22 @@ constructor modifiers from it.</dd>
         <dd>Tails of the edge(s) in a graph</dd>
       </dl></div><div class="section level2">
       
+      <h3 id="arpack-eigenvector-calculation">ARPACK eigenvector calculation<a class="anchor" aria-label="anchor" href="#arpack-eigenvector-calculation"></a></h3>
+      
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="arpack.html">arpack_defaults</a></code> <code><a href="arpack.html">arpack()</a></code> 
+        </dt>
+        <dd>ARPACK eigenvector calculation</dd>
+      </dl></div><div class="section level2">
+      
       <h3 id="centrality-measures">Centrality measures<a class="anchor" aria-label="anchor" href="#centrality-measures"></a></h3>
       
 
@@ -1643,11 +1680,6 @@ constructor modifiers from it.</dd>
           <code><a href="alpha_centrality.html">alpha_centrality()</a></code> 
         </dt>
         <dd>Find Bonacich alpha centrality scores of network positions</dd>
-      </dl><dl><dt>
-          
-          <code><a href="arpack.html">arpack_defaults</a></code> <code><a href="arpack.html">arpack()</a></code> 
-        </dt>
-        <dd>ARPACK eigenvector calculation</dd>
       </dl><dl><dt>
           
           <code><a href="authority_score.html">authority_score()</a></code> 
@@ -1693,11 +1725,6 @@ constructor modifiers from it.</dd>
           <code><a href="power_centrality.html">power_centrality()</a></code> 
         </dt>
         <dd>Find Bonacich Power Centrality Scores of Network Positions</dd>
-      </dl><dl><dt>
-          
-          <code><a href="spectrum.html">spectrum()</a></code> 
-        </dt>
-        <dd>Eigenvalues and eigenvectors of the adjacency matrix of a graph</dd>
       </dl><dl><dt>
           
           <code><a href="strength.html">strength()</a></code> 
@@ -2135,6 +2162,11 @@ van Eck &amp; Waltman.</dd>
           <code><a href="has_eulerian_path.html">has_eulerian_path()</a></code> <code><a href="has_eulerian_path.html">has_eulerian_cycle()</a></code> <code><a href="has_eulerian_path.html">eulerian_path()</a></code> <code><a href="has_eulerian_path.html">eulerian_cycle()</a></code> 
         </dt>
         <dd>Find Eulerian paths or cycles in a graph</dd>
+      </dl><dl><dt>
+          
+          <code><a href="is_dag.html">is_dag()</a></code> 
+        </dt>
+        <dd>Directed acyclic graphs</dd>
       </dl></div><div class="section level2">
       <h2 id="connected-components">Connected components<a class="anchor" aria-label="anchor" href="#connected-components"></a></h2>
       
@@ -2167,7 +2199,7 @@ van Eck &amp; Waltman.</dd>
         </dt>
         <dd>Decompose a graph into components</dd>
       </dl></div><div class="section level2">
-      <h2 id="spectral-coarse-graining">Spectral Coarse Graining<a class="anchor" aria-label="anchor" href="#spectral-coarse-graining"></a></h2>
+      <h2 id="spectral-coarse-graining">Spectral coarse graining<a class="anchor" aria-label="anchor" href="#spectral-coarse-graining"></a></h2>
       
       
 
@@ -2208,7 +2240,7 @@ van Eck &amp; Waltman.</dd>
         </dt>
         <dd>Stochastic matrix of a graph</dd>
       </dl></div><div class="section level2">
-      <h2 id="embedding">Embedding<a class="anchor" aria-label="anchor" href="#embedding"></a></h2>
+      <h2 id="spectral-embedding">Spectral embedding<a class="anchor" aria-label="anchor" href="#spectral-embedding"></a></h2>
       
       
 
@@ -2234,7 +2266,7 @@ van Eck &amp; Waltman.</dd>
         </dt>
         <dd>Spectral Embedding of the Laplacian of a Graph</dd>
       </dl></div><div class="section level2">
-      <h2 id="hierarchical-random-graph-functions">Hierarchical random graph functions<a class="anchor" aria-label="anchor" href="#hierarchical-random-graph-functions"></a></h2>
+      <h2 id="hierarchical-random-graphs">Hierarchical random graphs<a class="anchor" aria-label="anchor" href="#hierarchical-random-graphs"></a></h2>
       
       
 
