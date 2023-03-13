@@ -12,7 +12,7 @@ matrices"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9006</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9008</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -308,7 +308,31 @@ Matrices. <em>Linear Algebra and its Applications</em>, vol 88/89, pp 575-595,
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><code><a href="eigen_centrality.html">eigen_centrality()</a></code>, <code><a href="page_rank.html">page_rank()</a></code>,
 <code><a href="hub_score.html">hub_score()</a></code>, <code><a href="cluster_leading_eigen.html">cluster_leading_eigen()</a></code> are some of the
-functions in igraph that use ARPACK.</p></div>
+functions in igraph that use ARPACK.</p>
+<p>Centrality measures
+<code><a href="alpha_centrality.html">alpha_centrality</a>()</code>,
+<code><a href="closeness.html">closeness</a>()</code>,
+<code><a href="diversity.html">diversity</a>()</code>,
+<code><a href="eigen_centrality.html">eigen_centrality</a>()</code>,
+<code><a href="betweenness.html">estimate_betweenness</a>()</code>,
+<code><a href="harmonic_centrality.html">harmonic_centrality</a>()</code>,
+<code><a href="page_rank.html">page_rank</a>()</code>,
+<code><a href="power_centrality.html">power_centrality</a>()</code>,
+<code><a href="spectrum.html">spectrum</a>()</code>,
+<code><a href="strength.html">strength</a>()</code>,
+<code><a href="subgraph_centrality.html">subgraph_centrality</a>()</code></p>
+<p>Centrality measures
+<code><a href="alpha_centrality.html">alpha_centrality</a>()</code>,
+<code><a href="closeness.html">closeness</a>()</code>,
+<code><a href="diversity.html">diversity</a>()</code>,
+<code><a href="eigen_centrality.html">eigen_centrality</a>()</code>,
+<code><a href="betweenness.html">estimate_betweenness</a>()</code>,
+<code><a href="harmonic_centrality.html">harmonic_centrality</a>()</code>,
+<code><a href="page_rank.html">page_rank</a>()</code>,
+<code><a href="power_centrality.html">power_centrality</a>()</code>,
+<code><a href="spectrum.html">spectrum</a>()</code>,
+<code><a href="strength.html">strength</a>()</code>,
+<code><a href="subgraph_centrality.html">subgraph_centrality</a>()</code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -327,16 +351,16 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $vectors</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              [,1]        [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]  0.04604942  0.06711775</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,] -0.42976204  0.36133167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]  0.42825349 -0.36838343</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] -0.32519538 -0.33500233</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]  0.01986304  0.01877953</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,] -0.34958617 -0.44901791</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]  0.14337988  0.07766687</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] -0.35417289 -0.47045866</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] -0.28254388 -0.13562649</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]  0.41904493 -0.41142913</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,] -0.22151728  0.20760029</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]  0.41357972  0.03953904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]  0.05890779 -0.52723830</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]  0.33587717 -0.49754083</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]  0.03641444  0.07134002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,] -0.47348052 -0.21770459</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]  0.27035799  0.54740955</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] -0.05716249 -0.15001168</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] -0.55659057  0.13930784</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,] -0.22789130 -0.18910207</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options$bmat</span>
