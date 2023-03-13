@@ -308,7 +308,31 @@ Matrices. <em>Linear Algebra and its Applications</em>, vol 88/89, pp 575-595,
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><code><a href="eigen_centrality.html">eigen_centrality()</a></code>, <code><a href="page_rank.html">page_rank()</a></code>,
 <code><a href="hub_score.html">hub_score()</a></code>, <code><a href="cluster_leading_eigen.html">cluster_leading_eigen()</a></code> are some of the
-functions in igraph that use ARPACK.</p></div>
+functions in igraph that use ARPACK.</p>
+<p>Centrality measures
+<code><a href="alpha_centrality.html">alpha_centrality</a>()</code>,
+<code><a href="closeness.html">closeness</a>()</code>,
+<code><a href="diversity.html">diversity</a>()</code>,
+<code><a href="eigen_centrality.html">eigen_centrality</a>()</code>,
+<code><a href="betweenness.html">estimate_betweenness</a>()</code>,
+<code><a href="harmonic_centrality.html">harmonic_centrality</a>()</code>,
+<code><a href="page_rank.html">page_rank</a>()</code>,
+<code><a href="power_centrality.html">power_centrality</a>()</code>,
+<code><a href="spectrum.html">spectrum</a>()</code>,
+<code><a href="strength.html">strength</a>()</code>,
+<code><a href="subgraph_centrality.html">subgraph_centrality</a>()</code></p>
+<p>Centrality measures
+<code><a href="alpha_centrality.html">alpha_centrality</a>()</code>,
+<code><a href="closeness.html">closeness</a>()</code>,
+<code><a href="diversity.html">diversity</a>()</code>,
+<code><a href="eigen_centrality.html">eigen_centrality</a>()</code>,
+<code><a href="betweenness.html">estimate_betweenness</a>()</code>,
+<code><a href="harmonic_centrality.html">harmonic_centrality</a>()</code>,
+<code><a href="page_rank.html">page_rank</a>()</code>,
+<code><a href="power_centrality.html">power_centrality</a>()</code>,
+<code><a href="spectrum.html">spectrum</a>()</code>,
+<code><a href="strength.html">strength</a>()</code>,
+<code><a href="subgraph_centrality.html">subgraph_centrality</a>()</code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -327,16 +351,16 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $vectors</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              [,1]        [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,] -0.22464669 -0.01812441</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,] -0.19491456  0.43886359</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]  0.28622491  0.15704256</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] -0.17101615  0.20017294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,] -0.14462186 -0.06344583</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]  0.17631122 -0.25305863</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]  0.04488686 -0.07134530</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] -0.49058826  0.37619278</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]  0.53329729  0.70512960</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10,] -0.47039575  0.17451567</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]  0.05233902  0.05640539</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]  0.33861090 -0.16051328</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,] -0.31008297 -0.53713811</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] -0.64353423  0.57830829</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,] -0.29608193 -0.43020817</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]  0.17089152 -0.06814339</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]  0.28339055  0.33328047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] -0.16303837  0.12812014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]  0.38252944  0.17490527</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,] -0.04718710 -0.01705867</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options$bmat</span>
@@ -417,8 +441,8 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $vectors</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  0.9486833 -0.1054093 -0.1054093 -0.1054093 -0.1054093 -0.1054093</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] -0.1054093 -0.1054093 -0.1054093 -0.1054093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -0.9486833  0.1054093  0.1054093  0.1054093  0.1054093  0.1054093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  0.1054093  0.1054093  0.1054093  0.1054093</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options$bmat</span>
@@ -479,7 +503,7 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $options$numreo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
@@ -539,7 +563,7 @@ ARPACK, Gabor Csardi <a href="mailto:csardi.gabor@gmail.com">csardi.gabor@gmail.
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Tamás Nepusz.</p>
+  <p></p><p>Developed by Gábor Csárdi, Tamás Nepusz, Vincent Traag, Szabolcs Horvát, Fabio Zanini, Daniel Noom, Kirill Müller, Chan Zuckerberg Initiative.</p>
 </div>
 
 <div class="pkgdown-footer-right">

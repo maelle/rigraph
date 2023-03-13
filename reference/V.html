@@ -121,7 +121,6 @@ vertices in the sequence. See <code><a href="igraph-vs-attributes.html">$.igraph
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other vertex and edge sequences: 
 <code><a href="E.html">E</a>()</code>,
-<code><a href="as_ids.html">as_ids</a>()</code>,
 <code><a href="igraph-es-attributes.html">igraph-es-attributes</a></code>,
 <code><a href="igraph-es-indexing2.html">igraph-es-indexing2</a></code>,
 <code><a href="igraph-es-indexing.html">igraph-es-indexing</a></code>,
@@ -137,14 +136,14 @@ vertices in the sequence. See <code><a href="igraph-vs-attributes.html">$.igraph
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Vertex ids of an unnamed graph</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_ring.html">make_ring</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">V</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 10/10 vertices, from c8b8aef:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 10/10 vertices, from 0ffcc6d:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Vertex ids of a named graph</span></span></span>
 <span class="r-in"><span><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_ring.html">make_ring</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="set_vertex_attr.html">set_vertex_attr</a></span><span class="op">(</span><span class="st">"name"</span>, value <span class="op">=</span> <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">V</span><span class="op">(</span><span class="va">g2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 10/10 vertices, named, from 4ab5fbb:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 10/10 vertices, named, from bc223af:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] a b c d e f g h i j</span>
 </code></pre></div>
     </div>
@@ -153,7 +152,7 @@ vertices in the sequence. See <code><a href="igraph-vs-attributes.html">$.igraph
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Tamás Nepusz.</p>
+  <p></p><p>Developed by Gábor Csárdi, Tamás Nepusz, Vincent Traag, Szabolcs Horvát, Fabio Zanini, Daniel Noom, Kirill Müller, Chan Zuckerberg Initiative.</p>
 </div>
 
 <div class="pkgdown-footer-right">
