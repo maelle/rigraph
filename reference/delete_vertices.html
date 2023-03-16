@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9008</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.1.9009</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,10 +91,25 @@
 <code><a href="plus-.igraph.html">+.igraph</a>()</code>,
 <code><a href="add_edges.html">add_edges</a>()</code>,
 <code><a href="add_vertices.html">add_vertices</a>()</code>,
+<code><a href="complementer.html">complementer</a>()</code>,
+<code><a href="compose.html">compose</a>()</code>,
+<code><a href="ego.html">connect</a>()</code>,
+<code><a href="contract.html">contract</a>()</code>,
 <code><a href="delete_edges.html">delete_edges</a>()</code>,
+<code><a href="difference.igraph.html">difference.igraph</a>()</code>,
+<code><a href="difference.html">difference</a>()</code>,
+<code><a href="disjoint_union.html">disjoint_union</a>()</code>,
 <code><a href="edge.html">edge</a>()</code>,
 <code><a href="igraph-minus.html">igraph-minus</a></code>,
+<code><a href="intersection.igraph.html">intersection.igraph</a>()</code>,
+<code><a href="intersection.html">intersection</a>()</code>,
 <code><a href="path.html">path</a>()</code>,
+<code><a href="permute.html">permute</a>()</code>,
+<code><a href="rep.igraph.html">rep.igraph</a>()</code>,
+<code><a href="reverse_edges.html">reverse_edges</a>()</code>,
+<code><a href="simplify.html">simplify</a>()</code>,
+<code><a href="union.igraph.html">union.igraph</a>()</code>,
+<code><a href="union.html">union</a>()</code>,
 <code><a href="vertex.html">vertex</a>()</code></p></div>
     </div>
 
@@ -103,23 +118,23 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="make_ring.html">make_ring</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="set_vertex_attr.html">set_vertex_attr</a></span><span class="op">(</span><span class="st">"name"</span>, value <span class="op">=</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">g</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 415cc0e UN-- 10 10 -- Ring graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 96b9968 UN-- 10 10 -- Ring graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), mutual (g/l), circular (g/l), name (v/c)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 415cc0e (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 96b9968 (vertex names):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] A--B B--C C--D D--E E--F F--G G--H H--I I--J A--J</span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 10/10 vertices, named, from 415cc0e:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 10/10 vertices, named, from 96b9968:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] A B C D E F G H I J</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu">delete_vertices</span><span class="op">(</span><span class="va">g</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu">delete_vertices</span><span class="op">(</span><span class="st">"B"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">g2</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 244e444 UN-- 7 5 -- Ring graph</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 5330d8c UN-- 7 5 -- Ring graph</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (g/c), mutual (g/l), circular (g/l), name (v/c)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 244e444 (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 5330d8c (vertex names):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] C--D F--G G--H H--I I--J</span>
 <span class="r-in"><span><span class="fu"><a href="V.html">V</a></span><span class="op">(</span><span class="va">g2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + 7/7 vertices, named, from 244e444:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + 7/7 vertices, named, from 5330d8c:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] C D F G H I J</span>
 </code></pre></div>
     </div>
