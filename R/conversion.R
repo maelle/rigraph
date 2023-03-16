@@ -227,6 +227,21 @@ as_adjacency_matrix <- function(graph, type = c("both", "upper", "lower"),
   }
 }
 
+#' Convert a graph to an adjacency matrix
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.adjacency()` was renamed to `as_adjacency_matrix()` to create a more
+#' consistent API.
+#' @inheritParams as_adjacency_matrix
+#' @keywords internal
+#' @export
+get.adjacency <- function(graph , type = c("both","upper","lower") , attr = NULL , edges = FALSE , names = TRUE , sparse = igraph_opt("sparsematrices")) {
+   lifecycle::deprecate_soft("1.5.0", "get.adjacency()", "as_adjacency_matrix()")
+   as_adjacency_matrix(graph = graph, type = type, attr = attr, edges = edges, names = names, sparse = sparse)
+}
+
 #' @family conversion
 #' @export
 #' @rdname as_adjacency_matrix
@@ -271,6 +286,21 @@ as_edgelist <- function(graph, names = TRUE) {
   }
 
   res
+}
+
+#' Convert a graph to an edge list
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.edgelist()` was renamed to `as_edgelist()` to create a more
+#' consistent API.
+#' @inheritParams as_edgelist
+#' @keywords internal
+#' @export
+get.edgelist <- function(graph , names = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "get.edgelist()", "as_edgelist()")
+   as_edgelist(graph = graph, names = names)
 }
 
 
@@ -462,6 +492,21 @@ as_adj_list <- function(graph,
   res
 }
 
+#' Adjacency lists
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.adjlist()` was renamed to `as_adj_list()` to create a more
+#' consistent API.
+#' @inheritParams as_adj_list
+#' @keywords internal
+#' @export
+get.adjlist <- function(graph , mode = c("all","out","in","total") , loops = c("twice","once","ignore") , multiple = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "get.adjlist()", "as_adj_list()")
+   as_adj_list(graph = graph, mode = mode, loops = loops, multiple = multiple)
+}
+
 #' @rdname as_adj_list
 #' @aliases get.adjlist
 #' @family conversion
@@ -496,6 +541,21 @@ as_adj_edge_list <- function(graph,
   res <- lapply(res, function(.x) E(graph)[.x + 1])
   if (is_named(graph)) names(res) <- V(graph)$name
   res
+}
+
+#' Adjacency lists
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.adjedgelist()` was renamed to `as_adj_edge_list()` to create a more
+#' consistent API.
+#' @inheritParams as_adj_edge_list
+#' @keywords internal
+#' @export
+get.adjedgelist <- function(graph , mode = c("all","out","in","total") , loops = c("twice","once","ignore")) {
+   lifecycle::deprecate_soft("1.5.0", "get.adjedgelist()", "as_adj_edge_list()")
+   as_adj_edge_list(graph = graph, mode = mode, loops = loops, .x = .x)
 }
 
 #' Convert graphNEL objects from the graph package to igraph
@@ -599,6 +659,21 @@ graph_from_graphnel <- function(graphNEL, name = TRUE, weight = TRUE,
   }
 
   g
+}
+
+#' Convert graphNEL objects from the graph package to igraph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `igraph.from.graphNEL()` was renamed to `graph_from_graphnel()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_graphnel
+#' @keywords internal
+#' @export
+igraph.from.graphNEL <- function(graphNEL , name = TRUE , weight = TRUE , unlist.attrs = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "igraph.from.graphNEL()", "graph_from_graphnel()")
+   graph_from_graphnel(graphNEL = graphNEL, name = name, weight = weight, unlist.attrs = unlist.attrs, n = n, l = l)
 }
 
 #' Convert igraph graphs to graphNEL objects from the graph package
@@ -718,6 +793,21 @@ as_graphnel <- function(graph) {
   }
 
   res
+}
+
+#' Convert igraph graphs to graphNEL objects from the graph package
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `igraph.to.graphNEL()` was renamed to `as_graphnel()` to create a more
+#' consistent API.
+#' @inheritParams as_graphnel
+#' @keywords internal
+#' @export
+igraph.to.graphNEL <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "igraph.to.graphNEL()", "as_graphnel()")
+   as_graphnel(graph = graph, x = x, x = x, y = y)
 }
 
 get.incidence.dense <- function(graph, types, names, attr) {
@@ -877,6 +967,21 @@ as_incidence_matrix <- function(graph, types = NULL, attr = NULL,
   }
 }
 
+#' Incidence matrix of a bipartite graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.incidence()` was renamed to `as_incidence_matrix()` to create a more
+#' consistent API.
+#' @inheritParams as_incidence_matrix
+#' @keywords internal
+#' @export
+get.incidence <- function(graph , types = NULL , attr = NULL , names = TRUE , sparse = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "get.incidence()", "as_incidence_matrix()")
+   as_incidence_matrix(graph = graph, types = types, attr = attr, names = names, sparse = sparse)
+}
+
 #' @rdname graph_from_data_frame
 #' @param x An igraph object.
 #' @param what Character constant, whether to return info about vertices,
@@ -917,6 +1022,21 @@ as_data_frame <- function(x, what = c("edges", "vertices", "both")) {
   } else {
     edg
   }
+}
+
+#' Creating igraph graphs from data frames or vice-versa
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.data.frame()` was renamed to `as_data_frame()` to create a more
+#' consistent API.
+#' @inheritParams as_data_frame
+#' @keywords internal
+#' @export
+get.data.frame <- function(x , what = c("edges","vertices","both")) {
+   lifecycle::deprecate_soft("1.5.0", "get.data.frame()", "as_data_frame()")
+   as_data_frame(x = x, what = what)
 }
 
 
