@@ -94,6 +94,21 @@ add_edges <- function(graph, edges, ..., attr = list()) {
   graph
 }
 
+#' Add edges to a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `add.edges()` was renamed to `add_edges()` to create a more
+#' consistent API.
+#' @inheritParams add_edges
+#' @keywords internal
+#' @export
+add.edges <- function(graph , edges , ... , attr = list()) {
+   lifecycle::deprecate_soft("1.5.0", "add.edges()", "add_edges()")
+   add_edges(graph = graph, edges = edges, attr = attr, ...)
+}
+
 #' Add vertices to a graph
 #'
 #' If attributes are supplied, and they are not present in the graph,
@@ -160,6 +175,21 @@ add_vertices <- function(graph, nv, ..., attr = list()) {
   graph
 }
 
+#' Add vertices to a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `add.vertices()` was renamed to `add_vertices()` to create a more
+#' consistent API.
+#' @inheritParams add_vertices
+#' @keywords internal
+#' @export
+add.vertices <- function(graph , nv , ... , attr = list()) {
+   lifecycle::deprecate_soft("1.5.0", "add.vertices()", "add_vertices()")
+   add_vertices(graph = graph, nv = nv, attr = attr, ...)
+}
+
 #' Delete edges from a graph
 #'
 #' @param graph The input graph.
@@ -193,6 +223,21 @@ delete_edges <- function(graph, edges) {
   .Call(C_R_igraph_delete_edges, graph, as.igraph.es(graph, edges) - 1)
 }
 
+#' Delete edges from a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `delete.edges()` was renamed to `delete_edges()` to create a more
+#' consistent API.
+#' @inheritParams delete_edges
+#' @keywords internal
+#' @export
+delete.edges <- function(graph , edges) {
+   lifecycle::deprecate_soft("1.5.0", "delete.edges()", "delete_edges()")
+   delete_edges(graph = graph, edges = edges)
+}
+
 #' Delete vertices from a graph
 #'
 #' @param graph The input graph.
@@ -219,6 +264,21 @@ delete_vertices <- function(graph, v) {
   }
   on.exit(.Call(C_R_igraph_finalizer))
   .Call(C_R_igraph_delete_vertices, graph, as.igraph.vs(graph, v) - 1)
+}
+
+#' Delete vertices from a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `delete.vertices()` was renamed to `delete_vertices()` to create a more
+#' consistent API.
+#' @inheritParams delete_vertices
+#' @keywords internal
+#' @export
+delete.vertices <- function(graph , v) {
+   lifecycle::deprecate_soft("1.5.0", "delete.vertices()", "delete_vertices()")
+   delete_vertices(graph = graph, v = v)
 }
 
 ###################################################################

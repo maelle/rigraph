@@ -266,6 +266,21 @@ cohesive_blocks <- function(graph, labels = TRUE) {
   res
 }
 
+#' Calculate Cohesive Blocks
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `cohesive.blocks()` was renamed to `cohesive_blocks()` to create a more
+#' consistent API.
+#' @inheritParams cohesive_blocks
+#' @keywords internal
+#' @export
+cohesive.blocks <- function(graph , labels = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "cohesive.blocks()", "cohesive_blocks()")
+   cohesive_blocks(graph = graph, labels = labels)
+}
+
 #' @rdname cohesive_blocks
 #' @method length cohesiveBlocks
 #' @family cohesive.blocks
@@ -288,10 +303,40 @@ graphs_from_cohesive_blocks <- function(blocks, graph) {
   lapply(blocks(blocks), induced_subgraph, graph = graph)
 }
 
+#' Calculate Cohesive Blocks
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `blockGraphs()` was renamed to `graphs_from_cohesive_blocks()` to create a more
+#' consistent API.
+#' @inheritParams graphs_from_cohesive_blocks
+#' @keywords internal
+#' @export
+blockGraphs <- function(blocks , graph) {
+   lifecycle::deprecate_soft("1.5.0", "blockGraphs()", "graphs_from_cohesive_blocks()")
+   graphs_from_cohesive_blocks(blocks = blocks, graph = graph)
+}
+
 #' @family cohesive.blocks
 #' @export
 cohesion <- function(x, ...) {
   UseMethod("cohesion")
+}
+
+#' Vertex connectivity
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.cohesion()` was renamed to `cohesion()` to create a more
+#' consistent API.
+#' @inheritParams cohesion
+#' @keywords internal
+#' @export
+graph.cohesion <- function(x , ...) {
+   lifecycle::deprecate_soft("1.5.0", "graph.cohesion()", "cohesion()")
+   cohesion(x = x, ...)
 }
 
 #' @rdname cohesive_blocks

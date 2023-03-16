@@ -718,6 +718,21 @@ make_empty_graph <- function(n = 0, directed = TRUE) {
   res
 }
 
+#' A graph with no edges
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.empty()` was renamed to `make_empty_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_empty_graph
+#' @keywords internal
+#' @export
+graph.empty <- function(n = 0 , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.empty()", "make_empty_graph()")
+   make_empty_graph(n = n, directed = directed)
+}
+
 #' @rdname make_empty_graph
 #' @param ... Passed to `make_graph_empty`.
 #' @export
@@ -844,6 +859,21 @@ empty_graph <- function(...) constructor_spec(make_empty_graph, ...)
 graph_from_literal <- function(..., simplify = TRUE) {
   mf <- as.list(match.call())[-1]
   graph_from_literal_i(mf)
+}
+
+#' Creating (small) graphs via a simple interface
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.formula()` was renamed to `graph_from_literal()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_literal
+#' @keywords internal
+#' @export
+graph.formula <- function(... , simplify = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.formula()", "graph_from_literal()")
+   graph_from_literal(simplify = simplify, ...)
 }
 
 graph_from_literal_i <- function(mf) {
@@ -1002,6 +1032,21 @@ make_star <- function(n, mode = c("in", "out", "mutual", "undirected"),
   res
 }
 
+#' Create a star graph, a tree with n vertices and n - 1 leaves
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.star()` was renamed to `make_star()` to create a more
+#' consistent API.
+#' @inheritParams make_star
+#' @keywords internal
+#' @export
+graph.star <- function(n , mode = c("in","out","mutual","undirected") , center = 1) {
+   lifecycle::deprecate_soft("1.5.0", "graph.star()", "make_star()")
+   make_star(n = n, mode = mode, center = center)
+}
+
 #' @rdname make_star
 #' @param ... Passed to `make_star()`.
 #' @export
@@ -1034,6 +1079,21 @@ make_full_graph <- function(n, directed = FALSE, loops = FALSE) {
     res$loops <- loops
   }
   res
+}
+
+#' Create a full graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.full()` was renamed to `make_full_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_full_graph
+#' @keywords internal
+#' @export
+graph.full <- function(n , directed = FALSE , loops = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.full()", "make_full_graph()")
+   make_full_graph(n = n, directed = directed, loops = loops)
 }
 
 #' @rdname make_full_graph
@@ -1098,6 +1158,21 @@ make_lattice <- function(dimvector = NULL, length = NULL, dim = NULL,
     res$circular <- circular
   }
   res
+}
+
+#' Create a lattice graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.lattice()` was renamed to `make_lattice()` to create a more
+#' consistent API.
+#' @inheritParams make_lattice
+#' @keywords internal
+#' @export
+graph.lattice <- function(dimvector = NULL , length = NULL , dim = NULL , nei = 1 , directed = FALSE , mutual = FALSE , circular = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.lattice()", "make_lattice()")
+   make_lattice(dimvector = dimvector, length = length, dim = dim, nei = nei, directed = directed, mutual = mutual, circular = circular)
 }
 
 #' @rdname make_lattice
@@ -1296,6 +1371,21 @@ graph_from_atlas <- function(n) {
   res
 }
 
+#' Create a graph from the Graph Atlas
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.atlas()` was renamed to `graph_from_atlas()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_atlas
+#' @keywords internal
+#' @export
+graph.atlas <- function(n) {
+   lifecycle::deprecate_soft("1.5.0", "graph.atlas()", "graph_from_atlas()")
+   graph_from_atlas(n = n)
+}
+
 #' @rdname graph_from_atlas
 #' @param ... Passed to `graph_from_atlas()`.
 #' @export
@@ -1342,6 +1432,21 @@ make_chordal_ring <- function(n, w, directed = FALSE) {
     res$w <- w
   }
   res
+}
+
+#' Create an extended chordal ring graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.extended.chordal.ring()` was renamed to `make_chordal_ring()` to create a more
+#' consistent API.
+#' @inheritParams make_chordal_ring
+#' @keywords internal
+#' @export
+graph.extended.chordal.ring <- function(n , w , directed = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.extended.chordal.ring()", "make_chordal_ring()")
+   make_chordal_ring(n = n, w = w, directed = directed)
 }
 
 #' @rdname make_chordal_ring
@@ -1444,6 +1549,21 @@ make_de_bruijn_graph <- function(m, n) {
   res
 }
 
+#' De Bruijn graphs
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.de.bruijn()` was renamed to `make_de_bruijn_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_de_bruijn_graph
+#' @keywords internal
+#' @export
+graph.de.bruijn <- function(m , n) {
+   lifecycle::deprecate_soft("1.5.0", "graph.de.bruijn()", "make_de_bruijn_graph()")
+   make_de_bruijn_graph(m = m, n = n)
+}
+
 #' @rdname make_de_bruijn_graph
 #' @param ... Passed to `make_de_bruijn_graph()`.
 #' @export
@@ -1488,6 +1608,21 @@ make_kautz_graph <- function(m, n) {
     res$n <- n
   }
   res
+}
+
+#' Kautz graphs
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.kautz()` was renamed to `make_kautz_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_kautz_graph
+#' @keywords internal
+#' @export
+graph.kautz <- function(m , n) {
+   lifecycle::deprecate_soft("1.5.0", "graph.kautz()", "make_kautz_graph()")
+   make_kautz_graph(m = m, n = n)
 }
 
 #' @rdname make_kautz_graph
@@ -1548,6 +1683,21 @@ make_full_bipartite_graph <- function(n1, n2, directed = FALSE,
     res$mode <- mode
   }
   set_vertex_attr(res$graph, "type", value = res$types)
+}
+
+#' Create a full bipartite graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.full.bipartite()` was renamed to `make_full_bipartite_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_full_bipartite_graph
+#' @keywords internal
+#' @export
+graph.full.bipartite <- function(n1 , n2 , directed = FALSE , mode = c("all","out","in")) {
+   lifecycle::deprecate_soft("1.5.0", "graph.full.bipartite()", "make_full_bipartite_graph()")
+   make_full_bipartite_graph(n1 = n1, n2 = n2, directed = directed, mode = mode)
 }
 
 #' @rdname make_full_bipartite_graph
@@ -1630,6 +1780,21 @@ make_bipartite_graph <- function(types, edges, directed = FALSE) {
   res
 }
 
+#' Create a bipartite graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.bipartite()` was renamed to `make_bipartite_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_bipartite_graph
+#' @keywords internal
+#' @export
+graph.bipartite <- function(types , edges , directed = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.bipartite()", "make_bipartite_graph()")
+   make_bipartite_graph(types = types, edges = edges, directed = directed)
+}
+
 #' @rdname make_bipartite_graph
 #' @param ... Passed to `make_bipartite_graph()`.
 #' @export
@@ -1663,6 +1828,21 @@ make_full_citation_graph <- function(n, directed = TRUE) {
 
   res <- set_graph_attr(res, "name", "Full citation graph")
   res
+}
+
+#' Create a complete (full) citation graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.full.citation()` was renamed to `make_full_citation_graph()` to create a more
+#' consistent API.
+#' @inheritParams make_full_citation_graph
+#' @keywords internal
+#' @export
+graph.full.citation <- function(n , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.full.citation()", "make_full_citation_graph()")
+   make_full_citation_graph(n = n, directed = directed)
 }
 
 #' @rdname make_full_citation_graph

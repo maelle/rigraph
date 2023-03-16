@@ -575,6 +575,21 @@ graph_from_graphdb <- function(url = NULL,
   .Call(C_R_igraph_read_graph_graphdb, f, as.logical(directed))
 }
 
+#' Load a graph from the graph database for testing graph isomorphism.
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.graphdb()` was renamed to `graph_from_graphdb()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_graphdb
+#' @keywords internal
+#' @export
+graph.graphdb <- function(url = NULL , prefix = "iso" , type = "r001" , nodes = NULL , pair = "A" , which = 0 , base = "http://cneurocvs.rmki.kfki.hu/graphdb/gzip" , compressed = TRUE , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.graphdb()", "graph_from_graphdb()")
+   graph_from_graphdb(url = url, prefix = prefix, type = type, nodes = nodes, pair = pair, which = which, base = base, compressed = compressed, directed = directed)
+}
+
 read.graph.graphdb <- function(file, directed = TRUE, ...) {
   if (length(list(...)) > 0) {
     stop("Unknown arguments to read_graph (GraphDB format)")

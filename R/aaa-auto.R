@@ -31,6 +31,21 @@ graph_from_lcf <- function(n, shifts, repeats=1) {
   res
 }
 
+#' Creating a graph from LCF notation
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.lcf()` was renamed to `graph_from_lcf()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_lcf
+#' @keywords internal
+#' @export
+graph.lcf <- function(n , shifts , repeats = 1) {
+   lifecycle::deprecate_soft("1.5.0", "graph.lcf()", "graph_from_lcf()")
+   graph_from_lcf(n = n, shifts = shifts, repeats = repeats)
+}
+
 #' @export
 graph_from_adj_list <- function(adjlist, mode=c("out", "in", "all", "total"), duplicate=TRUE) {
   # Argument checks
@@ -43,6 +58,21 @@ graph_from_adj_list <- function(adjlist, mode=c("out", "in", "all", "total"), du
   res <- .Call(C_R_igraph_adjlist, adjlist, mode, duplicate)
 
   res
+}
+
+#' Create graphs from adjacency lists
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.adjlist()` was renamed to `graph_from_adj_list()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_adj_list
+#' @keywords internal
+#' @export
+graph.adjlist <- function(adjlist , mode = c("out","in","all","total") , duplicate = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.adjlist()", "graph_from_adj_list()")
+   graph_from_adj_list(adjlist = adjlist, mode = mode, duplicate = duplicate, x = x)
 }
 
 #' @export
@@ -90,6 +120,21 @@ sample_forestfire <- function(nodes, fw.prob, bw.factor=1, ambs=1, directed=TRUE
   }
 
   res
+}
+
+#' Forest Fire Network Model
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `forest.fire.game()` was renamed to `sample_forestfire()` to create a more
+#' consistent API.
+#' @inheritParams sample_forestfire
+#' @keywords internal
+#' @export
+forest.fire.game <- function(nodes , fw.prob , bw.factor = 1 , ambs = 1 , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "forest.fire.game()", "sample_forestfire()")
+   sample_forestfire(nodes = nodes, fw.prob = fw.prob, bw.factor = bw.factor, ambs = ambs, directed = directed)
 }
 
 #' @export
@@ -441,6 +486,21 @@ mean_distance <- function(graph, weights=NULL, directed=TRUE, unconnected=TRUE, 
   res
 }
 
+#' Shortest (directed or undirected) paths between vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `average.path.length()` was renamed to `mean_distance()` to create a more
+#' consistent API.
+#' @inheritParams mean_distance
+#' @keywords internal
+#' @export
+average.path.length <- function(graph , weights = NULL , directed = TRUE , unconnected = TRUE , details = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "average.path.length()", "mean_distance()")
+   mean_distance(graph = graph, weights = weights, directed = directed, unconnected = unconnected, details = details)
+}
+
 #' @export
 distance_table <- function(graph, directed=TRUE) {
   # Argument checks
@@ -579,6 +639,21 @@ count_multiple <- function(graph, eids=E(graph)) {
   res
 }
 
+#' Find the multiple or loop edges in a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `count.multiple()` was renamed to `count_multiple()` to create a more
+#' consistent API.
+#' @inheritParams count_multiple
+#' @keywords internal
+#' @export
+count.multiple <- function(graph , eids = E(graph)) {
+   lifecycle::deprecate_soft("1.5.0", "count.multiple()", "count_multiple()")
+   count_multiple(graph = graph, eids = eids)
+}
+
 #' @export
 eigen_centrality <- function(graph, directed=FALSE, scale=TRUE, weights=NULL, options=arpack_defaults) {
   # Argument checks
@@ -602,6 +677,21 @@ eigen_centrality <- function(graph, directed=FALSE, scale=TRUE, weights=NULL, op
     names(res$vector) <- vertex_attr(graph, "name", V(graph))
   }
   res
+}
+
+#' Find Eigenvector Centrality Scores of Network Positions
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `evcent()` was renamed to `eigen_centrality()` to create a more
+#' consistent API.
+#' @inheritParams eigen_centrality
+#' @keywords internal
+#' @export
+evcent <- function(graph , directed = FALSE , scale = TRUE , weights = NULL , options = arpack_defaults) {
+   lifecycle::deprecate_soft("1.5.0", "evcent()", "eigen_centrality()")
+   eigen_centrality(graph = graph, directed = directed, scale = scale, weights = weights, options = options)
 }
 
 #' @export
@@ -650,6 +740,21 @@ authority_score <- function(graph, scale=TRUE, weights=NULL, options=arpack_defa
     names(res$vector) <- vertex_attr(graph, "name", V(graph))
   }
   res
+}
+
+#' Kleinberg's hub and authority centrality scores.
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `authority.score()` was renamed to `authority_score()` to create a more
+#' consistent API.
+#' @inheritParams authority_score
+#' @keywords internal
+#' @export
+authority.score <- function(graph , scale = TRUE , weights = NULL , options = arpack_defaults) {
+   lifecycle::deprecate_soft("1.5.0", "authority.score()", "authority_score()")
+   authority_score(graph = graph, scale = scale, weights = weights, options = options)
 }
 
 #' @export
@@ -704,6 +809,21 @@ knn <- function(graph, vids=V(graph), mode=c("all", "out", "in", "total"), neigh
   res
 }
 
+#' Average nearest neighbor degree
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.knn()` was renamed to `knn()` to create a more
+#' consistent API.
+#' @inheritParams knn
+#' @keywords internal
+#' @export
+graph.knn <- function(graph , vids = V(graph) , mode = c("all","out","in","total") , neighbor.degree.mode = c("all","out","in","total") , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "graph.knn()", "knn()")
+   knn(graph = graph, vids = vids, mode = mode, neighbor.degree.mode = neighbor.degree.mode, weights = weights)
+}
+
 #' @export
 strength <- function(graph, vids=V(graph), mode=c("all", "out", "in", "total"), loops=TRUE, weights=NULL) {
   # Argument checks
@@ -729,6 +849,21 @@ strength <- function(graph, vids=V(graph), mode=c("all", "out", "in", "total"), 
   res
 }
 
+#' Strength or weighted vertex degree
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.strength()` was renamed to `strength()` to create a more
+#' consistent API.
+#' @inheritParams strength
+#' @keywords internal
+#' @export
+graph.strength <- function(graph , vids = V(graph) , mode = c("all","out","in","total") , loops = TRUE , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "graph.strength()", "strength()")
+   strength(graph = graph, vids = vids, mode = mode, loops = loops, weights = weights)
+}
+
 #' @export
 centralize <- function(scores, theoretical.max=0, normalized=TRUE) {
   # Argument checks
@@ -744,6 +879,21 @@ centralize <- function(scores, theoretical.max=0, normalized=TRUE) {
   res
 }
 
+#' Centralization of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralize.scores()` was renamed to `centralize()` to create a more
+#' consistent API.
+#' @inheritParams centralize
+#' @keywords internal
+#' @export
+centralize.scores <- function(scores , theoretical.max = 0 , normalized = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "centralize.scores()", "centralize()")
+   centralize(scores = scores, theoretical.max = theoretical.max, normalized = normalized)
+}
+
 #' @export
 centr_degree <- function(graph, mode=c("all", "out", "in", "total"), loops=TRUE, normalized=TRUE) {
   # Argument checks
@@ -757,6 +907,21 @@ centr_degree <- function(graph, mode=c("all", "out", "in", "total"), loops=TRUE,
   res <- .Call(C_R_igraph_centralization_degree, graph, mode, loops, normalized)
 
   res
+}
+
+#' Centralize a graph according to the degrees of vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralization.degree()` was renamed to `centr_degree()` to create a more
+#' consistent API.
+#' @inheritParams centr_degree
+#' @keywords internal
+#' @export
+centralization.degree <- function(graph , mode = c("all","out","in","total") , loops = TRUE , normalized = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "centralization.degree()", "centr_degree()")
+   centr_degree(graph = graph, mode = mode, loops = loops, normalized = normalized)
 }
 
 #' @export
@@ -787,6 +952,21 @@ centr_betw_tmax <- function(graph=NULL, nodes=0, directed=TRUE) {
   res
 }
 
+#' Theoretical maximum for betweenness centralization
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralization.betweenness.tmax()` was renamed to `centr_betw_tmax()` to create a more
+#' consistent API.
+#' @inheritParams centr_betw_tmax
+#' @keywords internal
+#' @export
+centralization.betweenness.tmax <- function(graph = NULL , nodes = 0 , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "centralization.betweenness.tmax()", "centr_betw_tmax()")
+   centr_betw_tmax(graph = graph, nodes = nodes, directed = directed)
+}
+
 #' @export
 centr_clo <- function(graph, mode=c("out", "in", "all", "total"), normalized=TRUE) {
   # Argument checks
@@ -801,6 +981,21 @@ centr_clo <- function(graph, mode=c("out", "in", "all", "total"), normalized=TRU
   res
 }
 
+#' Centralize a graph according to the closeness of vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralization.closeness()` was renamed to `centr_clo()` to create a more
+#' consistent API.
+#' @inheritParams centr_clo
+#' @keywords internal
+#' @export
+centralization.closeness <- function(graph , mode = c("out","in","all","total") , normalized = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "centralization.closeness()", "centr_clo()")
+   centr_clo(graph = graph, mode = mode, normalized = normalized)
+}
+
 #' @export
 centr_clo_tmax <- function(graph=NULL, nodes=0, mode=c("out", "in", "all", "total")) {
   # Argument checks
@@ -813,6 +1008,21 @@ centr_clo_tmax <- function(graph=NULL, nodes=0, mode=c("out", "in", "all", "tota
   res <- .Call(C_R_igraph_centralization_closeness_tmax, graph, nodes, mode)
 
   res
+}
+
+#' Theoretical maximum for closeness centralization
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralization.closeness.tmax()` was renamed to `centr_clo_tmax()` to create a more
+#' consistent API.
+#' @inheritParams centr_clo_tmax
+#' @keywords internal
+#' @export
+centralization.closeness.tmax <- function(graph = NULL , nodes = 0 , mode = c("out","in","all","total")) {
+   lifecycle::deprecate_soft("1.5.0", "centralization.closeness.tmax()", "centr_clo_tmax()")
+   centr_clo_tmax(graph = graph, nodes = nodes, mode = mode)
 }
 
 #' @export
@@ -831,6 +1041,21 @@ centr_eigen <- function(graph, directed=FALSE, scale=TRUE, options=arpack_defaul
   res
 }
 
+#' Centralize a graph according to the eigenvector centrality of vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralization.evcent()` was renamed to `centr_eigen()` to create a more
+#' consistent API.
+#' @inheritParams centr_eigen
+#' @keywords internal
+#' @export
+centralization.evcent <- function(graph , directed = FALSE , scale = TRUE , options = arpack_defaults , normalized = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "centralization.evcent()", "centr_eigen()")
+   centr_eigen(graph = graph, directed = directed, scale = scale, options = options, normalized = normalized)
+}
+
 #' @export
 centr_eigen_tmax <- function(graph=NULL, nodes=0, directed=FALSE, scale=TRUE) {
   # Argument checks
@@ -846,6 +1071,21 @@ centr_eigen_tmax <- function(graph=NULL, nodes=0, directed=FALSE, scale=TRUE) {
   res
 }
 
+#' Theoretical maximum for betweenness centralization
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `centralization.evcent.tmax()` was renamed to `centr_eigen_tmax()` to create a more
+#' consistent API.
+#' @inheritParams centr_eigen_tmax
+#' @keywords internal
+#' @export
+centralization.evcent.tmax <- function(graph = NULL , nodes = 0 , directed = FALSE , scale = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "centralization.evcent.tmax()", "centr_eigen_tmax()")
+   centr_eigen_tmax(graph = graph, nodes = nodes, directed = directed, scale = scale)
+}
+
 #' @export
 assortativity_nominal <- function(graph, types, directed=TRUE) {
   # Argument checks
@@ -858,6 +1098,21 @@ assortativity_nominal <- function(graph, types, directed=TRUE) {
   res <- .Call(C_R_igraph_assortativity_nominal, graph, types, directed)
 
   res
+}
+
+#' Assortativity coefficient
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `assortativity.nominal()` was renamed to `assortativity_nominal()` to create a more
+#' consistent API.
+#' @inheritParams assortativity_nominal
+#' @keywords internal
+#' @export
+assortativity.nominal <- function(graph , types , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "assortativity.nominal()", "assortativity_nominal()")
+   assortativity_nominal(graph = graph, types = types, directed = directed)
 }
 
 #' @export
@@ -888,6 +1143,21 @@ assortativity_degree <- function(graph, directed=TRUE) {
   res
 }
 
+#' Assortativity coefficient
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `assortativity.degree()` was renamed to `assortativity_degree()` to create a more
+#' consistent API.
+#' @inheritParams assortativity_degree
+#' @keywords internal
+#' @export
+assortativity.degree <- function(graph , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "assortativity.degree()", "assortativity_degree()")
+   assortativity_degree(graph = graph, directed = directed)
+}
+
 #' @export
 contract <- function(graph, mapping, vertex.attr.comb=igraph_opt("vertex.attr.comb")) {
   # Argument checks
@@ -900,6 +1170,21 @@ contract <- function(graph, mapping, vertex.attr.comb=igraph_opt("vertex.attr.co
   res <- .Call(C_R_igraph_contract_vertices, graph, mapping, vertex.attr.comb)
 
   res
+}
+
+#' Contract several vertices into a single one
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `contract.vertices()` was renamed to `contract()` to create a more
+#' consistent API.
+#' @inheritParams contract
+#' @keywords internal
+#' @export
+contract.vertices <- function(graph , mapping , vertex.attr.comb = igraph_opt("vertex.attr.comb")) {
+   lifecycle::deprecate_soft("1.5.0", "contract.vertices()", "contract()")
+   contract(graph = graph, mapping = mapping, vertex.attr.comb = vertex.attr.comb)
 }
 
 #' @export
@@ -952,6 +1237,21 @@ diversity <- function(graph, weights=NULL, vids=V(graph)) {
     names(res) <- vertex_attr(graph, "name", vids)
   }
   res
+}
+
+#' Graph diversity
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.diversity()` was renamed to `diversity()` to create a more
+#' consistent API.
+#' @inheritParams diversity
+#' @keywords internal
+#' @export
+graph.diversity <- function(graph , weights = NULL , vids = V(graph)) {
+   lifecycle::deprecate_soft("1.5.0", "graph.diversity()", "diversity()")
+   diversity(graph = graph, weights = weights, vids = vids)
 }
 
 #' @export
@@ -1100,6 +1400,21 @@ bipartite_projection_size <- function(graph, types=NULL) {
   res
 }
 
+#' Project a bipartite graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `bipartite.projection.size()` was renamed to `bipartite_projection_size()` to create a more
+#' consistent API.
+#' @inheritParams bipartite_projection_size
+#' @keywords internal
+#' @export
+bipartite.projection.size <- function(graph , types = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "bipartite.projection.size()", "bipartite_projection_size()")
+   bipartite_projection_size(graph = graph, types = types)
+}
+
 #' @export
 bipartite_mapping <- function(graph) {
   # Argument checks
@@ -1110,6 +1425,21 @@ bipartite_mapping <- function(graph) {
   res <- .Call(C_R_igraph_is_bipartite, graph)
 
   res
+}
+
+#' Decide whether a graph is bipartite
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `bipartite.mapping()` was renamed to `bipartite_mapping()` to create a more
+#' consistent API.
+#' @inheritParams bipartite_mapping
+#' @keywords internal
+#' @export
+bipartite.mapping <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "bipartite.mapping()", "bipartite_mapping()")
+   bipartite_mapping(graph = graph)
 }
 
 #' @export
@@ -1137,6 +1467,21 @@ articulation_points <- function(graph) {
     res <- create_vs(graph, res)
   }
   res
+}
+
+#' Articulation points and bridges of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `articulation.points()` was renamed to `articulation_points()` to create a more
+#' consistent API.
+#' @inheritParams articulation_points
+#' @keywords internal
+#' @export
+articulation.points <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "articulation.points()", "articulation_points()")
+   articulation_points(graph = graph)
 }
 
 #' @export
@@ -1169,6 +1514,21 @@ biconnected_components <- function(graph) {
     res$articulation.points <- create_vs(graph, res$articulation.points)
   }
   res
+}
+
+#' Biconnected components
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `biconnected.components()` was renamed to `biconnected_components()` to create a more
+#' consistent API.
+#' @inheritParams biconnected_components
+#' @keywords internal
+#' @export
+biconnected.components <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "biconnected.components()", "biconnected_components()")
+   biconnected_components(graph = graph)
 }
 
 #' @export
@@ -1257,6 +1617,21 @@ clique_num <- function(graph) {
   res <- .Call(C_R_igraph_clique_number, graph)
 
   res
+}
+
+#' Functions to find cliques, i.e. complete subgraphs in a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `clique.number()` was renamed to `clique_num()` to create a more
+#' consistent API.
+#' @inheritParams clique_num
+#' @keywords internal
+#' @export
+clique.number <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "clique.number()", "clique_num()")
+   clique_num(graph = graph)
 }
 
 #' @export
@@ -1493,6 +1868,21 @@ dyad_census <- function(graph) {
   res
 }
 
+#' Dyad census of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `dyad.census()` was renamed to `dyad_census()` to create a more
+#' consistent API.
+#' @inheritParams dyad_census
+#' @keywords internal
+#' @export
+dyad.census <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "dyad.census()", "dyad_census()")
+   dyad_census(graph = graph)
+}
+
 #' @export
 triad_census <- function(graph) {
   # Argument checks
@@ -1516,6 +1906,21 @@ count_triangles <- function(graph, vids=V(graph)) {
   res <- .Call(C_R_igraph_adjacent_triangles, graph, vids-1)
 
   res
+}
+
+#' Find triangles in graphs
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `adjacent.triangles()` was renamed to `count_triangles()` to create a more
+#' consistent API.
+#' @inheritParams count_triangles
+#' @keywords internal
+#' @export
+adjacent.triangles <- function(graph , vids = V(graph)) {
+   lifecycle::deprecate_soft("1.5.0", "adjacent.triangles()", "count_triangles()")
+   count_triangles(graph = graph, vids = vids)
 }
 
 #' @family triangles
@@ -1565,6 +1970,21 @@ max_flow <- function(graph, source, target, capacity=NULL) {
     res$partition2 <- create_vs(graph, res$partition2)
   }
   res
+}
+
+#' Maximum flow in a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.maxflow()` was renamed to `max_flow()` to create a more
+#' consistent API.
+#' @inheritParams max_flow
+#' @keywords internal
+#' @export
+graph.maxflow <- function(graph , source , target , capacity = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "graph.maxflow()", "max_flow()")
+   max_flow(graph = graph, source = source, target = target, capacity = capacity)
 }
 
 #' @export
@@ -1753,6 +2173,21 @@ graph_from_isomorphism_class <- function(size, number, directed=TRUE) {
   res <- .Call(C_R_igraph_isoclass_create, size, number, directed)
 
   res
+}
+
+#' Create a graph from an isomorphism class
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.isocreate()` was renamed to `graph_from_isomorphism_class()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_isomorphism_class
+#' @keywords internal
+#' @export
+graph.isocreate <- function(size , number , directed = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.isocreate()", "graph_from_isomorphism_class()")
+   graph_from_isomorphism_class(size = size, number = number, directed = directed)
 }
 
 #' @export
@@ -2003,6 +2438,21 @@ canonical_permutation <- function(graph, colors, sh=c("fm", "f", "fs", "fl", "fl
   res
 }
 
+#' Canonical permutation of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `canonical.permutation()` was renamed to `canonical_permutation()` to create a more
+#' consistent API.
+#' @inheritParams canonical_permutation
+#' @keywords internal
+#' @export
+canonical.permutation <- function(graph , colors , sh = c("fm","f","fs","fl","flm","fsm")) {
+   lifecycle::deprecate_soft("1.5.0", "canonical.permutation()", "canonical_permutation()")
+   canonical_permutation(graph = graph, colors = colors, sh = sh)
+}
+
 #' @export
 permute <- function(graph, permutation) {
   # Argument checks
@@ -2071,6 +2521,36 @@ count_automorphisms <- function(graph, colors, sh=c("fm", "f", "fs", "fl", "flm"
   res <- .Call(C_R_igraph_automorphisms, graph, colors, sh)
 
   res
+}
+
+#' Number of automorphisms
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.automorphisms()` was renamed to `count_automorphisms()` to create a more
+#' consistent API.
+#' @inheritParams count_automorphisms
+#' @keywords internal
+#' @export
+graph.automorphisms <- function(graph , colors , sh = c("fm","f","fs","fl","flm","fsm")) {
+   lifecycle::deprecate_soft("1.5.0", "graph.automorphisms()", "count_automorphisms()")
+   count_automorphisms(graph = graph, colors = colors, sh = sh)
+}
+
+#' Number of automorphisms
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `automorphisms()` was renamed to `count_automorphisms()` to create a more
+#' consistent API.
+#' @inheritParams count_automorphisms
+#' @keywords internal
+#' @export
+automorphisms <- function(graph , colors , sh = c("fm","f","fs","fl","flm","fsm")) {
+   lifecycle::deprecate_soft("1.5.0", "automorphisms()", "count_automorphisms()")
+   count_automorphisms(graph = graph, colors = colors, sh = sh)
 }
 
 #' @export
@@ -2192,6 +2672,21 @@ spectrum <- function(graph, algorithm=c("arpack", "auto", "lapack", "comp_auto",
   res
 }
 
+#' Eigenvalues and eigenvectors of the adjacency matrix of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.eigen()` was renamed to `spectrum()` to create a more
+#' consistent API.
+#' @inheritParams spectrum
+#' @keywords internal
+#' @export
+graph.eigen <- function(graph , algorithm = c("arpack","auto","lapack","comp_auto","comp_lapack","comp_arpack") , which = list() , options = arpack_defaults) {
+   lifecycle::deprecate_soft("1.5.0", "graph.eigen()", "spectrum()")
+   spectrum(graph = graph, algorithm = algorithm, which = which, options = options)
+}
+
 #' @export
 sir <- function(graph, beta, gamma, no.sim=100) {
   # Argument checks
@@ -2218,6 +2713,21 @@ convex_hull <- function(data) {
   res <- .Call(C_R_igraph_convex_hull, data)
 
   res
+}
+
+#' Convex hull of a set of vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `convex.hull()` was renamed to `convex_hull()` to create a more
+#' consistent API.
+#' @inheritParams convex_hull
+#' @keywords internal
+#' @export
+convex.hull <- function(data) {
+   lifecycle::deprecate_soft("1.5.0", "convex.hull()", "convex_hull()")
+   convex_hull(data = data)
 }
 
 #' @export

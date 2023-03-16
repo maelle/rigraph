@@ -558,6 +558,21 @@ code_len <- function(communities) {
   communities$codelength
 }
 
+#' Functions to deal with the result of network community detection
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `code.length()` was renamed to `code_len()` to create a more
+#' consistent API.
+#' @inheritParams code_len
+#' @keywords internal
+#' @export
+code.length <- function(communities) {
+   lifecycle::deprecate_soft("1.5.0", "code.length()", "code_len()")
+   code_len(communities = communities)
+}
+
 #' @rdname communities
 #' @family community
 #' @export
@@ -700,6 +715,21 @@ as_phylo <- function(x, ...) {
   UseMethod("as_phylo")
 }
 
+#' Functions to deal with the result of network community detection
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `asPhylo()` was renamed to `as_phylo()` to create a more
+#' consistent API.
+#' @inheritParams as_phylo
+#' @keywords internal
+#' @export
+asPhylo <- function(x , ...) {
+   lifecycle::deprecate_soft("1.5.0", "asPhylo()", "as_phylo()")
+   as_phylo(x = x, ...)
+}
+
 #' @rdname communities
 #' @method as_phylo communities
 #' @family community
@@ -757,6 +787,21 @@ as_phylo.communities <- function(x, use.modularity = FALSE, ...) {
   ape::reorder.phylo(obj)
 }
 
+#' Functions to deal with the result of network community detection
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `asPhylo.communities()` was renamed to `as_phylo.communities()` to create a more
+#' consistent API.
+#' @inheritParams as_phylo.communities
+#' @keywords internal
+#' @export
+asPhylo.communities <- function(x , use.modularity = FALSE , ...) {
+   lifecycle::deprecate_soft("1.5.0", "asPhylo.communities()", "as_phylo.communities()")
+   as_phylo.communities(x = x, use.modularity = use.modularity, ...)
+}
+
 #' @rdname communities
 #' @family community
 #' @export
@@ -790,6 +835,21 @@ cut_at <- function(communities, no, steps) {
     steps <- communities$vcount - no
     community.to.membership2(mm, communities$vcount, steps)
   }
+}
+
+#' Functions to deal with the result of network community detection
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `cutat()` was renamed to `cut_at()` to create a more
+#' consistent API.
+#' @inheritParams cut_at
+#' @keywords internal
+#' @export
+cutat <- function(communities , no , steps) {
+   lifecycle::deprecate_soft("1.5.0", "cutat()", "cut_at()")
+   cut_at(communities = communities, no = no, steps = steps)
 }
 
 #' @rdname communities
@@ -1485,6 +1545,21 @@ cluster_edge_betweenness <- function(graph, weights = NULL,
   res
 }
 
+#' Community structure detection based on edge betweenness
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `edge.betweenness.community()` was renamed to `cluster_edge_betweenness()` to create a more
+#' consistent API.
+#' @inheritParams cluster_edge_betweenness
+#' @keywords internal
+#' @export
+edge.betweenness.community <- function(graph , weights = NULL , directed = TRUE , edge.betweenness = TRUE , merges = TRUE , bridges = TRUE , modularity = TRUE , membership = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "edge.betweenness.community()", "cluster_edge_betweenness()")
+   cluster_edge_betweenness(graph = graph, weights = weights, directed = directed, edge.betweenness = edge.betweenness, merges = merges, bridges = bridges, modularity = modularity, membership = membership)
+}
+
 #' Community structure via greedy optimization of modularity
 #'
 #' This function tries to find dense subgraph, also called communities in
@@ -1563,6 +1638,21 @@ cluster_fast_greedy <- function(graph, merges = TRUE, modularity = TRUE,
   res$merges <- res$merges + 1
   class(res) <- "communities"
   res
+}
+
+#' Community structure via greedy optimization of modularity
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `fastgreedy.community()` was renamed to `cluster_fast_greedy()` to create a more
+#' consistent API.
+#' @inheritParams cluster_fast_greedy
+#' @keywords internal
+#' @export
+fastgreedy.community <- function(graph , merges = TRUE , modularity = TRUE , membership = TRUE , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "fastgreedy.community()", "cluster_fast_greedy()")
+   cluster_fast_greedy(graph = graph, merges = merges, modularity = modularity, membership = membership, weights = weights)
 }
 
 igraph.i.levc.arp <- function(externalP, externalE) {
@@ -2104,6 +2194,21 @@ plot_dendrogram <- function(x, mode = igraph_opt("dend.plot.type"), ...) {
   UseMethod("plot_dendrogram")
 }
 
+#' Community structure dendrogram plots
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `dendPlot()` was renamed to `plot_dendrogram()` to create a more
+#' consistent API.
+#' @inheritParams plot_dendrogram
+#' @keywords internal
+#' @export
+dendPlot <- function(x , mode = igraph_opt("dend.plot.type") , ...) {
+   lifecycle::deprecate_soft("1.5.0", "dendPlot()", "plot_dendrogram()")
+   plot_dendrogram(x = x, mode = mode, ...)
+}
+
 
 
 #' Community structure dendrogram plots
@@ -2207,6 +2312,21 @@ plot_dendrogram.communities <- function(x,
   } else if (mode == "phylo") {
     dendPlotPhylo(x, use.modularity = use.modularity, ...)
   }
+}
+
+#' Community structure dendrogram plots
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `dendPlot.communities()` was renamed to `plot_dendrogram.communities()` to create a more
+#' consistent API.
+#' @inheritParams plot_dendrogram.communities
+#' @keywords internal
+#' @export
+dendPlot.communities <- function(x , mode = igraph_opt("dend.plot.type") , ... , use.modularity = FALSE , palette = categorical_pal(8)) {
+   lifecycle::deprecate_soft("1.5.0", "dendPlot.communities()", "plot_dendrogram.communities()")
+   plot_dendrogram.communities(x = x, mode = mode, use.modularity = use.modularity, palette = palette, ...)
 }
 
 #' @importFrom grDevices palette

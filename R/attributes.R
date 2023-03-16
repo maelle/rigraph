@@ -61,6 +61,21 @@ graph_attr <- function(graph, name) {
   }
 }
 
+#' Graph attributes of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.graph.attribute()` was renamed to `graph_attr()` to create a more
+#' consistent API.
+#' @inheritParams graph_attr
+#' @keywords internal
+#' @export
+get.graph.attribute <- function(graph , name) {
+   lifecycle::deprecate_soft("1.5.0", "get.graph.attribute()", "graph_attr()")
+   graph_attr(graph = graph, name = name)
+}
+
 
 #' Set all or some graph attributes
 #'
@@ -182,6 +197,21 @@ vertex_attr <- function(graph, name, index = V(graph)) {
       myattr[index]
     }
   }
+}
+
+#' Query vertex attributes of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.vertex.attribute()` was renamed to `vertex_attr()` to create a more
+#' consistent API.
+#' @inheritParams vertex_attr
+#' @keywords internal
+#' @export
+get.vertex.attribute <- function(graph , name , index = V(graph)) {
+   lifecycle::deprecate_soft("1.5.0", "get.vertex.attribute()", "vertex_attr()")
+   vertex_attr(graph = graph, name = name, index = index)
 }
 
 #' Set one or more vertex attributes
@@ -392,6 +422,21 @@ edge_attr <- function(graph, name, index = E(graph)) {
       myattr[index]
     }
   }
+}
+
+#' Query edge attributes of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.edge.attribute()` was renamed to `edge_attr()` to create a more
+#' consistent API.
+#' @inheritParams edge_attr
+#' @keywords internal
+#' @export
+get.edge.attribute <- function(graph , name , index = E(graph)) {
+   lifecycle::deprecate_soft("1.5.0", "get.edge.attribute()", "edge_attr()")
+   edge_attr(graph = graph, name = name, index = index)
 }
 
 #' Set one or more edge attributes

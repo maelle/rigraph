@@ -175,6 +175,21 @@ disjoint_union <- function(...) {
   res
 }
 
+#' Disjoint union of graphs
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.disjoint.union()` was renamed to `disjoint_union()` to create a more
+#' consistent API.
+#' @inheritParams disjoint_union
+#' @keywords internal
+#' @export
+graph.disjoint.union <- function(...) {
+   lifecycle::deprecate_soft("1.5.0", "graph.disjoint.union()", "disjoint_union()")
+   disjoint_union(l = l, ...)
+}
+
 #' @export
 #' @rdname disjoint_union
 #' @family functions for manipulating graph structure
@@ -472,6 +487,21 @@ difference <- function(...) {
   UseMethod("difference")
 }
 
+#' Difference of two sets
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.difference()` was renamed to `difference()` to create a more
+#' consistent API.
+#' @inheritParams difference
+#' @keywords internal
+#' @export
+graph.difference <- function(...) {
+   lifecycle::deprecate_soft("1.5.0", "graph.difference()", "difference()")
+   difference(...)
+}
+
 
 #' Difference of graphs
 #'
@@ -611,6 +641,21 @@ complementer <- function(graph, loops = FALSE) {
   .Call(C_R_igraph_complementer, graph, as.logical(loops))
 }
 
+#' Complementer of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.complementer()` was renamed to `complementer()` to create a more
+#' consistent API.
+#' @inheritParams complementer
+#' @keywords internal
+#' @export
+graph.complementer <- function(graph , loops = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.complementer()", "complementer()")
+   complementer(graph = graph, loops = loops)
+}
+
 
 
 #' Compose two graphs as binary relations
@@ -738,6 +783,21 @@ compose <- function(g1, g2, byname = "auto") {
   }
 
   res
+}
+
+#' Compose two graphs as binary relations
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.compose()` was renamed to `compose()` to create a more
+#' consistent API.
+#' @inheritParams compose
+#' @keywords internal
+#' @export
+graph.compose <- function(g1 , g2 , byname = "auto") {
+   lifecycle::deprecate_soft("1.5.0", "graph.compose()", "compose()")
+   compose(g1 = g1, g2 = g2, byname = byname)
 }
 
 #' @family functions for manipulating graph structure

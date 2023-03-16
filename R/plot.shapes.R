@@ -313,6 +313,21 @@ add_shape <- function(shape, clip = shape_noclip,
   invisible(TRUE)
 }
 
+#' Various vertex shapes when plotting igraph graphs
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `add.vertex.shape()` was renamed to `add_shape()` to create a more
+#' consistent API.
+#' @inheritParams add_shape
+#' @keywords internal
+#' @export
+add.vertex.shape <- function(shape , clip = shape_noclip , plot = shape_noplot , parameters = list()) {
+   lifecycle::deprecate_soft("1.5.0", "add.vertex.shape()", "add_shape()")
+   add_shape(shape = shape, clip = clip, plot = plot, parameters = parameters)
+}
+
 ## These are the predefined shapes
 
 .igraph.shape.circle.clip <- function(coords, el, params,
