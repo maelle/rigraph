@@ -51,8 +51,6 @@ deprecated("are.connected", are_adjacent)
 deprecated("asPhylo", as_phylo)
 #' @method asPhylo communities
 deprecated("asPhylo.communities", as_phylo.communities)
-#' @method asPhylo igraphHRG
-deprecated("asPhylo.igraphHRG", as_phylo.igraphHRG)
 #' @export assortativity.degree
 deprecated("assortativity.degree", assortativity_degree)
 #' @export assortativity.nominal
