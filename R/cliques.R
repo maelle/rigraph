@@ -159,6 +159,21 @@ max_cliques <- function(graph, min = NULL, max = NULL, subset = NULL, file = NUL
   }
 }
 
+#' Functions to find cliques, i.e. complete subgraphs in a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `maximal.cliques()` was renamed to `cliques()` to create a more
+#' consistent API.
+#' @inheritParams cliques
+#' @keywords internal
+#' @export
+maximal.cliques <- function(graph , min = NULL , max = NULL , subset = NULL , file = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "maximal.cliques()", "cliques()")
+   cliques(graph = graph, min = min, max = max, subset = subset, file = file, x = x)
+}
+
 #' @family cliques
 #' @export
 count_max_cliques <- function(graph, min = NULL, max = NULL,
@@ -186,6 +201,21 @@ count_max_cliques <- function(graph, min = NULL, max = NULL,
   res <- .Call(C_R_igraph_maximal_cliques_count, graph, subset, min, max)
 
   res
+}
+
+#' Functions to find cliques, i.e. complete subgraphs in a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `maximal.cliques.count()` was renamed to `cliques()` to create a more
+#' consistent API.
+#' @inheritParams cliques
+#' @keywords internal
+#' @export
+maximal.cliques.count <- function(graph , min = NULL , max = NULL , subset = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "maximal.cliques.count()", "cliques()")
+   cliques(graph = graph, min = min, max = max, subset = subset)
 }
 
 #' @family cliques
@@ -351,6 +381,21 @@ ivs <- function(graph, min = NULL, max = NULL) {
   res
 }
 
+#' Independent vertex sets
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `independent.vertex.sets()` was renamed to `ivs()` to create a more
+#' consistent API.
+#' @inheritParams ivs
+#' @keywords internal
+#' @export
+independent.vertex.sets <- function(graph , min = NULL , max = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "independent.vertex.sets()", "ivs()")
+   ivs(graph = graph, min = min, max = max)
+}
+
 #' @family cliques
 #' @export
 largest_ivs <- function(graph) {
@@ -367,6 +412,21 @@ largest_ivs <- function(graph) {
   }
 
   res
+}
+
+#' Independent vertex sets
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `largest.independent.vertex.sets()` was renamed to `ivs()` to create a more
+#' consistent API.
+#' @inheritParams ivs
+#' @keywords internal
+#' @export
+largest.independent.vertex.sets <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "largest.independent.vertex.sets()", "ivs()")
+   ivs(graph = graph)
 }
 
 #' @family cliques
@@ -387,6 +447,21 @@ maximal_ivs <- function(graph) {
   res
 }
 
+#' Independent vertex sets
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `maximal.independent.vertex.sets()` was renamed to `ivs()` to create a more
+#' consistent API.
+#' @inheritParams ivs
+#' @keywords internal
+#' @export
+maximal.independent.vertex.sets <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "maximal.independent.vertex.sets()", "ivs()")
+   ivs(graph = graph)
+}
+
 #' @family cliques
 #' @export
 ivs_size <- function(graph) {
@@ -396,6 +471,21 @@ ivs_size <- function(graph) {
 
   on.exit(.Call(C_R_igraph_finalizer))
   .Call(C_R_igraph_independence_number, graph)
+}
+
+#' Independent vertex sets
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `independence.number()` was renamed to `ivs()` to create a more
+#' consistent API.
+#' @inheritParams ivs
+#' @keywords internal
+#' @export
+independence.number <- function(graph) {
+   lifecycle::deprecate_soft("1.5.0", "independence.number()", "ivs()")
+   ivs(graph = graph)
 }
 
 #' @family cliques

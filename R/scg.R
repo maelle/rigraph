@@ -134,6 +134,21 @@ stochastic_matrix <- function(graph, column.wise = FALSE,
   res
 }
 
+#' Stochastic matrix of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.stochastic()` was renamed to `stochastic_matrix()` to create a more
+#' consistent API.
+#' @inheritParams stochastic_matrix
+#' @keywords internal
+#' @export
+get.stochastic <- function(graph , column.wise = FALSE , sparse = igraph_opt("sparsematrices")) {
+   lifecycle::deprecate_soft("1.5.0", "get.stochastic()", "stochastic_matrix()")
+   stochastic_matrix(graph = graph, column.wise = column.wise, sparse = sparse)
+}
+
 
 
 #' SCG Problem Solver
@@ -287,6 +302,21 @@ scg_group <- function(V, nt,
   res
 }
 
+#' SCG Problem Solver
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `scgGrouping()` was renamed to `scg_group()` to create a more
+#' consistent API.
+#' @inheritParams scg_group
+#' @keywords internal
+#' @export
+scgGrouping <- function(V , nt , mtype = c("symmetric","laplacian","stochastic") , algo = c("optimum","interv_km","interv","exact_scg") , p = NULL , maxiter = 100) {
+   lifecycle::deprecate_soft("1.5.0", "scgGrouping()", "scg_group()")
+   scg_group(V = V, nt = nt, mtype = mtype, algo = algo, p = p, maxiter = maxiter)
+}
+
 
 
 #' Semi-Projectors
@@ -403,6 +433,21 @@ scg_semi_proj <- function(groups,
   }
 
   res
+}
+
+#' Semi-Projectors
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `scgSemiProjectors()` was renamed to `scg_semi_proj()` to create a more
+#' consistent API.
+#' @inheritParams scg_semi_proj
+#' @keywords internal
+#' @export
+scgSemiProjectors <- function(groups , mtype = c("symmetric","laplacian","stochastic") , p = NULL , norm = c("row","col") , sparse = igraph_opt("sparsematrices")) {
+   lifecycle::deprecate_soft("1.5.0", "scgSemiProjectors()", "scg_semi_proj()")
+   scg_semi_proj(groups = groups, mtype = mtype, p = p, norm = norm, sparse = sparse)
 }
 
 

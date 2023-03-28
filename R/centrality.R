@@ -33,6 +33,21 @@ estimate_betweenness <- function(graph, vids = V(graph), directed = TRUE, cutoff
   betweenness(graph, v = vids, directed = directed, cutoff = cutoff, weights = weights)
 }
 
+#' Vertex and edge betweenness centrality
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `betweenness.estimate()` was renamed to `estimate_betweenness()` to create a more
+#' consistent API.
+#' @inheritParams estimate_betweenness
+#' @keywords internal
+#' @export
+betweenness.estimate <- function(graph , vids = V(graph) , directed = TRUE , cutoff , weights = NULL , nobigint = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "betweenness.estimate()", "estimate_betweenness()")
+   estimate_betweenness(graph = graph, vids = vids, directed = directed, cutoff = cutoff, weights = weights, nobigint = nobigint)
+}
+
 
 
 #' Vertex and edge betweenness centrality
@@ -186,11 +201,41 @@ edge_betweenness <- function(graph, e = E(graph),
   res[as.numeric(e)]
 }
 
+#' Vertex and edge betweenness centrality
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `edge.betweenness()` was renamed to `estimate_betweenness()` to create a more
+#' consistent API.
+#' @inheritParams estimate_betweenness
+#' @keywords internal
+#' @export
+edge.betweenness <- function(graph , e = E(graph) , directed = TRUE , weights = NULL , cutoff = -1) {
+   lifecycle::deprecate_soft("1.5.0", "edge.betweenness()", "estimate_betweenness()")
+   estimate_betweenness(graph = graph, e = e, directed = directed, weights = weights, cutoff = cutoff)
+}
+
 #' @family centrality
 #' @export
 estimate_edge_betweenness <- function(graph, e = E(graph),
                                       directed = TRUE, cutoff, weights = NULL) {
   edge_betweenness(graph, e, directed = directed, cutoff = cutoff, weights = weights)
+}
+
+#' Vertex and edge betweenness centrality
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `edge.betweenness.estimate()` was renamed to `estimate_betweenness()` to create a more
+#' consistent API.
+#' @inheritParams estimate_betweenness
+#' @keywords internal
+#' @export
+edge.betweenness.estimate <- function(graph , e = E(graph) , directed = TRUE , cutoff , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "edge.betweenness.estimate()", "estimate_betweenness()")
+   estimate_betweenness(graph = graph, e = e, directed = directed, cutoff = cutoff, weights = weights)
 }
 
 #' Closeness centrality of vertices
@@ -300,6 +345,21 @@ closeness <- function(graph, vids = V(graph),
 #' @export
 estimate_closeness <- function(graph, vids = V(graph), mode = c("out", "in", "all", "total"), cutoff, weights = NULL, normalized = FALSE) {
   closeness(graph, vids, mode = mode, weights = weights, normalized = normalized, cutoff = cutoff)
+}
+
+#' Closeness centrality of vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `closeness.estimate()` was renamed to `closeness()` to create a more
+#' consistent API.
+#' @inheritParams closeness
+#' @keywords internal
+#' @export
+closeness.estimate <- function(graph , vids = V(graph) , mode = c("out","in","all","total") , cutoff , weights = NULL , normalized = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "closeness.estimate()", "closeness()")
+   closeness(graph = graph, vids = vids, mode = mode, cutoff = cutoff, weights = weights, normalized = normalized)
 }
 
 #' @rdname arpack
@@ -616,6 +676,21 @@ subgraph_centrality <- function(graph, diag = FALSE) {
     names(res) <- vertex_attr(graph, "name")
   }
   res
+}
+
+#' Find subgraph centrality scores of network positions
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `subgraph.centrality()` was renamed to `subgraph_centrality()` to create a more
+#' consistent API.
+#' @inheritParams subgraph_centrality
+#' @keywords internal
+#' @export
+subgraph.centrality <- function(graph , diag = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "subgraph.centrality()", "subgraph_centrality()")
+   subgraph_centrality(graph = graph, diag = diag)
 }
 
 
@@ -1235,6 +1310,21 @@ power_centrality <- function(graph, nodes = V(graph),
   res
 }
 
+#' Find Bonacich Power Centrality Scores of Network Positions
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `bonpow()` was renamed to `power_centrality()` to create a more
+#' consistent API.
+#' @inheritParams power_centrality
+#' @keywords internal
+#' @export
+bonpow <- function(graph , nodes = V(graph) , loops = FALSE , exponent = 1 , rescale = FALSE , tol = 1e-7 , sparse = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "bonpow()", "power_centrality()")
+   power_centrality(graph = graph, nodes = nodes, loops = loops, exponent = exponent, rescale = rescale, tol = tol, sparse = sparse)
+}
+
 alpha.centrality.dense <- function(graph, nodes = V(graph), alpha = 1,
                                    loops = FALSE, exo = 1, weights = NULL,
                                    tol = 1e-7) {
@@ -1405,4 +1495,19 @@ alpha_centrality <- function(graph, nodes = V(graph), alpha = 1,
     names(res) <- vertex_attr(graph, "name", nodes)
   }
   res
+}
+
+#' Find Bonacich alpha centrality scores of network positions
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `alpha.centrality()` was renamed to `alpha_centrality()` to create a more
+#' consistent API.
+#' @inheritParams alpha_centrality
+#' @keywords internal
+#' @export
+alpha.centrality <- function(graph , nodes = V(graph) , alpha = 1 , loops = FALSE , exo = 1 , weights = NULL , tol = 1e-7 , sparse = TRUE) {
+   lifecycle::deprecate_soft("1.5.0", "alpha.centrality()", "alpha_centrality()")
+   alpha_centrality(graph = graph, nodes = nodes, alpha = alpha, loops = loops, exo = exo, weights = weights, tol = tol, sparse = sparse)
 }

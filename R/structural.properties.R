@@ -128,6 +128,21 @@ get_diameter <- function(graph, directed = TRUE, unconnected = TRUE,
   res
 }
 
+#' Diameter of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.diameter()` was renamed to `diameter()` to create a more
+#' consistent API.
+#' @inheritParams diameter
+#' @keywords internal
+#' @export
+get.diameter <- function(graph , directed = TRUE , unconnected = TRUE , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "get.diameter()", "diameter()")
+   diameter(graph = graph, directed = directed, unconnected = unconnected, weights = weights)
+}
+
 #' @family structural.properties
 #' @export
 farthest_vertices <- function(graph, directed = TRUE, unconnected = TRUE,
@@ -157,6 +172,21 @@ farthest_vertices <- function(graph, directed = TRUE, unconnected = TRUE,
   }
 
   res
+}
+
+#' Diameter of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `farthest.nodes()` was renamed to `diameter()` to create a more
+#' consistent API.
+#' @inheritParams diameter
+#' @keywords internal
+#' @export
+farthest.nodes <- function(graph , directed = TRUE , unconnected = TRUE , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "farthest.nodes()", "diameter()")
+   diameter(graph = graph, directed = directed, unconnected = unconnected, weights = weights)
 }
 
 #' @family structural.properties
@@ -249,6 +279,21 @@ degree_distribution <- function(graph, cumulative = FALSE, ...) {
   }
 
   res
+}
+
+#' Degree and degree distribution of the vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `degree.distribution()` was renamed to `degree()` to create a more
+#' consistent API.
+#' @inheritParams degree
+#' @keywords internal
+#' @export
+degree.distribution <- function(graph , cumulative = FALSE , ...) {
+   lifecycle::deprecate_soft("1.5.0", "degree.distribution()", "degree()")
+   degree(graph = graph, cumulative = cumulative, ...)
 }
 
 
@@ -489,6 +534,21 @@ distances <- function(graph, v = V(graph), to = V(graph),
   res
 }
 
+#' Shortest (directed or undirected) paths between vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `shortest.paths()` was renamed to `distance_table()` to create a more
+#' consistent API.
+#' @inheritParams distance_table
+#' @keywords internal
+#' @export
+shortest.paths <- function(graph , v = V(graph) , to = V(graph) , mode = c("all","out","in") , weights = NULL , algorithm = c("automatic","unweighted","dijkstra","bellman-ford","johnson")) {
+   lifecycle::deprecate_soft("1.5.0", "shortest.paths()", "distance_table()")
+   distance_table(graph = graph, v = v, to = to, mode = mode, weights = weights, algorithm = algorithm)
+}
+
 #' @rdname distances
 #' @param from Numeric constant, the vertex from or to the shortest paths will
 #'   be calculated. Note that right now this is not a vector of vertex ids, but
@@ -606,6 +666,21 @@ shortest_paths <- function(graph, from, to = V(graph),
   res
 }
 
+#' Shortest (directed or undirected) paths between vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.shortest.paths()` was renamed to `distance_table()` to create a more
+#' consistent API.
+#' @inheritParams distance_table
+#' @keywords internal
+#' @export
+get.shortest.paths <- function(graph , from , to = V(graph) , mode = c("out","all","in") , weights = NULL , output = c("vpath","epath","both") , predecessors = FALSE , inbound.edges = FALSE , algorithm = c("automatic","unweighted","dijkstra","bellman-ford")) {
+   lifecycle::deprecate_soft("1.5.0", "get.shortest.paths()", "distance_table()")
+   distance_table(graph = graph, from = from, to = to, mode = mode, weights = weights, output = output, predecessors = predecessors, inbound.edges = inbound.edges, algorithm = algorithm, x = x, x = x)
+}
+
 #' @family structural.properties
 #' @export
 #' @rdname distances
@@ -655,6 +730,21 @@ all_shortest_paths <- function(graph, from,
   }
 
   res
+}
+
+#' Shortest (directed or undirected) paths between vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `get.all.shortest.paths()` was renamed to `distance_table()` to create a more
+#' consistent API.
+#' @inheritParams distance_table
+#' @keywords internal
+#' @export
+get.all.shortest.paths <- function(graph , from , to = V(graph) , mode = c("out","all","in") , weights = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "get.all.shortest.paths()", "distance_table()")
+   distance_table(graph = graph, from = from, to = to, mode = mode, weights = weights)
 }
 
 #' In- or out- component of a vertex
@@ -774,6 +864,21 @@ induced_subgraph <- function(graph, vids, impl = c("auto", "copy_and_delete", "c
   res <- .Call(C_R_igraph_induced_subgraph, graph, vids - 1, impl)
 
   res
+}
+
+#' Subgraph of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `induced.subgraph()` was renamed to `subgraph()` to create a more
+#' consistent API.
+#' @inheritParams subgraph
+#' @keywords internal
+#' @export
+induced.subgraph <- function(graph , vids , impl = c("auto","copy_and_delete","create_from_scratch")) {
+   lifecycle::deprecate_soft("1.5.0", "induced.subgraph()", "subgraph()")
+   subgraph(graph = graph, vids = vids, impl = impl)
 }
 
 #' @rdname subgraph
@@ -1132,6 +1237,21 @@ edge_density <- function(graph, loops = FALSE) {
   .Call(C_R_igraph_density, graph, as.logical(loops))
 }
 
+#' Graph density
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.density()` was renamed to `edge_density()` to create a more
+#' consistent API.
+#' @inheritParams edge_density
+#' @keywords internal
+#' @export
+graph.density <- function(graph , loops = FALSE) {
+   lifecycle::deprecate_soft("1.5.0", "graph.density()", "edge_density()")
+   edge_density(graph = graph, loops = loops)
+}
+
 #' @rdname ego
 #' @family structural.properties
 #' @export
@@ -1154,6 +1274,21 @@ ego_size <- function(graph, order = 1, nodes = V(graph),
     as.igraph.vs(graph, nodes) - 1, as.numeric(order), as.numeric(mode),
     mindist
   )
+}
+
+#' Neighborhood of graph vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `neighborhood.size()` was renamed to `connect()` to create a more
+#' consistent API.
+#' @inheritParams connect
+#' @keywords internal
+#' @export
+neighborhood.size <- function(graph , order = 1 , nodes = V(graph) , mode = c("all","out","in") , mindist = 0) {
+   lifecycle::deprecate_soft("1.5.0", "neighborhood.size()", "connect()")
+   connect(graph = graph, order = order, nodes = nodes, mode = mode, mindist = mindist)
 }
 
 
@@ -1254,6 +1389,21 @@ ego <- function(graph, order = 1, nodes = V(graph),
   res
 }
 
+#' Neighborhood of graph vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `neighborhood()` was renamed to `connect()` to create a more
+#' consistent API.
+#' @inheritParams connect
+#' @keywords internal
+#' @export
+neighborhood <- function(graph , order = 1 , nodes = V(graph) , mode = c("all","out","in") , mindist = 0) {
+   lifecycle::deprecate_soft("1.5.0", "neighborhood()", "connect()")
+   connect(graph = graph, order = order, nodes = nodes, mode = mode, mindist = mindist, x = x)
+}
+
 #' @rdname ego
 #' @family structural.properties
 #' @export
@@ -1277,6 +1427,21 @@ make_ego_graph <- function(graph, order = 1, nodes = V(graph),
     as.numeric(mode), mindist
   )
   res
+}
+
+#' Neighborhood of graph vertices
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.neighborhood()` was renamed to `connect()` to create a more
+#' consistent API.
+#' @inheritParams connect
+#' @keywords internal
+#' @export
+graph.neighborhood <- function(graph , order = 1 , nodes = V(graph) , mode = c("all","out","in") , mindist = 0) {
+   lifecycle::deprecate_soft("1.5.0", "graph.neighborhood()", "connect()")
+   connect(graph = graph, order = order, nodes = nodes, mode = mode, mindist = mindist)
 }
 
 
@@ -1336,6 +1501,21 @@ coreness <- function(graph, mode = c("all", "out", "in")) {
   res
 }
 
+#' K-core decomposition of graphs
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.coreness()` was renamed to `coreness()` to create a more
+#' consistent API.
+#' @inheritParams coreness
+#' @keywords internal
+#' @export
+graph.coreness <- function(graph , mode = c("all","out","in")) {
+   lifecycle::deprecate_soft("1.5.0", "graph.coreness()", "coreness()")
+   coreness(graph = graph, mode = mode)
+}
+
 
 
 #' Topological sorting of vertices in a graph
@@ -1385,6 +1565,21 @@ topo_sort <- function(graph, mode = c("out", "all", "in")) {
   if (igraph_opt("return.vs.es")) res <- create_vs(graph, res)
 
   res
+}
+
+#' Topological sorting of vertices in a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `topological.sort()` was renamed to `topo_sort()` to create a more
+#' consistent API.
+#' @inheritParams topo_sort
+#' @keywords internal
+#' @export
+topological.sort <- function(graph , mode = c("out","all","in")) {
+   lifecycle::deprecate_soft("1.5.0", "topological.sort()", "topo_sort()")
+   topo_sort(graph = graph, mode = mode)
 }
 
 #' Finding a feedback arc set in a graph
@@ -1725,6 +1920,21 @@ bfs <- function(graph, root, mode = c("out", "in", "all", "total"),
   res
 }
 
+#' Breadth-first search
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.bfs()` was renamed to `bfs()` to create a more
+#' consistent API.
+#' @inheritParams bfs
+#' @keywords internal
+#' @export
+graph.bfs <- function(graph , root , mode = c("out","in","all","total") , unreachable = TRUE , restricted = NULL , order = TRUE , rank = FALSE , father = FALSE , pred = FALSE , succ = FALSE , dist = FALSE , callback = NULL , extra = NULL , rho = parent.frame() , neimode) {
+   lifecycle::deprecate_soft("1.5.0", "graph.bfs()", "bfs()")
+   bfs(graph = graph, root = root, mode = mode, unreachable = unreachable, restricted = restricted, order = order, rank = rank, father = father, pred = pred, succ = succ, dist = dist, callback = callback, extra = extra, rho = rho, neimode = neimode)
+}
+
 
 
 #' Depth-first search
@@ -1876,6 +2086,21 @@ dfs <- function(graph, root, mode = c("out", "in", "all", "total"),
   res
 }
 
+#' Depth-first search
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.dfs()` was renamed to `dfs()` to create a more
+#' consistent API.
+#' @inheritParams dfs
+#' @keywords internal
+#' @export
+graph.dfs <- function(graph , root , mode = c("out","in","all","total") , unreachable = TRUE , order = TRUE , order.out = FALSE , father = FALSE , dist = FALSE , in.callback = NULL , out.callback = NULL , extra = NULL , rho = parent.frame() , neimode) {
+   lifecycle::deprecate_soft("1.5.0", "graph.dfs()", "dfs()")
+   dfs(graph = graph, root = root, mode = mode, unreachable = unreachable, order = order, order.out = order.out, father = father, dist = dist, in.callback = in.callback, out.callback = out.callback, extra = extra, rho = rho, neimode = neimode)
+}
+
 #' Connected components of a graph
 #'
 #' Calculate the maximal (weakly or strongly) connected components of a graph
@@ -1948,6 +2173,21 @@ components <- function(graph, mode = c("weak", "strong")) {
   res
 }
 
+#' Connected components of a graph
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `clusters()` was renamed to `component_distribution()` to create a more
+#' consistent API.
+#' @inheritParams component_distribution
+#' @keywords internal
+#' @export
+clusters <- function(graph , mode = c("weak","strong")) {
+   lifecycle::deprecate_soft("1.5.0", "clusters()", "component_distribution()")
+   component_distribution(graph = graph, mode = mode)
+}
+
 #' @rdname components
 #' @export
 is_connected <- is_connected_impl
@@ -2007,6 +2247,21 @@ unfold_tree <- function(graph, mode = c("all", "out", "in", "total"), roots) {
   # Function call
   res <- .Call(C_R_igraph_unfold_tree, graph, mode, roots)
   res
+}
+
+#' Convert a general graph into a forest
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `unfold.tree()` was renamed to `unfold_tree()` to create a more
+#' consistent API.
+#' @inheritParams unfold_tree
+#' @keywords internal
+#' @export
+unfold.tree <- function(graph , mode = c("all","out","in","total") , roots) {
+   lifecycle::deprecate_soft("1.5.0", "unfold.tree()", "unfold_tree()")
+   unfold_tree(graph = graph, mode = mode, roots = roots)
 }
 
 #' Graph Laplacian
@@ -2078,6 +2333,21 @@ laplacian_matrix <- function(graph, normalized = FALSE, weights = NULL,
     rownames(res) <- colnames(res) <- V(graph)$name
   }
   res
+}
+
+#' Graph Laplacian
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph.laplacian()` was renamed to `laplacian_matrix()` to create a more
+#' consistent API.
+#' @inheritParams laplacian_matrix
+#' @keywords internal
+#' @export
+graph.laplacian <- function(graph , normalized = FALSE , weights = NULL , sparse = igraph_opt("sparsematrices")) {
+   lifecycle::deprecate_soft("1.5.0", "graph.laplacian()", "laplacian_matrix()")
+   laplacian_matrix(graph = graph, normalized = normalized, weights = weights, sparse = sparse)
 }
 
 #' Matching
@@ -2186,6 +2456,21 @@ is_matching <- function(graph, matching, types = NULL) {
   res
 }
 
+#' Matching
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `is.matching()` was renamed to `is_matching()` to create a more
+#' consistent API.
+#' @inheritParams is_matching
+#' @keywords internal
+#' @export
+is.matching <- function(graph , matching , types = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "is.matching()", "is_matching()")
+   is_matching(graph = graph, matching = matching, types = types)
+}
+
 #' @family structural.properties
 #' @export
 #' @rdname matching
@@ -2203,6 +2488,21 @@ is_max_matching <- function(graph, matching, types = NULL) {
   res <- .Call(C_R_igraph_is_maximal_matching, graph, types, matching)
 
   res
+}
+
+#' Matching
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `is.maximal.matching()` was renamed to `is_matching()` to create a more
+#' consistent API.
+#' @inheritParams is_matching
+#' @keywords internal
+#' @export
+is.maximal.matching <- function(graph , matching , types = NULL) {
+   lifecycle::deprecate_soft("1.5.0", "is.maximal.matching()", "is_matching()")
+   is_matching(graph = graph, matching = matching, types = types)
 }
 
 #' @family structural.properties
@@ -2238,6 +2538,21 @@ max_bipartite_match <- function(graph, types = NULL, weights = NULL,
     names(res$matching) <- V(graph)$name
   }
   res
+}
+
+#' Matching
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `maximum.bipartite.matching()` was renamed to `is_matching()` to create a more
+#' consistent API.
+#' @inheritParams is_matching
+#' @keywords internal
+#' @export
+maximum.bipartite.matching <- function(graph , types = NULL , weights = NULL , eps = .Machine$double.eps) {
+   lifecycle::deprecate_soft("1.5.0", "maximum.bipartite.matching()", "is_matching()")
+   is_matching(graph = graph, types = types, weights = weights, eps = eps)
 }
 
 
