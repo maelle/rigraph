@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.1.9006</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.1.9017</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,8 @@ argument is ignored.</p></dd>
 <dd><p>Weight vector. If the graph has a <code>weight</code> edge
 attribute, then this is used by default. If the graph does not have a
 <code>weight</code> edge attribute and this argument is <code>NULL</code>, then a
-warning is given and <code><a href="degree.html">degree()</a></code> is called.</p></dd>
+<code><a href="degree.html">degree()</a></code> is called. If this is <code>NA</code>, then no edge weights are used
+(even if the graph has a <code>weight</code> edge attribute).</p></dd>
 
 </dl></div>
     <div class="section level2">
