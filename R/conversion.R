@@ -834,16 +834,16 @@ get.incidence.sparse <- function(graph, types, names, attr) {
 #'   created, you will need the `Matrix` package for this.
 #' @return A sparse or dense matrix.
 #' @author Gabor Csardi \email{csardi.gabor@@gmail.com}
-#' @seealso [graph_from_incidence_matrix()] for the opposite operation.
+#' @seealso [graph_from_biadjacency_matrix()] for the opposite operation.
 #' @family conversion
 #' @export
 #' @keywords graphs
 #' @examples
 #'
 #' g <- make_bipartite_graph(c(0, 1, 0, 1, 0, 0), c(1, 2, 2, 3, 3, 4))
-#' as_incidence_matrix(g)
+#' as_biadjacency_matrix(g)
 #'
-as_incidence_matrix <- function(graph, types = NULL, attr = NULL,
+as_biadjacency_matrix <- function(graph, types = NULL, attr = NULL,
                                 names = TRUE, sparse = FALSE) {
   # Argument checks
   ensure_igraph(graph)
@@ -858,7 +858,20 @@ as_incidence_matrix <- function(graph, types = NULL, attr = NULL,
     get.incidence.dense(graph, types = types, names = names, attr = attr)
   }
 }
-
+#' As incidence matrix
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `as_incidence_matrix()` was renamed to `as_biadjacency_matrix()` to create a more
+#' consistent API.
+#' @inheritParams as_biadjacency_matrix
+#' @keywords internal
+#' @export
+as_incidence_matrix <- function(...) {
+   lifecycle::deprecate_soft("1.5.2", "as_incidence_matrix()", "as_biadjacency_matrix()")
+   as_biadjacency_matrix(...)
+}
 #' @rdname graph_from_data_frame
 #' @param x An igraph object.
 #' @param what Character constant, whether to return info about vertices,

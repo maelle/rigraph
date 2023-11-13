@@ -139,14 +139,14 @@ graph.incidence.dense <- function(incidence, directed, mode, multiple,
 
 #' Create graphs from an incidence matrix
 #'
-#' `graph_from_incidence_matrix()` creates a bipartite igraph graph from an incidence
+#' `graph_from_biadjacency_matrix()` creates a bipartite igraph graph from an incidence
 #' matrix.
 #'
 #' Bipartite graphs have a \sQuote{`type`} vertex attribute in igraph,
 #' this is boolean and `FALSE` for the vertices of the first kind and
 #' `TRUE` for vertices of the second kind.
 #'
-#' `graph_from_incidence_matrix()` can operate in two modes, depending on the
+#' `graph_from_biadjacency_matrix()` can operate in two modes, depending on the
 #' `multiple` argument. If it is `FALSE` then a single edge is
 #' created for every non-zero element in the incidence matrix. If
 #' `multiple` is `TRUE`, then the matrix elements are rounded up to
@@ -174,7 +174,7 @@ graph.incidence.dense <- function(incidence, directed, mode, multiple,
 #'   weighted graph is created and the name of the edge attribute will be
 #'   \sQuote{`weight`}.
 #' @param add.names A character constant, `NA` or `NULL`.
-#'   `graph_from_incidence_matrix()` can add the row and column names of the incidence
+#'   `graph_from_biadjacency_matrix()` can add the row and column names of the incidence
 #'   matrix as vertex attributes. If this argument is `NULL` (the default)
 #'   and the incidence matrix has both row and column names, then these are added
 #'   as the \sQuote{`name`} vertex attribute. If you want a different vertex
@@ -192,10 +192,10 @@ graph.incidence.dense <- function(incidence, directed, mode, multiple,
 #' inc <- matrix(sample(0:1, 15, repl = TRUE), 3, 5)
 #' colnames(inc) <- letters[1:5]
 #' rownames(inc) <- LETTERS[1:3]
-#' graph_from_incidence_matrix(inc)
+#' graph_from_biadjacency_matrix(inc)
 #'
 #' @export
-graph_from_incidence_matrix <- function(incidence, directed = FALSE,
+graph_from_biadjacency_matrix <- function(incidence, directed = FALSE,
                                         mode = c("all", "out", "in", "total"),
                                         multiple = FALSE, weighted = NULL,
                                         add.names = NULL) {
@@ -243,9 +243,31 @@ graph_from_incidence_matrix <- function(incidence, directed = FALSE,
   }
   res
 }
-
-#' @rdname graph_from_incidence_matrix
-#' @param ... Passed to `graph_from_incidence_matrix()`.
-#' @family incidence
+#' Graph from incidence matrix
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph_from_incidence_matrix()` was renamed to `graph_from_biadjacency_matrix()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_biadjacency_matrix
+#' @keywords internal
 #' @export
-from_incidence_matrix <- function(...) constructor_spec(graph_from_incidence_matrix, ...)
+from_incidence_matrix <- function(...) {
+   lifecycle::deprecate_soft("1.5.2", "graph_from_incidence_matrix()", "graph_from_biadjacency_matrix()")
+   graph_from_biadjacency_matrix(...)
+}
+#' From incidence matrix
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `graph_from_incidence_matrix()` was renamed to `graph_from_biadjacency_matrix()` to create a more
+#' consistent API.
+#' @inheritParams graph_from_biadjacency_matrix
+#' @keywords internal
+#' @export
+graph_from_incidence_matrix <- function(...) {
+   lifecycle::deprecate_soft("1.5.2", "graph_from_incidence_matrix()", "graph_from_biadjacency_matrix()")
+   graph_from_biadjacency_matrix(...)
+}
