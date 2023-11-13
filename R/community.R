@@ -93,10 +93,10 @@
 #' `dendrogram` object. It only works for hierarchical methods, and gives
 #' an error message to others. See [stats::dendrogram()] for details.
 #'
-#' `as.hclust` is similar to [as.dendrogram()], but converts a
+#' [stats::as.hclust()] is similar to [as.dendrogram()], but converts a
 #' hierarchical community structure to a `hclust` object.
 #'
-#' `as_phylo()` converts a hierarchical community structure to a `phylo`
+#' [ape::as.phylo()] converts a hierarchical community structure to a `phylo`
 #' object, you will need the `ape` package for this.
 #'
 #' `show_trace()` works (currently) only for communities found by the leading
@@ -117,11 +117,12 @@
 #' [igraph.plotting] on how to change the plot.
 #'
 #' @rdname communities
+#' @family community
 #' @aliases communities membership algorithm crossing cutat merges sizes cut_at
 #' is.hierarchical print.communities plot.communities length.communities
 #' as.dendrogram.communities as.hclust.communities code_len
-#' asPhylo asPhylo.communities showtrace code.length
-#' as_phylo as_phylo.communities show_trace is_hierarchical
+#' showtrace code.length
+#' show_trace is_hierarchical
 #' @param communities,x,object A `communities` object, the result of an
 #'   igraph community detection function.
 #' @param graph An igraph graph object, corresponding to `communities`.
@@ -192,23 +193,13 @@
 #'
 #'   [plot()] for `communities` objects returns `NULL`, invisibly.
 #'
-#'   #' @author Gabor Csardi \email{csardi.gabor@@gmail.com}
+#' @author Gabor Csardi \email{csardi.gabor@@gmail.com}
 #' @seealso See [plot_dendrogram()] for plotting community structure
 #' dendrograms.
 #'
 #' See [compare()] for comparing two community structures
 #' on the same graph.
-#'
-#' The different methods for finding communities, they all return a
-#' `communities` object: [cluster_edge_betweenness()],
-#' [cluster_fast_greedy()],
-#' [cluster_label_prop()],
-#' [cluster_leading_eigen()],
-#' [cluster_louvain()], [cluster_leiden()],
-#' [cluster_optimal()], [cluster_spinglass()],
-#' [cluster_walktrap()].
 #' @keywords graphs
-#' @family community
 #' @export
 #' @examples
 #'
@@ -264,7 +255,6 @@ as_membership <- function(x) add_class(x, "membership")
 
 #' @rdname communities
 #' @method print communities
-#' @family community
 #' @export
 print.communities <- function(x, ...) {
   noc <- if (!is.null(x$membership)) max(membership(x), 0) else NA
@@ -457,7 +447,6 @@ modularity.igraph <- function(x, membership, weights = NULL, resolution = 1, dir
 
 #' @rdname communities
 #' @method modularity communities
-#' @family community
 #' @export
 modularity.communities <- function(x, ...) {
   if (!is.null(x$modularity)) {
@@ -469,7 +458,6 @@ modularity.communities <- function(x, ...) {
 
 #' @rdname modularity.igraph
 #' @aliases mod.matrix
-#' @family community
 #' @export
 modularity_matrix <- function(graph, membership, weights = NULL, resolution = 1, directed = TRUE) {
   # Argument checks
@@ -500,7 +488,6 @@ modularity_matrix <- function(graph, membership, weights = NULL, resolution = 1,
 
 #' @rdname communities
 #' @method length communities
-#' @family community
 #' @export
 length.communities <- function(x) {
   m <- membership(x)
@@ -508,7 +495,6 @@ length.communities <- function(x) {
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 sizes <- function(communities) {
   m <- membership(communities)
@@ -516,14 +502,12 @@ sizes <- function(communities) {
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 algorithm <- function(communities) {
   communities$algorithm
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 merges <- function(communities) {
   if (!is.null(communities$merges)) {
@@ -534,7 +518,6 @@ merges <- function(communities) {
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 crossing <- function(communities, graph) {
   m <- membership(communities)
@@ -549,14 +532,12 @@ crossing <- function(communities, graph) {
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 code_len <- function(communities) {
   communities$codelength
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 is_hierarchical <- function(communities) {
   !is.null(communities$merges)
@@ -586,7 +567,6 @@ complete.dend <- function(comm, use.modularity) {
 #' @rdname communities
 #' @importFrom stats as.dendrogram
 #' @method as.dendrogram communities
-#' @family community
 #' @export
 as.dendrogram.communities <- function(object, hang = -1, use.modularity = FALSE,
                                       ...) {
@@ -683,25 +663,13 @@ as.dendrogram.communities <- function(object, hang = -1, use.modularity = FALSE,
 #' @rdname communities
 #' @importFrom stats as.hclust
 #' @method as.hclust communities
-#' @family community
 #' @export
 as.hclust.communities <- function(x, hang = -1, use.modularity = FALSE,
                                   ...) {
   as.hclust(as.dendrogram(x, hang = hang, use.modularity = use.modularity))
 }
 
-#' @rdname communities
-#' @family community
-#' @export
-as_phylo <- function(x, ...) {
-  UseMethod("as_phylo")
-}
-
-#' @rdname communities
-#' @method as_phylo communities
-#' @family community
-#' @export
-as_phylo.communities <- function(x, use.modularity = FALSE, ...) {
+as.phylo.communities <- function(x, use.modularity = FALSE, ...) {
   if (!is_hierarchical(x)) {
     stop("Not a hierarchical community structure")
   }
@@ -753,9 +721,8 @@ as_phylo.communities <- function(x, use.modularity = FALSE, ...) {
   class(obj) <- "phylo"
   ape::reorder.phylo(obj)
 }
-
+rlang::on_load(s3_register("ape::as.phylo", "communities"))
 #' @rdname communities
-#' @family community
 #' @export
 cut_at <- function(communities, no, steps) {
   if (!inherits(communities, "communities")) {
@@ -790,7 +757,6 @@ cut_at <- function(communities, no, steps) {
 }
 
 #' @rdname communities
-#' @family community
 #' @export
 show_trace <- function(communities) {
   if (!inherits(communities, "communities")) {
@@ -1724,6 +1690,7 @@ cluster_leading_eigen <- function(graph, steps = -1, weights = NULL,
 #'   weights. Set this to `NA` if the graph was a \sQuote{weight} edge
 #'   attribute, but you don't want to use it for community detection. A larger
 #'   edge weight means a stronger connection for this function.
+#' @inheritParams rlang::args_dots_empty
 #' @param initial The initial state. If `NULL`, every vertex will have a
 #'   different label at the beginning. Otherwise it must be a vector with an
 #'   entry for each vertex. Non-negative values denote different labels, negative
@@ -1753,7 +1720,40 @@ cluster_leading_eigen <- function(graph, steps = -1, weights = NULL,
 #' g <- add_edges(g, c(1, 12))
 #' cluster_label_prop(g)
 #'
-cluster_label_prop <- function(graph, weights = NULL, initial = NULL, fixed = NULL) {
+cluster_label_prop <- function(
+    graph,
+    weights = NULL,
+    ...,
+    initial = NULL,
+    fixed = NULL) {
+  if (...length() > 0) {
+    lifecycle::deprecate_soft(
+      "1.6.0",
+      "cluster_label_prop(... = )",
+      details = "Arguments `initial` and `fixed` must be named."
+    )
+
+    dots <- list(...)
+    dots[["graph"]] <- graph
+    dots[["weights"]] <- weights
+    if (!is.null(initial)) {
+      dots[["initial"]] <- initial
+    }
+    if (!is.null(fixed)) {
+      dots[["fixed"]] <- fixed
+    }
+
+    return(inject(cluster_label_prop0(!!!dots)))
+  }
+
+  cluster_label_prop0(graph, weights, initial, fixed)
+}
+
+cluster_label_prop0 <- function(
+    graph,
+    weights = NULL,
+    initial = NULL,
+    fixed = NULL) {
   # Argument checks
   ensure_igraph(graph)
 
@@ -2060,7 +2060,6 @@ cluster_infomap <- function(graph, e.weights = NULL, v.weights = NULL,
 
 #' @rdname communities
 #' @method plot communities
-#' @family community
 #' @export
 #' @importFrom graphics plot
 plot.communities <- function(x, y,
@@ -2079,7 +2078,6 @@ plot.communities <- function(x, y,
 
 #' @rdname plot_dendrogram.communities
 #' @aliases dendPlot
-#' @family community
 #' @export
 plot_dendrogram <- function(x, mode = igraph_opt("dend.plot.type"), ...) {
   UseMethod("plot_dendrogram")
@@ -2225,7 +2223,7 @@ dendPlotPhylo <- function(communities, colbar = palette(),
                           use.modularity = FALSE,
                           edge.color = "#AAAAAAFF",
                           edge.lty = c(1, 2), ...) {
-  phy <- as_phylo(communities, use.modularity = use.modularity)
+  phy <- ape::as.phylo(communities, use.modularity = use.modularity)
 
   getedges <- function(tip) {
     repeat {
@@ -2279,15 +2277,6 @@ dendPlotPhylo <- function(communities, colbar = palette(),
 #'   (1985).
 #' @return A real number.
 #' @author Tamas Nepusz \email{ntamas@@gmail.com}
-#' @seealso See [cluster_walktrap()],
-#' [cluster_spinglass()],
-#' [cluster_leading_eigen()],
-#' [cluster_edge_betweenness()],
-#' [cluster_fast_greedy()],
-#' [cluster_label_prop()]
-#' [cluster_louvain()]
-#' [cluster_leiden()]
-#' for various community detection methods.
 #' @references Meila M: Comparing clusterings by the variation of information.
 #' In: Scholkopf B, Warmuth MK (eds.). *Learning Theory and Kernel
 #' Machines: 16th Annual Conference on Computational Learning Theory and 7th
