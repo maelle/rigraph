@@ -9,6 +9,7 @@ on:
     branches:
       - main
       - fix/*
+      - clean-deprecations
 
 name: R-CMD-check
 
