@@ -265,7 +265,36 @@ purrr::walk2(
 # delete script ----
 fs::file_delete(zzz_script)
 
+gert::git_add("tools/deprecate-template.txt")
+gert::git_add("tools/deprecate.R")
+gert::git_commit("add tools script and template")
+gert::git_add("R/zzz-deprecate.R")
+gert::git_commit("rm zzz-deprecate")
+gert::git_push()
 # modif by hand
 # https://github.com/igraph/rigraph/pull/970/commits/a336806f1cd64573a4705f1bc8b966ac1e53b07d
 # https://github.com/igraph/rigraph/pull/970/commits/6a14368f9ab6405bab30342fa81fb358afc9a9ff
 # https://github.com/igraph/rigraph/pull/970/commits/d40a77150cd52dbd8125694d736b193d6be6da35
+gert::git_branch_create("zzz2")
+
+files <- gert::git_status()[["file"]]
+files <- files[startsWith(files, "R/")]
+snapshot_file <- function(path) {
+  gert::git_add(path)
+  gert::git_commit(sprintf("refactor!: change %s", path))
+}
+commits <- purrr::map_chr(files, snapshot_files)
+
+gert::git_branch_checkout("zzzz")
+
+build_commit <- function(commit) {
+
+  message <- gert::git_commit_info(commit)[["message"]]
+
+  gert::git_cherry_pick(commit)
+  gert::git_reset_soft()
+  devtools::document()
+
+  gert::git_commit_all(message)
+}
+purrr::walk(commits, build_commit)
