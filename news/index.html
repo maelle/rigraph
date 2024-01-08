@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.6.0.9007</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.6.0.9021</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +59,205 @@
       <small>Source: <a href="https://github.com/igraph/rigraph/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9021" id="igraph-1609021">igraph 1.6.0.9021<a class="anchor" aria-label="anchor" href="#igraph-1609021"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9021">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9021"></a></h3>
+<ul><li>Restore <code><a href="../reference/hrg_tree.html">hrg_tree()</a></code> semantics (<a href="https://github.com/igraph/rigraph/issues/1078" class="external-link">#1078</a>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9020" id="igraph-1609020">igraph 1.6.0.9020<a class="anchor" aria-label="anchor" href="#igraph-1609020"></a></h2>
+<div class="section level3">
+<h3 id="chore-1-6-0-9020">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9020"></a></h3>
+<ul><li><p>Fix typo in revdepcheck script.</p></li>
+<li><p>Tweak revdepcheck scripts.</p></li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9019" id="igraph-1609019">igraph 1.6.0.9019<a class="anchor" aria-label="anchor" href="#igraph-1609019"></a></h2>
+<div class="section level3">
+<h3 id="chore-1-6-0-9019">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9019"></a></h3>
+<ul><li>Update revdepcheck results.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9018" id="igraph-1609018">igraph 1.6.0.9018<a class="anchor" aria-label="anchor" href="#igraph-1609018"></a></h2>
+<div class="section level3">
+<h3 id="chore-1-6-0-9018">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9018"></a></h3>
+<ul><li><p>Update revdepcheck results.</p></li>
+<li><p>Exclude bad packages from checks.</p></li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9017" id="igraph-1609017">igraph 1.6.0.9017<a class="anchor" aria-label="anchor" href="#igraph-1609017"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9017">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9017"></a></h3>
+<ul><li>Add scalar conversion checks in a few critical places (<a href="https://github.com/igraph/rigraph/issues/1069" class="external-link">#1069</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="refactoring-1-6-0-9017">Refactoring<a class="anchor" aria-label="anchor" href="#refactoring-1-6-0-9017"></a></h3>
+<ul><li><p>Remove unused vectorlist / matrixlist destructors (<a href="https://github.com/igraph/rigraph/issues/1070" class="external-link">#1070</a>).</p></li>
+<li><p>Breaking change: remove graph.isomorphic.34(), fixes <a href="https://github.com/igraph/rigraph/issues/1065" class="external-link">#1065</a> (<a href="https://github.com/igraph/rigraph/issues/1067" class="external-link">#1067</a>).</p></li>
+<li><p>Use integers for mode enum in cluster_label_prop.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="breaking-changes-1-6-0-9017">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-6-0-9017"></a></h3>
+<ul><li>Breaking change: remove graph.isomorphic.34(), fixes <a href="https://github.com/igraph/rigraph/issues/1065" class="external-link">#1065</a> (<a href="https://github.com/igraph/rigraph/issues/1067" class="external-link">#1067</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="uncategorized-1-6-0-9017">Uncategorized<a class="anchor" aria-label="anchor" href="#uncategorized-1-6-0-9017"></a></h3>
+<ul><li>Check that matrix sizes are in the supported range before passing them to R (<a href="https://github.com/igraph/rigraph/issues/1066" class="external-link">#1066</a>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9016" id="igraph-1609016">igraph 1.6.0.9016<a class="anchor" aria-label="anchor" href="#igraph-1609016"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9016">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9016"></a></h3>
+<ul><li><p>Check that we receive a scalar when expecting a scalar in C code (<a href="https://github.com/igraph/rigraph/issues/1051" class="external-link">#1051</a>).</p></li>
+<li><p>Local (weighted) transitivity now produces a named vector (<a href="https://github.com/igraph/rigraph/issues/1057" class="external-link">#1057</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="chore-1-6-0-9016">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9016"></a></h3>
+<ul><li><p>Standardize the handling of some stimulus enum types (<a href="https://github.com/igraph/rigraph/issues/1064" class="external-link">#1064</a>).</p></li>
+<li><p>Improve readability in rinterface.h.</p></li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9015" id="igraph-1609015">igraph 1.6.0.9015<a class="anchor" aria-label="anchor" href="#igraph-1609015"></a></h2>
+<div class="section level3">
+<h3 id="features-1-6-0-9015">Features<a class="anchor" aria-label="anchor" href="#features-1-6-0-9015"></a></h3>
+<ul><li>Breaking change: Remove <code>NA</code> padding for <code>dfs(unreachable = FALSE)$order</code> and <code>$order.out</code> and for <code>bfs(unreachable = FALSE)$order</code> . (<a href="https://github.com/igraph/rigraph/issues/1062" class="external-link">#1062</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="chore-1-6-0-9015">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9015"></a></h3>
+<ul><li>Revdepcheck and scripts, no new failures.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="breaking-changes-1-6-0-9015">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-6-0-9015"></a></h3>
+<ul><li>Breaking change: Remove <code>NA</code> padding for <code>dfs(unreachable = FALSE)$order</code> and <code>$order.out</code> and for <code>bfs(unreachable = FALSE)$order</code> . (<a href="https://github.com/igraph/rigraph/issues/1062" class="external-link">#1062</a>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9014" id="igraph-1609014">igraph 1.6.0.9014<a class="anchor" aria-label="anchor" href="#igraph-1609014"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9014">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9014"></a></h3>
+<ul><li>Fix incorrect usage in subgraph.edges() example.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="features-1-6-0-9014">Features<a class="anchor" aria-label="anchor" href="#features-1-6-0-9014"></a></h3>
+<ul><li>New <code><a href="../reference/k_shortest_paths.html">k_shortest_paths()</a></code> to compute the first k shortest paths between two vertices (<a href="https://github.com/igraph/rigraph/issues/1028" class="external-link">#1028</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="chore-1-6-0-9014">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9014"></a></h3>
+<ul><li><p>Remove unused types (<a href="https://github.com/igraph/rigraph/issues/1060" class="external-link">#1060</a>).</p></li>
+<li><p>Re-generate docs.</p></li>
+<li><p>Don’t pass attributes to C functions (<a href="https://github.com/igraph/rigraph/issues/1048" class="external-link">#1048</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="refactoring-1-6-0-9014">Refactoring<a class="anchor" aria-label="anchor" href="#refactoring-1-6-0-9014"></a></h3>
+<ul><li><p>Do not duplicate prototypes, use a common header for rinterface.c / rinterface_extra.c (<a href="https://github.com/igraph/rigraph/issues/1055" class="external-link">#1055</a>).</p></li>
+<li><p>Remove unused stimulus type VERTEXSETLIST_INT (<a href="https://github.com/igraph/rigraph/issues/1049" class="external-link">#1049</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="tests-1-6-0-9014">tests<a class="anchor" aria-label="anchor" href="#tests-1-6-0-9014"></a></h3>
+<ul><li>Test transferring colors in isomorphism functions (<a href="https://github.com/igraph/rigraph/issues/1050" class="external-link">#1050</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="uncategorized-1-6-0-9014">Uncategorized<a class="anchor" aria-label="anchor" href="#uncategorized-1-6-0-9014"></a></h3>
+<ul><li>Refactor/type-refactorings (<a href="https://github.com/igraph/rigraph/issues/1052" class="external-link">#1052</a>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9013" id="igraph-1609013">igraph 1.6.0.9013<a class="anchor" aria-label="anchor" href="#igraph-1609013"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9013">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9013"></a></h3>
+<ul><li><p>Remove use of deprecated <code>STR()</code> (<a href="https://github.com/igraph/rigraph/issues/1034" class="external-link">#1034</a>).</p></li>
+<li><p>Stimulus argument dependencies (<a href="https://github.com/igraph/rigraph/issues/1037" class="external-link">#1037</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="features-1-6-0-9013">Features<a class="anchor" aria-label="anchor" href="#features-1-6-0-9013"></a></h3>
+<ul><li>Use <code>[]</code> assignment for converting matrices (<a href="https://github.com/igraph/rigraph/issues/1035" class="external-link">#1035</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="chore-1-6-0-9013">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9013"></a></h3>
+<ul><li><p>Remove unused includes (<a href="https://github.com/igraph/rigraph/issues/1039" class="external-link">#1039</a>).</p></li>
+<li><p>Move towards autogenerating all bindings (<a href="https://github.com/igraph/rigraph/issues/1043" class="external-link">#1043</a>).</p></li>
+<li><p>Avoid deprecated function (<a href="https://github.com/igraph/rigraph/issues/1041" class="external-link">#1041</a>).</p></li>
+<li><p>Use new function in favor of deprecated one (<a href="https://github.com/igraph/rigraph/issues/1038" class="external-link">#1038</a>).</p></li>
+<li><p>Stabilize <code>sources.mk</code> (<a href="https://github.com/igraph/rigraph/issues/1036" class="external-link">#1036</a>).</p></li>
+<li><p>Regenerate parser (<a href="https://github.com/igraph/rigraph/issues/1030" class="external-link">#1030</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="refactoring-1-6-0-9013">Refactoring<a class="anchor" aria-label="anchor" href="#refactoring-1-6-0-9013"></a></h3>
+<ul><li><p>Clean up some auto-generation code (<a href="https://github.com/igraph/rigraph/issues/1031" class="external-link">#1031</a>).</p></li>
+<li><p>Remove unused parts from code generation (<a href="https://github.com/igraph/rigraph/issues/1032" class="external-link">#1032</a>).</p></li>
+<li><p>Replace loop by <code><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply()</a></code> when returning vertex and edge sets (<a href="https://github.com/igraph/rigraph/issues/1033" class="external-link">#1033</a>).</p></li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9012" id="igraph-1609012">igraph 1.6.0.9012<a class="anchor" aria-label="anchor" href="#igraph-1609012"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9012">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9012"></a></h3>
+<ul><li>Fix auto-generation and handling of arpack defaults.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-1-6-0-9012">Documentation<a class="anchor" aria-label="anchor" href="#documentation-1-6-0-9012"></a></h3>
+<ul><li>Fix math formatting in fit_power_law() docs.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="refactoring-1-6-0-9012">Refactoring<a class="anchor" aria-label="anchor" href="#refactoring-1-6-0-9012"></a></h3>
+<ul><li>Use new ARPACK_DEFAULTS symbol from C core for default arpack options.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9011" id="igraph-1609011">igraph 1.6.0.9011<a class="anchor" aria-label="anchor" href="#igraph-1609011"></a></h2>
+<div class="section level3">
+<h3 id="refactoring-1-6-0-9011">Refactoring<a class="anchor" aria-label="anchor" href="#refactoring-1-6-0-9011"></a></h3>
+<ul><li><p>Breaking change: Use <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_soft()</a></code> for deprecated functions (<a href="https://github.com/igraph/rigraph/issues/1025" class="external-link">#1025</a>).</p></li>
+<li><p>Breaking change: Use <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_soft()</a></code> for deprecated functions (<a href="https://github.com/igraph/rigraph/issues/1024" class="external-link">#1024</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="breaking-changes-1-6-0-9011">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-6-0-9011"></a></h3>
+<ul><li><p>Breaking change: Use <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_soft()</a></code> for deprecated functions (<a href="https://github.com/igraph/rigraph/issues/1025" class="external-link">#1025</a>).</p></li>
+<li><p>Breaking change: Use <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_soft()</a></code> for deprecated functions (<a href="https://github.com/igraph/rigraph/issues/1024" class="external-link">#1024</a>).</p></li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9010" id="igraph-1609010">igraph 1.6.0.9010<a class="anchor" aria-label="anchor" href="#igraph-1609010"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9010">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9010"></a></h3>
+<ul><li><p>Double registration of entrypoint removed.</p></li>
+<li><p>Fix some deprecated and incompatible pointers warnings (<a href="https://github.com/igraph/rigraph/issues/1020" class="external-link">#1020</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="chore-1-6-0-9010">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9010"></a></h3>
+<ul><li><p>Update revdepcheck results.</p></li>
+<li><p>Add tools script and template for moving to lifecycle (<a href="https://github.com/igraph/rigraph/issues/1022" class="external-link">#1022</a>).</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-1-6-0-9010">Documentation<a class="anchor" aria-label="anchor" href="#documentation-1-6-0-9010"></a></h3>
+<ul><li>New <code><a href="../articles/deprecated-dot-case.html">vignette("deprecated-dot-case")</a></code> that lists deprecated functions and their alternatives (<a href="https://github.com/igraph/rigraph/issues/1013" class="external-link">#1013</a>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9009" id="igraph-1609009">igraph 1.6.0.9009<a class="anchor" aria-label="anchor" href="#igraph-1609009"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-6-0-9009">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-6-0-9009"></a></h3>
+<ul><li>Intersections between edges and rectangle vertices are computed correctly (<a href="https://github.com/igraph/rigraph/issues/1021" class="external-link">#1021</a>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.6.0.9008" id="igraph-1609008">igraph 1.6.0.9008<a class="anchor" aria-label="anchor" href="#igraph-1609008"></a></h2>
+<div class="section level3">
+<h3 id="chore-1-6-0-9008">Chore<a class="anchor" aria-label="anchor" href="#chore-1-6-0-9008"></a></h3>
+<ul><li>Add Aviator configuration.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-1-6-0-9008">Documentation<a class="anchor" aria-label="anchor" href="#documentation-1-6-0-9008"></a></h3>
+<ul><li>Clarify that Infomap considers edge directions.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.6.0.9007" id="igraph-1609007">igraph 1.6.0.9007<a class="anchor" aria-label="anchor" href="#igraph-1609007"></a></h2>
 <div class="section level3">
@@ -376,7 +575,7 @@ Error in is_directed(object) :
 <div class="section level3">
 <h3 id="deprecated-1-4-0">Deprecated<a class="anchor" aria-label="anchor" href="#deprecated-1-4-0"></a></h3>
 <ul><li>
-<code><a href="../reference/count_automorphisms.html">automorphisms()</a></code> was renamed to <code><a href="../reference/count_automorphisms.html">count_automorphisms()</a></code>; the old name is still available, but it is deprecated.</li>
+<code><a href="../reference/automorphisms.html">automorphisms()</a></code> was renamed to <code><a href="../reference/count_automorphisms.html">count_automorphisms()</a></code>; the old name is still available, but it is deprecated.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="other-1-4-0">Other<a class="anchor" aria-label="anchor" href="#other-1-4-0"></a></h3>
@@ -438,7 +637,7 @@ Error in is_directed(object) :
 <li>
 <code><a href="../reference/edge_attr.html">edge_attr()</a></code> does not ignore its <code>index=...</code> argument any more.</li>
 <li>
-<code><a href="../reference/count_automorphisms.html">automorphisms()</a></code>, <code><a href="../reference/automorphism_group.html">automorphism_group()</a></code> and <code><a href="../reference/canonical_permutation.html">canonical_permutation()</a></code> now allow all possible values supported by the C core in the <code>sh</code> argument. Earlier versions supported only <code>"fm"</code>.</li>
+<code><a href="../reference/automorphisms.html">automorphisms()</a></code>, <code><a href="../reference/automorphism_group.html">automorphism_group()</a></code> and <code><a href="../reference/canonical_permutation.html">canonical_permutation()</a></code> now allow all possible values supported by the C core in the <code>sh</code> argument. Earlier versions supported only <code>"fm"</code>.</li>
 <li>The <code>vertex.frame.width</code> plotting parameter now allows zero and negative values; these will simply remove the outline of the corresponding vertex.</li>
 <li>The documentation of the <code>sh</code> argument of the BLISS isomorphism algorithm in <code><a href="../reference/isomorphic.html">isomorphic()</a></code> was fixed; earlier versions incorrectly referred to <code>sh1</code> and <code>sh2</code>.</li>
 <li>
@@ -467,7 +666,7 @@ Error in is_directed(object) :
 <li>
 <code><a href="../reference/sample_spanning_tree.html">sample_spanning_tree()</a></code> to sample spanning trees of an undirected graph uniformly at random</li>
 <li>
-<code><a href="../reference/count_automorphisms.html">automorphisms()</a></code> and <code><a href="../reference/canonical_permutation.html">canonical_permutation()</a></code> now supports vertex colors</li>
+<code><a href="../reference/automorphisms.html">automorphisms()</a></code> and <code><a href="../reference/canonical_permutation.html">canonical_permutation()</a></code> now supports vertex colors</li>
 <li>
 <code><a href="../reference/random_walk.html">random_edge_walk()</a></code> to record the edges traversed during a random walk</li>
 <li>
@@ -734,7 +933,7 @@ Error in is_directed(object) :
 <li>Graph drawing: allow fixing edge labels at given positions, issue <a href="https://github.com/igraph/rigraph/issues/181" class="external-link">#181</a>.</li>
 <li>Drop the ‘type’ vertex attribute after bipartite projection, the projections are not bipartite any more, issue <a href="https://github.com/igraph/rigraph/issues/255" class="external-link">#255</a>.</li>
 <li>Print logical attributes in header properly (i.e. encoded by <code>l</code>, not <code>x</code>, which is for complex attributes. Issue <a href="https://github.com/igraph/rigraph/issues/578" class="external-link">#578</a>.</li>
-<li>Add a constructor for <code>communities</code> objects, see <code><a href="../reference/make_clusters.html">create.communities()</a></code>. Issue <a href="https://github.com/igraph/rigraph/issues/547" class="external-link">#547</a>.</li>
+<li>Add a constructor for <code>communities</code> objects, see <code><a href="../reference/create.communities.html">create.communities()</a></code>. Issue <a href="https://github.com/igraph/rigraph/issues/547" class="external-link">#547</a>.</li>
 <li>Better error handling in the GraphML parser.</li>
 <li>GraphML reader is a bit more lenient now; makes it possible to read GraphML files saved from yWorks apps.</li>
 <li>Fixed a bug in <code>constaint()</code>, issue <a href="https://github.com/igraph/rigraph/issues/580" class="external-link">#580</a>.</li>
@@ -768,37 +967,37 @@ Error in is_directed(object) :
 <h3 id="new-features-and-bug-fixes-0-7-0">New features and bug fixes<a class="anchor" aria-label="anchor" href="#new-features-and-bug-fixes-0-7-0"></a></h3>
 <ul><li>Added a demo for hierarchical random graphs, invoke it via <code>demo(hrg)</code>.</li>
 <li>Make attribute prefixes optional when writing a GraphML file.</li>
-<li>Added function <code><a href="../reference/modularity.igraph.html">mod.matrix()</a></code>.</li>
+<li>Added function <code><a href="../reference/mod.matrix.html">mod.matrix()</a></code>.</li>
 <li>Support edge weights in leading eigenvector community detection.</li>
 <li>Added the LAD library for checking (sub)graph isomorphism, version 1.</li>
 <li>Logical attributes.</li>
-<li>Added <code><a href="../reference/layout_as_bipartite.html">layout.bipartite()</a></code> function, a simple two-column layout for bipartite graphs.</li>
+<li>Added <code><a href="../reference/layout.bipartite.html">layout.bipartite()</a></code> function, a simple two-column layout for bipartite graphs.</li>
 <li>Support incidence matrices in bipartite Pajek files.</li>
 <li>Pajek files in matrix format are now directed by default, unless they are bipartite.</li>
 <li>Support weighted (and signed) networks in Pajek when file is in matrix format.</li>
-<li>Fixed a bug in <code><a href="../reference/sample_pa.html">barabasi.game()</a></code>, algorithm psumtree-multiple just froze.</li>
-<li>Function <code><a href="../reference/layout_with_mds.html">layout.mds()</a></code> by default returns a layout matrix now.</li>
+<li>Fixed a bug in <code><a href="../reference/barabasi.game.html">barabasi.game()</a></code>, algorithm psumtree-multiple just froze.</li>
+<li>Function <code><a href="../reference/layout.mds.html">layout.mds()</a></code> by default returns a layout matrix now.</li>
 <li>Added support for Boolean attributes in the GraphML and GML readers and writer.</li>
 <li>Change MDS layout coordinates, first dim is according to first eigenvalue, etc.</li>
 <li>
 <code><a href="../reference/communities.html">plot.communities()</a></code> (<code><a href="../reference/plot.igraph.html">plot.igraph()</a></code>, really) draws a border around the marked groups by default.</li>
 <li>printing graphs now converts the <code>name</code> graph attribute to character</li>
 <li>Convenience functions to query and set all attributes at once: <code>vertex.attriubutes()</code>, <code><a href="../reference/graph_attr.html">graph.attributes()</a></code> and <code><a href="../reference/edge_attr.html">edge.attributes()</a></code>.</li>
-<li>Function <code><a href="../reference/disjoint_union.html">graph.disjoint.union()</a></code> handles attributes now.</li>
-<li>Rewrite <code><a href="../reference/union.igraph.html">graph.union()</a></code> to handle attributes properly.</li>
+<li>Function <code><a href="../reference/graph.disjoint.union.html">graph.disjoint.union()</a></code> handles attributes now.</li>
+<li>Rewrite <code><a href="../reference/graph.union.html">graph.union()</a></code> to handle attributes properly.</li>
 <li>
 <code><a href="../reference/rewire.html">rewire()</a></code>: now supports the generation and destruction of loops.</li>
-<li>Erdos-Renyi type bipartite random graphs: <code><a href="../reference/sample_bipartite.html">bipartite.random.game()</a></code>.</li>
-<li>Support the new options (predecessors and inbound_edges) of <code>get_shortest_paths()</code>, reorganized the output of <code><a href="../reference/distances.html">get.shortest.paths()</a></code> completely.</li>
+<li>Erdos-Renyi type bipartite random graphs: <code><a href="../reference/bipartite.random.game.html">bipartite.random.game()</a></code>.</li>
+<li>Support the new options (predecessors and inbound_edges) of <code>get_shortest_paths()</code>, reorganized the output of <code><a href="../reference/get.shortest.paths.html">get.shortest.paths()</a></code> completely.</li>
 <li>Added <code><a href="../reference/graphlet_basis.html">graphlets()</a></code> and related functions.</li>
 <li>Fix modularity values of multilevel community if there are no merges at all.</li>
 <li>Fixed bug when deleting edges with FALSE in the matrix notation.</li>
-<li>Fix <code><a href="../reference/power_centrality.html">bonpow()</a></code> and <code><a href="../reference/alpha_centrality.html">alpha.centrality()</a></code> and make sure that the sparse solver is called.</li>
+<li>Fix <code><a href="../reference/bonpow.html">bonpow()</a></code> and <code><a href="../reference/alpha.centrality.html">alpha.centrality()</a></code> and make sure that the sparse solver is called.</li>
 <li>
-<code><a href="../reference/tkplot.html">tkplot()</a></code> news: enable setting coordinates from the command line via <code><a href="../reference/tkplot.html">tkplot.setcoords()</a></code> and access to the canvas via <code><a href="../reference/tkplot.html">tkplot.canvas()</a></code>.</li>
+<code><a href="../reference/tkplot.html">tkplot()</a></code> news: enable setting coordinates from the command line via <code><a href="../reference/tkplot.setcoords.html">tkplot.setcoords()</a></code> and access to the canvas via <code><a href="../reference/tkplot.canvas.html">tkplot.canvas()</a></code>.</li>
 <li>Fixed a potential crash in <code>igraph_edge_connectivity()</code>, because of an un-initialized variable in the C code.</li>
 <li>Avoiding overflow in <code><a href="../reference/closeness.html">closeness()</a></code> and related functions.</li>
-<li>Check for NAs after converting ‘type’ to logical in <code><a href="../reference/bipartite_projection.html">bipartite.projection()</a></code>.</li>
+<li>Check for NAs after converting ‘type’ to logical in <code><a href="../reference/bipartite.projection.html">bipartite.projection()</a></code>.</li>
 <li>
 <code>graphNEL</code> conversion functions only load the ‘graph’ package if it was not loaded before and they load it at the end of the search path, to minimize conflicts.</li>
 <li>Fixed a bug when creating graphs from adjacency matrices, we now convert them to double, in case they are integers.</li>
@@ -806,33 +1005,33 @@ Error in is_directed(object) :
 <li>Fixed a memory leak in the functions with attribute combinations.</li>
 <li>Removed some memory leaks from the SCG functions.</li>
 <li>Fixed some memory leaks in the ray tracer.</li>
-<li>Fixed memory leak in <code><a href="../reference/bfs.html">graph.bfs()</a></code> and <code><a href="../reference/dfs.html">graph.dfs()</a></code>.</li>
+<li>Fixed memory leak in <code><a href="../reference/graph.bfs.html">graph.bfs()</a></code> and <code><a href="../reference/graph.dfs.html">graph.dfs()</a></code>.</li>
 <li>Fix a bug in triad census that set the first element of the result to NaN.</li>
-<li>Fixed a crash in <code><a href="../reference/is_chordal.html">is.chordal()</a></code>.</li>
+<li>Fixed a crash in <code><a href="../reference/is.chordal.html">is.chordal()</a></code>.</li>
 <li>Fixed a bug in weighted modularity calculation, sum of the weights was truncated to an integer.</li>
 <li>Fixed a bug in weighted multilevel communtiies, the maximum weight was rounded to an integer.</li>
-<li>Fixed a bug in <code><a href="../reference/centr_clo_tmax.html">centralization.closeness.tmax()</a></code>.</li>
+<li>Fixed a bug in <code><a href="../reference/centralization.closeness.tmax.html">centralization.closeness.tmax()</a></code>.</li>
 <li>Reimplement push-relabel maximum flow with gap heuristics.</li>
 <li>Maximum flow functions now return some statistics about the push relabel algorithm steps.</li>
 <li>Function <code><a href="../reference/arpack.html">arpack()</a></code> now gives error message if unknown options are given.</li>
 <li>Fixed missing whitespace in Pajek writer when the ID attribute was numeric.</li>
 <li>Fixed a bug that caused the GML reader to crash when the ID attribute was non-numeric.</li>
 <li>Fixed issue <a href="https://github.com/igraph/rigraph/issues/500" class="external-link">#500</a>, potential segfault if the two graphs in BLISS differ in the number of vertices or edges.</li>
-<li>Added <code><a href="../reference/igraph_test.html">igraphtest()</a></code> function.</li>
+<li>Added <code><a href="../reference/igraphtest.html">igraphtest()</a></code> function.</li>
 <li>Fix dyad census instability, sometimes incorrect results were reported.</li>
 <li>Dyad census detects integer overflow now and gives a warning.</li>
-<li>Function <code><a href="../reference/add_edges.html">add.edges()</a></code> does not allow now zeros in the vertex set.</li>
-<li>Added a function to count the number of adjacent triangles: <code><a href="../reference/count_triangles.html">adjacent.triangles()</a></code>.</li>
-<li>Added <code><a href="../reference/spectrum.html">graph.eigen()</a></code> function, eigenproblems on adjacency matrices.</li>
-<li>Added some workarounds for functions that create a lot of graphs, <code><a href="../reference/decompose.html">decompose.graph()</a></code> and <code><a href="../reference/ego.html">graph.neighborhood()</a></code> use it. Fixes issue <a href="https://github.com/igraph/rigraph/issues/508" class="external-link">#508</a>.</li>
-<li>Added weights support for <code><a href="../reference/cluster_optimal.html">optimal.community()</a></code>, closes <a href="https://github.com/igraph/rigraph/issues/511" class="external-link">#511</a>.</li>
+<li>Function <code><a href="../reference/add.edges.html">add.edges()</a></code> does not allow now zeros in the vertex set.</li>
+<li>Added a function to count the number of adjacent triangles: <code><a href="../reference/adjacent.triangles.html">adjacent.triangles()</a></code>.</li>
+<li>Added <code><a href="../reference/graph.eigen.html">graph.eigen()</a></code> function, eigenproblems on adjacency matrices.</li>
+<li>Added some workarounds for functions that create a lot of graphs, <code><a href="../reference/decompose.graph.html">decompose.graph()</a></code> and <code><a href="../reference/graph.neighborhood.html">graph.neighborhood()</a></code> use it. Fixes issue <a href="https://github.com/igraph/rigraph/issues/508" class="external-link">#508</a>.</li>
+<li>Added weights support for <code><a href="../reference/optimal.community.html">optimal.community()</a></code>, closes <a href="https://github.com/igraph/rigraph/issues/511" class="external-link">#511</a>.</li>
 <li>Faster maximal clique finding.</li>
 <li>Added a function to count maximum cliques.</li>
 <li>Set operations: union, intersection, disjoint, union, difference, compose now work based on vertex names (if they are present) and keep attributes, closes <a href="https://github.com/igraph/rigraph/issues/20" class="external-link">#20</a>.</li>
 <li>Removed functions <code>graph.intersection.by.name()</code>, <code>graph.union.by.name()</code>, <code>graph.difference.by.name()</code>.</li>
-<li>The <code>+</code> operator on graphs now calls <code><a href="../reference/union.igraph.html">graph.union()</a></code> if both argument graphs are named, and calls <code><a href="../reference/disjoint_union.html">graph.disjoint.union()</a></code> otherwise.</li>
-<li>Added function <code><a href="../reference/igraph_version.html">igraph.version()</a></code>.</li>
-<li>Generate graphs from a stochastic block model: <code><a href="../reference/sample_sbm.html">sbm.game()</a></code>.</li>
+<li>The <code>+</code> operator on graphs now calls <code><a href="../reference/graph.union.html">graph.union()</a></code> if both argument graphs are named, and calls <code><a href="../reference/graph.disjoint.union.html">graph.disjoint.union()</a></code> otherwise.</li>
+<li>Added function <code><a href="../reference/igraph.version.html">igraph.version()</a></code>.</li>
+<li>Generate graphs from a stochastic block model: <code><a href="../reference/sbm.game.html">sbm.game()</a></code>.</li>
 <li>Do not suggest the stats, XML, jpeg and png packages any more.</li>
 <li>Fixed a <code>set.vertex/edge.attribute</code> bug that changed both graph objects, after copying (<a href="https://github.com/igraph/rigraph/issues/533" class="external-link">#533</a>)</li>
 <li>Fixed a bug in <code>barabasi.game</code> that caused crashes.</li>
