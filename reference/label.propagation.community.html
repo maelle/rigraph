@@ -14,7 +14,7 @@ consistent API."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/
     
     <a class="navbar-brand me-2" href="../index.html">igraph</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.6.0.9021</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.6.0.9025</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,6 +103,14 @@ edge weight means a stronger connection for this function.</p></dd>
 
 <dt>...</dt>
 <dd><p>These dots are for future extensions and must be empty.</p></dd>
+
+
+<dt>mode</dt>
+<dd><p>Logical, whether to consider edge directions for the label propagation,
+and if so, in which direction the labels should propagate. Ignored for undirected graphs.
+"all" means to ignore edge directions (even in directed graphs).
+"out" means to propagate labels along the natural direction of the edges.
+"in" means to propagate labels backwards (i.e. from head to tail).</p></dd>
 
 
 <dt>initial</dt>
